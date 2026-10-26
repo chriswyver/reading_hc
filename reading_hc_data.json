@@ -47204,7 +47204,23 @@
           "sub": false
         }
       ],
-      "goals": [],
+      "goals": [
+        {
+          "player": "Ryan Crowe",
+          "type": "",
+          "minute": null
+        },
+        {
+          "player": "Tom Minall",
+          "type": "",
+          "minute": null
+        },
+        {
+          "player": "Connor Beauchamp",
+          "type": "",
+          "minute": null
+        }
+      ],
       "notes": "",
       "round": "First round",
       "post": "",
@@ -59802,6 +59818,176 @@
       "post": "",
       "stage": "Phase 1",
       "so": null
+    },
+    {
+      "id": "Mmvpe6u4erxmh7",
+      "date": "1987-02-01",
+      "season": "1986-87",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Indian Gymkhana",
+      "venue": "Away",
+      "status": "Played",
+      "gf": 0,
+      "ga": 1,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [],
+      "notes": "",
+      "round": "First round",
+      "post": "",
+      "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmvpebkudffkqc",
+      "date": "1987-11-29",
+      "season": "1987-88",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Welton",
+      "venue": "Home",
+      "status": "Played",
+      "gf": 1,
+      "ga": 2,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [
+        {
+          "player": "Charles Oscroft",
+          "type": "",
+          "minute": null
+        }
+      ],
+      "notes": "",
+      "round": "Third Round",
+      "post": "",
+      "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmvpef04lejfuc",
+      "date": "1987-11-15",
+      "season": "1987-88",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Old Mid-Whitgiftians",
+      "venue": "Home",
+      "status": "Played",
+      "gf": 3,
+      "ga": 1,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [],
+      "notes": "",
+      "round": "Second round",
+      "post": "",
+      "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmvpeicl6pgtc1",
+      "date": "1987-11-01",
+      "season": "1987-88",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Trojans",
+      "venue": "Home",
+      "status": "Played",
+      "gf": 2,
+      "ga": 1,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [
+        {
+          "player": "Paddy Osborn",
+          "type": "",
+          "minute": null
+        },
+        {
+          "player": "Adrian Radnedge",
+          "type": "",
+          "minute": null
+        }
+      ],
+      "notes": "",
+      "round": "First round",
+      "post": "",
+      "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmvperennmak1z",
+      "date": "1986-01-26",
+      "season": "1985-86",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Old Kingstonians",
+      "venue": "Away",
+      "status": "Played",
+      "gf": 0,
+      "ga": 1,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [],
+      "notes": "",
+      "round": "First round",
+      "post": "",
+      "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmvpeuztwyd0il",
+      "date": "1985-01-27",
+      "season": "1984-85",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Welton",
+      "venue": "Home",
+      "status": "Played",
+      "gf": 4,
+      "ga": 3,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [],
+      "notes": "",
+      "round": "First round",
+      "post": "",
+      "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmvpeyaf6wn1t9",
+      "date": "1985-02-17",
+      "season": "1984-85",
+      "team": "Men's 1s",
+      "competition": "HA Cup",
+      "opponent": "Slough",
+      "venue": "Away",
+      "status": "Played",
+      "gf": 1,
+      "ga": 2,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [
+        {
+          "player": "Micky Denehy",
+          "type": "",
+          "minute": null
+        }
+      ],
+      "notes": "",
+      "round": "Second round",
+      "post": "",
+      "stage": "",
+      "so": null
     }
   ],
   "leagueTables": [
@@ -72095,14 +72281,14 @@
           "marks": []
         }
       ],
-      "playoffs": [],
       "stage": "National",
       "carry": false,
       "summary": false,
+      "combine": false,
+      "combineOff": false,
       "fixtures": "auto",
       "cutAfter": null,
-      "combine": false,
-      "combineOff": false
+      "playoffs": []
     }
   ],
   "compKinds": {
