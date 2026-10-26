@@ -67825,14 +67825,14 @@
           "marks": []
         }
       ],
-      "playoffs": [],
       "stage": "Phase 1",
       "carry": false,
       "summary": false,
+      "combine": false,
+      "combineOff": false,
       "fixtures": "auto",
       "cutAfter": null,
-      "combine": false,
-      "combineOff": false
+      "playoffs": []
     },
     {
       "id": "Tmvfgeotplc38c",
@@ -72020,6 +72020,89 @@
           "bso": null
         }
       ]
+    },
+    {
+      "id": "Tmvp9h0nkh6sju",
+      "season": "2002-03",
+      "team": "Men's 1s",
+      "division": "Super 6s Indoor National League Qualifier",
+      "notes": "",
+      "postName": "",
+      "rows": [
+        {
+          "pos": 1,
+          "team": "Reading",
+          "p": null,
+          "w": null,
+          "d": null,
+          "l": null,
+          "gf": null,
+          "ga": null,
+          "gd": null,
+          "pts": null,
+          "marks": []
+        },
+        {
+          "pos": 2,
+          "team": "Crostyx",
+          "p": null,
+          "w": null,
+          "d": null,
+          "l": null,
+          "gf": null,
+          "ga": null,
+          "gd": null,
+          "pts": null,
+          "marks": []
+        },
+        {
+          "pos": null,
+          "team": "Infantry",
+          "p": null,
+          "w": null,
+          "d": null,
+          "l": null,
+          "gf": null,
+          "ga": null,
+          "gd": null,
+          "pts": null,
+          "marks": []
+        },
+        {
+          "pos": null,
+          "team": "Sheffield",
+          "p": null,
+          "w": null,
+          "d": null,
+          "l": null,
+          "gf": null,
+          "ga": null,
+          "gd": null,
+          "pts": null,
+          "marks": []
+        },
+        {
+          "pos": null,
+          "team": "Nottingham",
+          "p": null,
+          "w": null,
+          "d": null,
+          "l": null,
+          "gf": null,
+          "ga": null,
+          "gd": null,
+          "pts": null,
+          "marks": []
+        }
+      ],
+      "playoffs": [],
+      "stage": "National",
+      "carry": false,
+      "summary": false,
+      "fixtures": "auto",
+      "cutAfter": null,
+      "combine": false,
+      "combineOff": false
     }
   ],
   "compKinds": {
