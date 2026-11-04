@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reading HC | National League Archive</title>
+<title>Reading HC | Men's 1st XI Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -323,7 +323,7 @@
 
 <header>
   <div class="header-inner">
-    <div class="brand">Reading Hockey Club<small>National League archive</small></div>
+    <div class="brand">Reading Hockey Club<small>Men's 1st XI archive</small></div>
     <nav id="nav">
       <button data-page="home" class="active">Home</button>
       <button data-page="matches">Matches</button>
@@ -343,7 +343,7 @@
 <section id="page-home" class="page active">
   <div class="home-hero">
     <h1>Reading Hockey Club archive</h1>
-    <p class="lede">Every men's National League, cup, European and indoor match we've been able to trace, with scorers, lineups where they survive, league tables and player records.</p>
+    <p class="lede">Every men's 1st XI league (London League from 1972, National League from 1988), cup, European and indoor match we've been able to trace, with scorers, lineups where they survive, league tables and player records.</p>
   </div>
   <div id="home-summary"></div>
   <div class="panel" id="home-data"></div>
@@ -410,6 +410,9 @@
       <div><label class="f" for="e-round">Round (name or number)</label><input type="text" id="e-round" list="dl-rounds" placeholder="e.g. Semi-final, Round 2"></div>
       <div><label class="f" for="e-sogf">Reading shoot-out</label><input type="number" id="e-sogf" min="0" inputmode="numeric" placeholder="If drawn"></div>
       <div><label class="f" for="e-soga">Opponent shoot-out</label><input type="number" id="e-soga" min="0" inputmode="numeric" placeholder="If drawn"></div>
+    </div>
+    <div class="grid g4" style="margin-top:14px;">
+      <div><label class="f" for="e-sowin">Shoot-out winner (score not known)</label><select id="e-sowin"><option value="">–</option><option value="W">Reading</option><option value="L">Opponent</option></select></div>
     </div>
     <div class="grid g4" style="margin-top:14px;">
       <div><label class="f" for="e-stage">League stage</label><input type="text" id="e-stage" list="dl-stages" placeholder="e.g. Phase 2: Top Six"></div>
@@ -522,8 +525,8 @@
 <!-- ══════════ LEAGUE TABLES ══════════ -->
 <section id="page-league" class="page">
   <h1>Tables</h1>
-  <p class="lede" id="lf-lede">Reading's National League standings, by season.</p>
-  <div class="seg" id="lf-kind" style="margin-bottom:14px;"><button data-kind="league" class="on">Domestic leagues</button><button data-kind="cup">Domestic cup</button><button data-kind="euro">European cup</button><button data-kind="indoor">Domestic indoor</button><button data-kind="euroindoor">European indoor</button></div>
+  <p class="lede" id="lf-lede">Reading's league standings, by season.</p>
+  <div class="seg" id="lf-kind" style="margin-bottom:14px;"><button data-kind="league" class="on">Domestic leagues</button><button data-kind="cup">Domestic cup</button><button data-kind="county">County cup</button><button data-kind="euro">European cup</button><button data-kind="indoor">Domestic indoor</button><button data-kind="euroindoor">European indoor</button></div>
   <div class="btn-row" style="margin-bottom:14px;" id="lf-tools">
     <select id="lf-jump" style="width:auto;min-width:170px;" aria-label="Jump to season"></select>
     <button class="btn btn-primary btn-sm edit-only" id="btn-add-table">New table</button>
@@ -614,21 +617,21 @@
     </div>
     <div class="grid g3" style="margin-top:14px;">
       <div><label class="f" for="lt-fixtures">Reading's fixtures (for the missing-games check)</label>
-        <select id="lt-fixtures"><option value="auto">Automatic</option><option value="once">Each team once</option><option value="double">Home and away</option><option value="none">Don't check</option></select></div>
+        <select id="lt-fixtures"><option value="auto">Automatic</option><option value="once">Each team once</option><option value="double">Home and away</option><option value="free">Clubs arranged their own fixtures</option><option value="none">Don't check</option></select></div>
       <div><label class="f" for="lt-cut">Season cut short after (games)</label><input type="number" id="lt-cut" min="0" placeholder="Leave blank if completed"></div>
       <div style="align-self:end;"><p class="muted small" id="lt-fixtures-auto"></p></div>
     </div>
     <div style="margin-top:14px;">
       <button type="button" class="btn btn-secondary btn-sm" id="lt-paste-toggle">Paste a table</button>
       <div class="paste-box" id="lt-paste-box" hidden>
-        <label class="f" for="lt-paste">Paste rows copied from England Hockey or a spreadsheet. Each row needs the team name followed by P W D L GF GA (GD optional) Pts, or P W D L GD Pts when goals for and against aren't given.</label>
+        <label class="f" for="lt-paste">Paste rows copied from England Hockey or a spreadsheet. Each row needs the team name followed by P W D L GF GA (GD optional) Pts, or P W D L GD Pts when goals for and against aren't given. For leagues ranked by percentage, add the percentage anywhere after the numbers with a decimal point or % sign (e.g. 76.81 or 76.81%); Pts can then be left out, or goals can be left out (P W D L Pts %).</label>
         <textarea id="lt-paste" rows="8"></textarea>
         <div class="btn-row" style="margin-top:8px;"><button type="button" class="btn btn-primary btn-sm" id="lt-paste-apply">Replace rows with pasted table</button><span class="small muted" id="lt-paste-msg"></span></div>
       </div>
     </div>
     <div class="tbl-wrap" style="margin-top:14px;">
       <table class="tbl lt-edit">
-        <thead><tr><th class="n">Pos</th><th>Team</th><th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n" title="Only needed when GF and GA aren't known">GD</th><th class="n">Pts</th><th title="Champions">Ch</th><th title="Play-offs">PO</th><th title="Promoted">Pro</th><th title="Relegated">Rel</th><th></th></tr></thead>
+        <thead><tr><th class="n">Pos</th><th>Team</th><th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n" title="Only needed when GF and GA aren't known">GD</th><th class="n">Pts</th><th class="n" title="Only for leagues ranked by percentage">%</th><th title="Champions">Ch</th><th title="Play-offs">PO</th><th title="Promoted">Pro</th><th title="Relegated">Rel</th><th></th></tr></thead>
         <tbody id="lt-rows"></tbody>
       </table>
     </div>
@@ -721,15 +724,18 @@ function roundStage(r) {
 }
 const EURO_RE = /euro|europe|cup winners|champions cup|club champions/i;
 const CUP_RE  = /\bcup\b|trophy|shield|\bplate\b|knock-?out/i;
+// County cups: Berks Cup, Berkshire Cup, Berks & Bucks Cup, any "County Cup"
+const COUNTY_RE = /\b(berks|berkshire|bucks|oxon|oxfordshire|surrey|middlesex|kent|hants|hampshire|county)\b.*\b(cup|trophy|shield)\b/i;
 const INDOOR_RE = /indoor|super ?6|super ?sixes|hockey ?5s/i;
-const KINDS = ['league', 'cup', 'euro', 'indoor', 'euroindoor'];
-const KIND_LABEL = { league: 'League', cup: 'Domestic cup', euro: 'European cup', indoor: 'Domestic indoor', euroindoor: 'European indoor' };
+const KINDS = ['league', 'cup', 'county', 'euro', 'indoor', 'euroindoor'];
+const KIND_LABEL = { league: 'League', cup: 'Domestic cup', county: 'County cup', euro: 'European cup', indoor: 'Domestic indoor', euroindoor: 'European indoor' };
 function autoKind(c) {
   c = String(c || '');
   if (INDOOR_RE.test(c)) return EURO_RE.test(c) ? 'euroindoor' : 'indoor';
-  return EURO_RE.test(c) ? 'euro' : CUP_RE.test(c) ? 'cup' : 'league';
+  if (/national clubs? championship|benson (&|and) hedges/i.test(c)) return 'cup';   // the national club knock-out (Benson & Hedges era)
+  return EURO_RE.test(c) ? 'euro' : COUNTY_RE.test(c) ? 'county' : CUP_RE.test(c) ? 'cup' : 'league';
 }
-const KIND_TAB_LABEL = { league: 'Domestic leagues', cup: 'Domestic cup', euro: 'European cup', indoor: 'Domestic indoor', euroindoor: 'European indoor' };
+const KIND_TAB_LABEL = { league: 'Domestic leagues', cup: 'Domestic cup', county: 'County cup', euro: 'European cup', indoor: 'Domestic indoor', euroindoor: 'European indoor' };
 // Type filter: the five categories on the Tables tab
 function fillKind(sel, kinds = KINDS) {
   const cur = sel.value;
@@ -834,6 +840,10 @@ function result(m) {
   if (m.gf == null || m.ga == null) return '';
   return m.gf > m.ga ? 'W' : m.gf < m.ga ? 'L' : 'D';
 }
+// Shoot-outs: a score, or just the winner when the score isn't known ({ won: true/false })
+const soKnown = so => !!so && so.gf != null && so.ga != null;
+const soWon = so => !so ? null : soKnown(so) ? so.gf > so.ga : !!so.won;
+const soText = so => soKnown(so) ? `${so.gf}–${so.ga}` : 'score not known';
 const countsForRecord = m => ['Played', 'Awarded win', 'Awarded loss'].includes(m.status);
 const canHaveLineup   = m => !['Postponed', 'Cancelled', 'Awarded win', 'Awarded loss', 'Walkover win', 'Walkover loss'].includes(m.status);
 
@@ -887,7 +897,7 @@ function normalise(d) {
     round: canonRound(m.round),
     post: String(m.post || '').trim(),
     stage: renameStage(m.stage),
-    so: m.so && m.so.gf != null && m.so.ga != null ? { gf: +m.so.gf, ga: +m.so.ga } : null,
+    so: m.so && m.so.gf != null && m.so.ga != null ? { gf: +m.so.gf, ga: +m.so.ga } : m.so && typeof m.so.won === 'boolean' ? { gf: null, ga: null, won: m.so.won } : null,
   })).map(m => (!m.post && m.stage && POST_NAMES.includes(m.stage)) ? { ...m, post: m.stage, stage: '' } : m);   // e.g. Super Cup entered as a league stage: it's an end-of-season competition
   o.leagueTables = (d.leagueTables || []).map(t => ({
     id: t.id || uid('T'),
@@ -899,11 +909,11 @@ function normalise(d) {
     rows: (t.rows || []).map(r => ({
       pos: numOrNull(r.pos), team: String(r.team || '').trim(),
       p: numOrNull(r.p), w: numOrNull(r.w), d: numOrNull(r.d), l: numOrNull(r.l),
-      gf: numOrNull(r.gf), ga: numOrNull(r.ga), gd: numOrNull(r.gd), pts: numOrNull(r.pts),
+      gf: numOrNull(r.gf), ga: numOrNull(r.ga), gd: numOrNull(r.gd), pts: numOrNull(r.pts), pct: numOrNull(r.pct),
       marks: (r.marks || []).filter(k => MARKS.some(m => m.k === k)),
     })).filter(r => r.team),
     stage: renameStage(t.stage), carry: !!t.carry, summary: !!t.summary, combine: !!t.combine, combineOff: !!t.combineOff,
-    fixtures: ['auto', 'once', 'double', 'none'].includes(t.fixtures) ? t.fixtures : 'auto', cutAfter: numOrNull(t.cutAfter),
+    fixtures: ['auto', 'once', 'double', 'free', 'none'].includes(t.fixtures) ? t.fixtures : 'auto', cutAfter: numOrNull(t.cutAfter),
     playoffs: (t.playoffs || []).map(x => ({
       round: canonRound(x.round) || 'Semi-final',
       a: String(x.a || '').trim(), b: String(x.b || '').trim(),
@@ -1113,7 +1123,7 @@ function scoreHTML(m) {
   const side = m.venue === 'Away' ? 'away' : 'home';
   const s = `<span class="score ${side}" title="Reading ${m.gf}, ${esc(m.opponent)} ${m.ga}"><b class="us">${m.gf}</b><b class="them">${m.ga}</b></span>`;
   if (m.status === 'Abandoned') return s + ' <span class="status-tag">abandoned</span>';
-  if (m.so) return s + ` <span class="status-tag">${m.so.gf > m.so.ga ? 'won' : 'lost'} ${m.so.gf}–${m.so.ga} on shoot-out</span>`;
+  if (m.so) return s + ` <span class="status-tag">${soWon(m.so) ? 'won' : 'lost'} ${soKnown(m.so) ? soText(m.so) + ' ' : ''}on shoot-out</span>`;
   return s;
 }
 // Completeness markers: ✓ complete, ~ incomplete, ✗ missing
@@ -1316,8 +1326,9 @@ function openEditor(id) {
   $('#e-round').value  = m ? m.round : '';
   $('#e-post').value   = m ? (m.post || '') : '';
   $('#e-stage').value  = m ? m.stage : (last && last.stage && last.season === seasonFromDate(new Date().toISOString().slice(0, 10)) ? last.stage : '');
-  $('#e-sogf').value   = m && m.so ? m.so.gf : '';
-  $('#e-soga').value   = m && m.so ? m.so.ga : '';
+  $('#e-sogf').value   = m && m.so ? m.so.gf ?? '' : '';
+  $('#e-soga').value   = m && m.so ? m.so.ga ?? '' : '';
+  $('#e-sowin').value  = m && m.so && !soKnown(m.so) ? (m.so.won ? 'W' : 'L') : '';
   $('#e-lineup-known').checked = m ? m.lineupKnown : true;
   $('#e-lineup-complete').checked = !!(m && m.lineupComplete);
   $('#lineup-rows').innerHTML = ''; $('#goal-rows').innerHTML = '';
@@ -1484,7 +1495,7 @@ $('#btn-save-match').addEventListener('click', () => {
     round: canonRound($('#e-round').value),
     post: $('#e-post').value.trim(),
     stage: $('#e-stage').value.trim(),
-    so: numOrNull($('#e-sogf').value) != null && numOrNull($('#e-soga').value) != null ? { gf: +$('#e-sogf').value, ga: +$('#e-soga').value } : null,
+    so: numOrNull($('#e-sogf').value) != null && numOrNull($('#e-soga').value) != null ? { gf: +$('#e-sogf').value, ga: +$('#e-soga').value } : $('#e-sowin').value ? { gf: null, ga: null, won: $('#e-sowin').value === 'W' } : null,
   };
   if (m.lineupKnown && canHaveLineup(m)) {
     m.lineup = $$('#lineup-rows .lrow').map(r => ({
@@ -1541,10 +1552,10 @@ function statCat(m) {
   const k = compKind(m.competition);
   if (k === 'indoor') return 'League';           // domestic indoor league and finals
   if (k === 'euroindoor') return 'Euro';
-  return k === 'cup' ? 'Cup' : k === 'euro' ? 'Euro' : isPost(m) ? 'Post' : 'League';
+  return k === 'cup' ? 'Cup' : k === 'county' ? 'County' : k === 'euro' ? 'Euro' : isPost(m) ? 'Post' : 'League';
 }
 function statCatTips(ms) {
-  const names = { League: [], Post: [], Cup: [], Euro: [] };
+  const names = { League: [], Post: [], Cup: [], County: [], Euro: [] };
   ms.forEach(m => { const c = statCat(m); names[c].push(c === 'Post' ? (m.post || 'Play-offs') : m.competition); });
   const t = {};
   Object.entries(names).forEach(([c, a]) => { const u = uniq(a).sort(); t[c] = u.length ? 'Includes ' + u.join(', ') : 'None in this selection'; });
@@ -1553,7 +1564,7 @@ function statCatTips(ms) {
 function playerStats(matches, scorersCount) {
   const P = new Map();
   const get = n => {
-    if (!P.has(n)) P.set(n, { name: n, apps: 0, goals: 0, aLeague: 0, aPost: 0, aCup: 0, aEuro: 0, gLeague: 0, gPost: 0, gCup: 0, gEuro: 0, FG: 0, PC: 0, PS: 0, gk: 0, seasons: new Set(), bySeason: new Map(), matches: [] });
+    if (!P.has(n)) P.set(n, { name: n, apps: 0, goals: 0, aLeague: 0, aPost: 0, aCup: 0, aCounty: 0, aEuro: 0, gLeague: 0, gPost: 0, gCup: 0, gCounty: 0, gEuro: 0, FG: 0, PC: 0, PS: 0, gk: 0, seasons: new Set(), bySeason: new Map(), matches: [] });
     return P.get(n);
   };
   const bs = (r, s, team) => {
@@ -1648,7 +1659,7 @@ function renderStats() {
     lastStatsRows = rows;
     if (!rows.length) { $('#stats-body').innerHTML = '<div class="empty">No players fit these filters.</div>'; return; }
     const s = statsSort, tip = statCatTips(ms);
-    const cats = statsSurface === 'indoor' ? [['League', 'Domestic'], ['Euro', 'Europe']] : [['League', 'League'], ['Post', 'Play-offs'], ['Cup', 'Cup'], ['Euro', 'Europe']];
+    const cats = statsSurface === 'indoor' ? [['League', 'Domestic'], ['Euro', 'Europe']] : [['League', 'League'], ['Post', 'Play-offs'], ['Cup', 'Cup'], ['County', 'County'], ['Euro', 'Europe']];
     const n = v => v || '';
     $('#stats-body').innerHTML = `<div class="panel" style="padding:0;"><div class="tbl-wrap"><table class="tbl sortable" id="tbl-players"><thead>
       <tr class="grp"><th></th><th></th>${showApps ? '<th colspan="${cats.length + 1}" class="c" style="border-bottom:1px solid var(--line);">Appearances</th>' : ''}<th colspan="${cats.length + 1}" class="c" style="border-bottom:1px solid var(--line);">Goals</th>${showApps ? '<th></th>' : ''}<th></th><th></th><th></th></tr>
@@ -1663,7 +1674,7 @@ function renderStats() {
         ${showApps ? `<td class="n hide-sm">${r.apps ? r.gpa.toFixed(2) : '–'}</td>` : ''}
         <td class="n">${r.nSeasons}</td><td class="hide-sm">${esc(r.first)}</td><td class="hide-sm">${esc(r.last)}</td></tr>`).join('')}
       </tbody></table></div></div>
-      <p class="muted small">Hover over a column heading to see which competitions it includes. Play-offs covers play-offs and end-of-season tournaments; Cup and Europe follow the competition types on the Tables page.${showApps ? ' Appearances are a minimum, as many line ups are missing.' : ''}</p>`;
+      <p class="muted small">Hover over a column heading to see which competitions it includes. Play-offs covers play-offs and end-of-season tournaments; Cup, County and Europe follow the competition types on the Tables page.${showApps ? ' Appearances are a minimum, as many line ups are missing.' : ''}</p>`;
   } else {
     $('#stats-coverage').hidden = false; $('#sf-min-wrap').hidden = true; $('#sf-scorers-wrap').hidden = false;
     let rows = sortRows(seasonStats(ms), seasonSort);
@@ -1703,8 +1714,8 @@ $('#stats-body').addEventListener('click', e => {
 });
 $('#btn-stats-csv').addEventListener('click', () => {
   let rows;
-  if (statsView === 'players') rows = [['Player', ...($('#sf-apps').checked ? ['Apps', 'League apps', 'Play-off apps', 'Cup apps', 'Europe apps'] : []), 'Total goals', 'League goals', 'Play-off goals', 'Cup goals', 'Europe goals', 'Seasons', 'First season', 'Last season'],
-    ...lastStatsRows.map(r => [r.name, ...($('#sf-apps').checked ? [r.apps, r.aLeague, r.aPost, r.aCup, r.aEuro] : []), r.goals, r.gLeague, r.gPost, r.gCup, r.gEuro, r.nSeasons, r.first, r.last])];
+  if (statsView === 'players') rows = [['Player', ...($('#sf-apps').checked ? ['Apps', 'League apps', 'Play-off apps', 'Cup apps', 'County apps', 'Europe apps'] : []), 'Total goals', 'League goals', 'Play-off goals', 'Cup goals', 'County goals', 'Europe goals', 'Seasons', 'First season', 'Last season'],
+    ...lastStatsRows.map(r => [r.name, ...($('#sf-apps').checked ? [r.apps, r.aLeague, r.aPost, r.aCup, r.aCounty, r.aEuro] : []), r.goals, r.gLeague, r.gPost, r.gCup, r.gCounty, r.gEuro, r.nSeasons, r.first, r.last])];
   else rows = [['Season', 'Team', 'Competition', 'P', 'W', 'D', 'L', 'GF', 'GA', 'Finish', 'Top scorer', 'Top scorer goals'],
     ...lastStatsRows.map(r => [r.season, r.team, r.comp, r.p, r.w, r.d, r.l, r.gf, r.ga, r.finish ?? '', r.topNames.join('; '), r.top || ''])];
   const csv = rows.map(r => r.map(c => /[",\n]/.test(String(c)) ? `"${String(c).replace(/"/g, '""')}"` : c).join(',')).join('\r\n');
@@ -1842,7 +1853,7 @@ $('#pl-profile').addEventListener('click', e => {
 // LEAGUE TABLES
 // ════════════════════════════════════════════════════════════
 function sortTableRows(rows) {
-  return rows.slice().sort((a, b) => (a.pos ?? 99) - (b.pos ?? 99) || (b.pts ?? 0) - (a.pts ?? 0));
+  return rows.slice().sort((a, b) => (a.pos ?? 99) - (b.pos ?? 99) || (b.pts ?? 0) - (a.pts ?? 0) || (b.pct ?? 0) - (a.pct ?? 0));
 }
 // ════════════════════════════════════════════════════════════
 // OPPONENTS: head-to-head record
@@ -1977,8 +1988,8 @@ function renderLeague() {
   $$('#lf-kind button').forEach(b => b.classList.toggle('on', b.dataset.kind === leagueKind));
   $('#lf-tools').hidden = leagueKind !== 'league' && leagueKind !== 'indoor';
   $('#lf-jump').hidden = leagueKind !== 'league' && leagueKind !== 'indoor';
-  $('#lf-lede').textContent = leagueKind === 'league' ? "Reading's National League standings, by season."
-    : leagueKind === 'cup' ? "Reading's domestic cup runs, by season." : leagueKind === 'euro' ? "Reading's European club competitions, by season."
+  $('#lf-lede').textContent = leagueKind === 'league' ? "Reading's league standings, by season: the London League to 1987-88, then the National League."
+    : leagueKind === 'cup' ? "Reading's domestic cup runs, by season." : leagueKind === 'county' ? "Reading's county cup runs, by season." : leagueKind === 'euro' ? "Reading's European club competitions, by season."
     : leagueKind === 'indoor' ? "Reading's domestic indoor seasons: league and finals." : "Reading's European indoor club competitions, by season.";
   renderCompTypes();
   if (leagueKind !== 'league' && leagueKind !== 'indoor') { renderCups(leagueKind); return; }
@@ -2007,6 +2018,16 @@ function renderLeague() {
   let body = '', tgdSum = 0;
   groups.forEach(g => {
     if (g.gap) {
+      const lm = db.matches.filter(m => m.season === g.season && m.team === leagueTab && countsForRecord(m) && leagueScopeMatch(m) && !isPost(m));
+      const comp = uniq(lm.map(m => m.competition)).join(', ');
+      if (lm.length) {
+        // No table yet: show Reading's own league record from the archive, greyed, so the season isn't blank
+        const r = recordOf(lm), gd = r.gf - r.ga;
+        body += `<tr class="sum-row gap-row" data-season="${esc(g.season)}" title="No table recorded: Reading's league games in the archive"><td><span class="muted" style="padding-left:14px;">${esc(g.season)}</span></td>
+          <td class="n muted">–</td><td class="muted">${esc(comp)} <span class="tag" title="No table recorded yet; these are Reading's league games in the archive">no table</span>${readOnly ? '' : ` <button class="btn btn-secondary btn-sm edit-only" data-add-table-season="${esc(g.season)}" style="margin-left:8px;">Add table</button>`}</td>
+          ${COLS.map(k => `<td class="n muted">${r[k]}</td>`).join('')}<td class="n muted">${(gd > 0 ? '+' : '') + gd}</td><td class="n muted">–</td></tr>`;
+        return;
+      }
       const n = db.matches.filter(m => m.season === g.season && m.team === leagueTab && countsForRecord(m) && (leagueKind !== 'indoor' || leagueScopeMatch(m))).length;
       body += `<tr class="sum-row gap-row" data-season="${esc(g.season)}"><td><span class="muted" style="padding-left:14px;">${esc(g.season)}</span></td>
         <td colspan="10" class="muted">No table recorded${n ? `, ${n} result${n === 1 ? '' : 's'} in the archive` : ''}
@@ -2019,7 +2040,8 @@ function renderLeague() {
     const pts = g.tables.filter(isPostTable).map(x => { const c = x.rows.find(r => CLUB_RE.test(r.team)); return c && c.pos ? `${x.stage} ${c.pos === 1 ? 'winners' : ordinal(c.pos)}` : ''; }).filter(Boolean);
     const badge = [playoffBadge(groupForPlayoffs(g)), ...pts].filter(Boolean).join(' · ');
     const miss = seasonMissingCount(g);
-    const missTag = miss == null ? '' : miss ? ` <span class="tag miss-badge" title="League games not yet in the archive">${miss} missing</span>` : ' <span class="tag ok-badge edit-only" title="Every league game is in the archive">all games in</span>';
+    const freeFix = g.tables.some(x => !isPostTable(x) && fixtureRule(x, g.season).mode === 'free');
+    const missTag = freeFix ? ` <span class="tag" title="${esc(FREE_FIXTURES_NOTE)}">own fixtures</span>` : miss == null ? '' : miss ? ` <span class="tag miss-badge" title="League games not yet in the archive">${miss} missing</span>` : ' <span class="tag ok-badge edit-only" title="Every league game is in the archive">all games in</span>';
     const outcome = ['champ', 'prom', 'rel'].map(k => MARKS.find(x => x.k === k)).find(mk => mk && leagueTablesOf(g).some(x => ((x.rows.find(r => CLUB_RE.test(r.team)) || {}).marks || []).includes(mk.k)));
     const div = `${esc(t.division)}${t.stage ? ` <span class="muted small" style="font-weight:400;">${esc(t.stage)}</span>` : ''}${outcome ? ` <span class="tag mk-${outcome.k}">${outcome.label}</span>` : ''}${badge ? badge.split(' · ').map(b => ` <span class="tag ${/winners$/i.test(b) ? 'po-win' : 'po-other'}">${esc(b)}</span>`).join('') : ''}${missTag}`;
     // Colour the summary row by any outcome Reading got in any stage
@@ -2036,7 +2058,7 @@ function renderLeague() {
       body += `<tr class="sum-row${open ? ' open' : ''} ${markClass({ marks: allMarks }).replace('st-', 'bar-')}" data-season="${esc(g.season)}"><td>${link}</td>
         <td class="n"><strong>${club.pos ?? '–'}</strong><span class="muted" style="font-weight:400;">/${Math.min(...t.rows.map(r => r.pos ?? 1)) === 1 ? t.rows.length : Math.max(...leagueTablesOf(g).map(x => x.rows.length))}</span></td>
         <td>${div}${line !== club ? ' <span class="muted small" style="font-weight:400;">all phases</span>' : ''}</td>${COLS.map(k => `<td class="n">${line[k] ?? '–'}</td>`).join('')}
-        <td class="n">${gd == null ? '–' : (gd > 0 ? '+' : '') + gd}</td><td class="n"><strong>${line.pts ?? '–'}</strong></td></tr>`;
+        <td class="n">${gd == null ? '–' : (gd > 0 ? '+' : '') + gd}</td><td class="n"><strong>${freeFix && line.pct != null ? `<span title="London League placings went by percentage of points won">${line.pct.toFixed(1)}%</span>` : line.pts ?? (line.pct != null ? line.pct.toFixed(1) + '%' : '–')}</strong></td></tr>`;
     } else {
       body += `<tr class="sum-row${open ? ' open' : ''}" data-season="${esc(g.season)}"><td>${link}</td><td colspan="10" class="muted">${esc(t.division)}, no Reading row in this table</td></tr>`;
     }
@@ -2048,14 +2070,24 @@ function renderLeague() {
     <div style="padding:16px 18px 6px;"><h2 style="margin-bottom:2px;">Reading: season by season</h2>
     <p class="muted small">Click a season to see the full league table and Reading's results. Click a result to see the line up and scorers.</p></div>
     <div class="tbl-wrap"><table class="tbl" id="lt-summary"><thead><tr><th>Season</th><th class="n">Pos</th><th>Division</th>
-      <th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n">GD</th><th class="n">Pts</th></tr></thead>
+      <th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n">GD</th><th class="n" title="Points; % for London League seasons, which were placed by percentage">Pts</th></tr></thead>
     <tbody>${body}</tbody></table></div>
     <div style="padding:0 18px 12px;">${legendHTML(summaryRows)}</div></div>`;
 }
 
 // ── Cups: one row per season and competition; click to see Reading's ties round by round
+// Ties in date order; a tie with no date goes by its round (final after semi-final after quarter-final)
+function roundRank(r) {
+  r = String(r || '').toLowerCase();
+  if (/semi/.test(r)) return 90; if (/quarter/.test(r)) return 80; if (/\bfinal\b/.test(r)) return 100;
+  const n = /(\d+)/.exec(r); if (n) return +n[1];
+  const w = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'].findIndex(x => r.includes(x));
+  return w >= 0 ? w + 1 : 50;
+}
+// Same-day ties (finals days: semi-final then final) fall back to the round
+const cupOrder = (a, b) => a.date && b.date ? a.date.localeCompare(b.date) || roundRank(a.round) - roundRank(b.round) : roundRank(a.round) - roundRank(b.round) || (a.date ? -1 : b.date ? 1 : 0);
 function cupOutcome(ms) {
-  const won = m => { const r = result(m); return r === 'W' || (r === 'D' && m.so && m.so.gf > m.so.ga); };
+  const won = m => { const r = result(m); return r === 'W' || (r === 'D' && soWon(m.so) === true); };
   const fin = ms.filter(m => /\bfinal\b/i.test(m.round) && !/semi|quarter/i.test(m.round)).pop();
   if (fin) return won(fin) ? 'Winners' : 'Runners-up';
   const last = ms.filter(m => m.round).pop();
@@ -2079,7 +2111,7 @@ function renderCups(kind) {
   if (!tabs.includes(leagueTab)) leagueTab = tabs[0] || leagueTab;
   $('#lf-tabs').innerHTML = tabs.length > 1 ? tabs.map(t => `<button data-tab="${esc(t)}" class="${t === leagueTab ? 'on' : ''}">${esc(t)}</button>`).join('') : '';
   const mine = ms.filter(m => m.team === leagueTab);
-  const KDESC = { cup: ['domestic cup', 'cup (e.g. "EH Cup", "HA Cup")'], euro: ['European', 'European competition (e.g. "Euro Hockey League", "European Cup Winners Cup")'],
+  const KDESC = { cup: ['domestic cup', 'cup (e.g. "EH Cup", "HA Cup")'], county: ['county cup', 'county cup (e.g. "Berks Cup")'], euro: ['European', 'European competition (e.g. "Euro Hockey League", "European Cup Winners Cup")'],
     indoor: ['domestic indoor', 'indoor competition (e.g. "Indoor Premier Division", "Super 6s")'], euroindoor: ['European indoor', 'European indoor competition (e.g. "EuroHockey Indoor Club Cup")'] }[kind];
   if (!mine.length) {
     $('#league-body').innerHTML = `<div class="empty">No ${KDESC[0]} matches yet. A match goes here when its competition is a ${KDESC[1]}${readOnly ? '' : ', or set it under <strong>Competition types</strong> below'}.</div>`;
@@ -2092,7 +2124,7 @@ function renderCups(kind) {
   const tot = { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0 };
   let titles = 0, body = '';
   groups.forEach(g => {
-    g.ms.sort((a, b) => (a.date || '9999').localeCompare(b.date || '9999'));
+    g.ms.sort(cupOrder);
     const played = g.ms.filter(countsForRecord);
     const r = { p: played.length, w: 0, d: 0, l: 0, gf: 0, ga: 0 };
     played.forEach(m => { const x = result(m); if (x === 'W') r.w++; else if (x === 'D') r.d++; else if (x === 'L') r.l++; r.gf += m.gf || 0; r.ga += m.ga || 0; });
@@ -2155,7 +2187,7 @@ function fullTableHTML(rows, opt = {}) {
     const res = result(m);
     const txt = (m.status === 'Played' || m.status === 'Abandoned') && m.gf != null && m.ga != null ? `${m.gf}-${m.ga}${m.so ? '*' : ''}`
       : /Walkover|Awarded/.test(m.status) ? (res === 'W' ? 'W/O' : 'L/O') : m.status === 'Played' ? '?' : m.status.slice(0, 4);
-    const tip = `${fmtDate(m.date)}, ${m.venue === 'Away' ? 'away' : m.venue === 'Home' ? 'home' : 'neutral'}: Reading ${m.gf ?? '?'}, ${m.opponent} ${m.ga ?? '?'}${m.so ? ` (shoot-out ${m.so.gf}-${m.so.ga})` : ''}. Click for line up and scorers.`;
+    const tip = `${fmtDate(m.date)}, ${m.venue === 'Away' ? 'away' : m.venue === 'Home' ? 'home' : 'neutral'}: Reading ${m.gf ?? '?'}, ${m.opponent} ${m.ga ?? '?'}${m.so ? ` (${soWon(m.so) ? 'won' : 'lost'} shoot-out, ${soText(m.so)})` : ''}. Click for line up and scorers.`;
     return `<button class="rchip ${res || 'X'}${openCells.has(m.id) ? ' on' : ''}" data-cell="${m.id}" title="${esc(tip)}">${esc(txt)}</button>`;
   };
   const cells = r => {
@@ -2172,12 +2204,14 @@ function fullTableHTML(rows, opt = {}) {
   const zone = (r, i) => [top(r) && rows[i + 1] && !top(rows[i + 1]) ? 'zone-below' : '', rel(r) && i > 0 && !rel(rows[i - 1]) ? 'zone-above' : ''].join(' ');
   const head = ms ? (dbl ? '<th class="c rc" title="Reading at home">H</th><th class="c rc" title="Reading away">A</th>' : '<th class="c rc">Result</th>') : '';
   const group = ms ? `<tr class="grp"><th colspan="10"></th><th colspan="${dbl ? 2 : 1}" class="c rc" style="border-bottom:1px solid var(--line);">Reading's result</th></tr>` : '';
-  let html = `<div class="tbl-wrap"><table class="tbl lt-full"><thead>${group}<tr><th class="n">Pos</th><th>Team</th><th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n">GD</th><th class="n">Pts</th>${head}</tr></thead><tbody>
+  const hasPct = rows.some(r => r.pct != null);
+  const fmtPct = v => v == null ? '' : v.toFixed(2);
+  let html = `<div class="tbl-wrap"><table class="tbl lt-full"><thead>${group.replace('colspan="10"', `colspan="${hasPct ? 11 : 10}"`)}<tr><th class="n">Pos</th><th>Team</th><th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n">GD</th><th class="n">Pts</th>${hasPct ? '<th class="n" title="Percentage of points available: the league was ranked on this">%</th>' : ''}${head}</tr></thead><tbody>
     ${rows.map((r, i) => {
       const gd = gdOf(r);
       return `<tr class="${CLUB_RE.test(r.team) ? 'club' : ''} ${markClass(r)} ${zone(r, i)}"><td class="n">${r.pos ?? ''}</td><td>${esc(r.team)}</td>
         ${['p', 'w', 'd', 'l', 'gf', 'ga'].map(k => `<td class="n">${r[k] ?? ''}</td>`).join('')}
-        <td class="n">${gd == null ? '' : (gd > 0 ? '+' : '') + gd}</td><td class="n"><strong>${r.pts ?? ''}</strong></td>${cells(r)}</tr>`;
+        <td class="n">${gd == null ? '' : (gd > 0 ? '+' : '') + gd}</td><td class="n">${hasPct ? (r.pts ?? '') : `<strong>${r.pts ?? ''}</strong>`}</td>${hasPct ? `<td class="n"><strong>${fmtPct(r.pct)}</strong></td>` : ''}${cells(r)}</tr>`;
     }).join('')}</tbody></table></div>${legendHTML(rows)}`;
   if (ms) {
     if (ms.some(m => m.so)) html += `<p class="muted small" style="margin-top:4px;">* decided by a shoot-out.</p>`;
@@ -2193,11 +2227,15 @@ function fullTableHTML(rows, opt = {}) {
 //   up to 1995-96: everyone once · 1996-97 to 2021-22: home and away
 //   Premier Division from 2022-23: once per phase table · other divisions: home and away
 //   2020-21: cancelled after 6 games
+//   London League (1970s-80s): no fixture list. Clubs arranged their own games, so the number played varies
+const FREE_FIXTURES_RE = /\blondon (hockey )?league\b/i;
+const FREE_FIXTURES_NOTE = 'Clubs arranged their own fixtures, so there was no set number of games and not every club played every other club';
 function fixtureRule(t, season) {
   const y = parseInt(season, 10);
   let mode = t.fixtures && t.fixtures !== 'auto' ? t.fixtures : null, why = '';
   if (!mode) {
     if (isIndoorTable(t)) { mode = 'once'; why = 'everyone once (indoor)'; }
+    else if (FREE_FIXTURES_RE.test(t.division || '')) { mode = 'free'; why = 'clubs arranged their own fixtures (London League)'; }
     else if (t.stage) { mode = 'once'; why = 'each team in this phase once'; }
     else if (y <= 1995) { mode = 'once'; why = 'everyone once (up to 1995-96)'; }
     else if (y <= 2021) { mode = 'double'; why = 'home and away (1996-97 to 2021-22)'; }
@@ -2210,7 +2248,7 @@ function fixtureRule(t, season) {
 function updateFixturesHint() {
   const t = { fixtures: 'auto', stage: $('#lt-stage').value.trim(), division: $('#lt-div').value.trim() };
   const r = fixtureRule(t, $('#lt-season').value.trim());
-  $('#lt-fixtures-auto').textContent = `Automatic for this table: ${r.mode === 'once' ? 'each team once' : 'home and away'}${r.cut != null ? `, cut short after ${r.cut}` : ''}.`;
+  $('#lt-fixtures-auto').textContent = `Automatic for this table: ${r.mode === 'free' ? 'clubs arranged their own fixtures, so missing games aren\'t counted' : r.mode === 'once' ? 'each team once' : 'home and away'}${r.cut != null ? `, cut short after ${r.cut}` : ''}.`;
 }
 ['#lt-season', '#lt-stage', '#lt-div'].forEach(x => $(x).addEventListener('input', updateFixturesHint));
 // Loose team-name matching so "Brooklands MU" finds "Brooklands Manchester University"
@@ -2230,6 +2268,13 @@ function missingFixtures(t, season, ms) {
   if (rule.mode === 'none' || !t.rows.some(r => CLUB_RE.test(r.team))) return null;
   const by = new Map(rows.map(r => [r, []]));
   ms.forEach(m => { const r = teamFor(m.opponent, rows); if (r) by.get(r).push(m); else out.unmatched.push(m.opponent); });
+  if (rule.mode === 'free') {
+    // No fixture list to check against: just say who Reading played
+    out.free = true; out.count = 0; out.expected = null;
+    out.have = ms.length; out.clubs = [...by.values()].filter(l => l.length).length; out.of = rows.length;
+    out.unmatched = uniq(out.unmatched);
+    return out;
+  }
   out.none = [];
   by.forEach((list, r) => {
     out.have += list.length;
@@ -2252,6 +2297,7 @@ function missingFixtures(t, season, ms) {
 }
 function missingHTML(x, label) {
   if (!x) return '';
+  if (x.free) return `<div class="lt-flag good">No set fixture list: ${FREE_FIXTURES_NOTE.charAt(0).toLowerCase() + FREE_FIXTURES_NOTE.slice(1)}. The archive has ${x.have} game${x.have === 1 ? '' : 's'} against ${x.clubs} of the ${x.of} other clubs; missing games can only be spotted by checking the played column against the table.${x.unmatched.length ? `<div class="small" style="margin-top:4px;">Results against teams not in this table: <strong>${esc(x.unmatched.join(', '))}</strong>. Check the spelling.</div>` : ''}</div>`;
   const extra = (x.extra.length ? `<div class="small" style="margin-top:4px;">Venue or duplicate problems: ${esc(x.extra.join(', '))}.</div>` : '') +
     (x.unmatched.length ? `<div class="small" style="margin-top:4px;">Results against teams not in this table: <strong>${esc(x.unmatched.join(', '))}</strong>. Check the spelling, or set the right stage.</div>` : '');
   if (x.rule.cut != null) {
@@ -2273,7 +2319,7 @@ function seasonMissingCount(g) {
   let n = 0, any = false;
   g.tables.forEach(t => {
     const x = missingFixtures(t, g.season, isPostTable(t) ? postTableMatches(t) : staged ? ms.filter(m => m.stage === t.stage) : ms);
-    if (x) { any = true; n += x.count; }
+    if (x && !x.free) { any = true; n += x.count; }
   });
   return any ? n : null;
 }
@@ -2303,6 +2349,7 @@ function missingInfo(x, label) {
   if (!x) return null;
   const html = missingHTML(x, label);
   const ok = html.includes('lt-flag good') && !x.extra.length && !x.unmatched.length;
+  if (x.free) return { bad: !ok, html, short: `no set fixture list (clubs arranged their own games): played ${x.clubs} of ${x.of} clubs` };
   return { bad: !ok, html, short: x.rule.cut != null ? `${x.have} games in (season cut short)` : `all ${x.expected} fixtures in` };
 }
 const openPhase = new Map();      // season -> table id, 'total' or 'po'
@@ -2383,7 +2430,7 @@ function playoffTies(t) {
   const ours = db.matches.filter(m => isPost(m) && leagueScopeMatch(m) && m.season === t.season && m.team === t.team && m.gf != null && m.ga != null
       && !db.leagueTables.some(x => x.season === t.season && x.team === t.team && x.stage && x.stage === m.post))
     .map(m => {
-      const r = { round: m.round || postName(m), post: m.post, a: CLUB_NAME, b: m.opponent, as: m.gf, bs: m.ga, aso: m.so ? m.so.gf : null, bso: m.so ? m.so.ga : null, matchId: m.id, date: m.date };
+      const r = { round: m.round || postName(m), post: m.post, a: CLUB_NAME, b: m.opponent, as: m.gf, bs: m.ga, aso: m.so ? (soKnown(m.so) ? m.so.gf : m.so.won ? 1 : 0) : null, bso: m.so ? (soKnown(m.so) ? m.so.ga : m.so.won ? 0 : 1) : null, matchId: m.id, date: m.date };
       return m.venue === 'Away' ? { ...r, a: r.b, b: r.a, as: r.bs, bs: r.as, aso: r.bso, bso: r.aso } : r;
     });
   return [...ours, ...(t.playoffs || [])];
@@ -2502,9 +2549,9 @@ $('#btn-add-table').addEventListener('click', () => openTableEditor(null));
 
 let editingTable = null;
 function ltRowHTML(r = {}) {
-  const n = k => `<td><input type="number" class="n" data-k="${k}" value="${r[k] ?? ''}" aria-label="${k}"></td>`;
+  const n = k => `<td><input type="number" class="n" data-k="${k}" value="${r[k] ?? ''}" aria-label="${k}"${k === 'pct' ? ' step="0.01"' : ''}></td>`;
   return `<tr>${n('pos')}<td><input type="text" data-k="team" value="${esc(r.team || '')}" aria-label="Team" list="dl-opps" style="min-width:180px;"></td>
-    ${n('p')}${n('w')}${n('d')}${n('l')}${n('gf')}${n('ga')}${n('gd')}${n('pts')}
+    ${n('p')}${n('w')}${n('d')}${n('l')}${n('gf')}${n('ga')}${n('gd')}${n('pts')}${n('pct')}
     ${MARKS.map(m => `<td class="ck"><input type="checkbox" data-m="${m.k}" title="${m.label}" aria-label="${m.label}" ${(r.marks || []).includes(m.k) ? 'checked' : ''}></td>`).join('')}
     <td><button type="button" class="x" aria-label="Remove row">&times;</button></td></tr>`;
 }
@@ -2547,17 +2594,23 @@ function parseTable(text) {
     const toks = line.replace(/\u2212/g, '-').trim().split(/\t+|\s{2,}|,|\s+/).map(s => s.trim()).filter(Boolean);
     if (toks.length < 7) return;      // team + at least six numbers
     const isNum = s => /^[+-]?\d+$/.test(s);
+    const isPct = s => /^\d+(\.\d+)?%$/.test(s) || /^\d+\.\d+$/.test(s);   // 76.81, 76.81% or 77%
     let pos = null;
     if (isNum(toks[0]) || /^\d+(st|nd|rd|th|=)?\.?$/i.test(toks[0])) pos = parseInt(toks.shift(), 10);
-    const nums = [];
-    while (toks.length && isNum(toks[toks.length - 1])) nums.unshift(+toks.pop());
+    const nums = []; let pct = null;
+    while (toks.length && (isNum(toks[toks.length - 1]) || isPct(toks[toks.length - 1]))) {
+      const t = toks.pop();
+      if (isNum(t)) nums.unshift(+t); else if (pct == null) pct = parseFloat(t);
+    }
     const team = toks.join(' ').trim();
-    if (!team || nums.length < 6) return;
-    let p, w, d, l, gf = null, ga = null, gd = null, pts;
+    if (!team || nums.length < (pct != null ? 5 : 6)) return;
+    let p, w, d, l, gf = null, ga = null, gd = null, pts = null;
+    if (pct != null && nums.length === 5) { [p, w, d, l, pts] = nums; out.push({ pos, team, p, w, d, l, gf, ga, gd, pts, pct }); return; }   // P W D L Pts %, no goals given
     if (nums.length >= 8) { [p, w, d, l, gf, ga] = nums; pts = nums[nums.length - 1]; }   // GD (and anything extra) ignored
     else if (nums.length === 7) [p, w, d, l, gf, ga, pts] = nums;
+    else if (pct != null) [p, w, d, l, gf, ga] = nums;                                     // P W D L GF GA %, no points column
     else [p, w, d, l, gd, pts] = nums;                                                     // P W D L GD Pts
-    out.push({ pos, team, p, w, d, l, gf, ga, gd, pts });
+    out.push({ pos, team, p, w, d, l, gf, ga, gd, pts, pct });
   });
   out.forEach((r, i) => { if (r.pos == null) r.pos = i + 1; });
   return out;
@@ -2565,7 +2618,7 @@ function parseTable(text) {
 $('#lt-paste-toggle').addEventListener('click', () => { $('#lt-paste-box').hidden = !$('#lt-paste-box').hidden; if (!$('#lt-paste-box').hidden) $('#lt-paste').focus(); });
 $('#lt-paste-apply').addEventListener('click', () => {
   const rows = parseTable($('#lt-paste').value);
-  if (!rows.length) { $('#lt-paste-msg').textContent = 'No rows recognised. Each row needs a team name then at least six numbers.'; return; }
+  if (!rows.length) { $('#lt-paste-msg').textContent = 'No rows recognised. Each row needs a team name then at least six numbers (or P W D L Pts and a percentage).'; return; }
   $('#lt-rows').innerHTML = rows.map(ltRowHTML).join('');
   $('#lt-paste-msg').textContent = `${rows.length} rows read. Check them below before saving.`;
 });
@@ -2685,13 +2738,14 @@ function parseTemplateRow(line) {
   const post = ci > 0 ? rf.slice(0, ci).trim() : '';
   const round = canonRound(ci > 0 ? rf.slice(ci + 1) : rf);
   const num = i => at(i) === '' ? null : (/^\d+$/.test(at(i)) ? +at(i) : (errs.push(`"${at(i)}" should be a number`), null));
-  const gf = num(TPL.gf), ga = num(TPL.ga), sogf = num(TPL.sogf), soga = num(TPL.soga);
+  const soFlag = /^(w|won|l|lost)$/i.test(at(TPL.sogf)) ? /^w/i.test(at(TPL.sogf)) : null;   // W or L: the winner, score not known
+  const gf = num(TPL.gf), ga = num(TPL.ga), sogf = soFlag == null ? num(TPL.sogf) : null, soga = soFlag == null ? num(TPL.soga) : null;
   const lineup = []; for (let i = TPL.p0; i < TPL.p0 + TPL.pN; i++) if (at(i)) lineup.push(importPlayer(at(i)));
   const goals = []; for (let i = TPL.g0; i < Math.max(TPL.g0 + TPL.gN, c.length); i++) if (at(i)) goals.push(importGoal(at(i)));
   const luFlag = at(TPL.lu).toLowerCase();
   return {
     date: date || '', season, team: at(TPL.team), competition: at(TPL.comp), stage: renameStage(at(TPL.stage)), round, post,
-    opponent: at(TPL.opp), venue, status: status || 'Played', gf, ga, so: sogf != null && soga != null ? { gf: sogf, ga: soga } : null,
+    opponent: at(TPL.opp), venue, status: status || 'Played', gf, ga, so: sogf != null && soga != null ? { gf: sogf, ga: soga } : soFlag != null ? { gf: null, ga: null, won: soFlag } : null,
     lineupKnown: luFlag.startsWith('n') ? false : luFlag.startsWith('y') ? true : (lineup.length ? true : null),
     lineup, goals, notes: at(TPL.notes), errs,
   };
@@ -2762,7 +2816,7 @@ function planImport() {
   $('#imp-out').innerHTML = importPlan.length ? `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th><th>Season</th><th>Team</th><th>Opponent</th><th></th><th>Score</th><th>Stage / round</th><th class="n">Line up</th><th class="n">Goals</th><th>Action</th></tr></thead><tbody>
     ${importPlan.map(x => `<tr><td>${x.date ? esc(fmtDate(x.date)) : (x.match && x.match.date ? esc(fmtDate(x.match.date)) : '<span class="muted">–</span>')}</td>
       <td>${esc(x.season)}</td><td>${esc(x.team)}</td><td>${esc(x.opponent)}</td><td>${x.venue ? x.venue[0] : ''}</td>
-      <td>${x.status !== 'Played' ? esc(x.status) : x.gf != null ? `${x.gf}–${x.ga ?? '?'}${x.so ? ` (${x.so.gf}–${x.so.ga} SO)` : ''}` : ''}</td>
+      <td>${x.status !== 'Played' ? esc(x.status) : x.gf != null ? `${x.gf}–${x.ga ?? '?'}${x.so ? ` (${soKnown(x.so) ? soText(x.so) + ' SO' : (x.so.won ? 'won' : 'lost') + ' SO'})` : ''}` : ''}</td>
       <td class="small">${esc([x.stage, isCupMatch(x) ? x.round : isPost(x) ? roundTag(x) : ''].filter(Boolean).join(', '))}</td>
       <td class="n">${x.lineupKnown === false ? 'none' : x.lineup.length}</td><td class="n">${x.goals.length}</td>
       <td><strong>${label[x.action]}</strong>${x.changes ? ` <span class="muted small">${esc(x.changes.join(', '))}</span>` : ''}${x.why ? ` <span class="muted small">${esc(x.why)}</span>` : ''}
@@ -2803,7 +2857,7 @@ function gapsReport() {
   const rows = [], summary = [];
   const where = m => isCupMatch(m) ? [m.competition, m.stage, m.round].filter(Boolean).join(', ') : m.stage || (isPost(m) ? roundTag(m) : '');
   // Each game and table belongs to one type; leagues (outdoor and indoor) also get the missing-fixtures check
-  const TYPE = { league: 'League', indoor: 'Indoor', cup: 'Domestic cup', euro: 'European cup', euroindoor: 'European indoor' };
+  const TYPE = { league: 'League', indoor: 'Indoor', cup: 'Domestic cup', county: 'County cup', euro: 'European cup', euroindoor: 'European indoor' };
   const typeOf = m => TYPE[compKind(m.competition)];
   const tableType = t => isIndoorTable(t) ? (compKind(t.division) === 'indoor' ? 'Indoor' : 'European indoor') : 'League';
   const add = r => rows.push({ team: '', type: '', game: '', res: '', sc: '', dup: '', nodate: '', note: '', ...r });
@@ -2819,7 +2873,7 @@ function gapsReport() {
         if (!tables.length && !league.length) return;
         const staged = tables.length > 1 || tables.some(t => t.stage);
         const used = new Set();
-        let expected = 0;
+        let expected = 0, freeFix = false;
         tables.forEach(t => {
           if (!t.rows.some(r => CLUB_RE.test(r.team))) return;
           const { mode, cut } = fixtureRule(t, season);
@@ -2828,6 +2882,7 @@ function gapsReport() {
           const own = staged ? league.filter(m => m.stage === t.stage) : league;
           const by = new Map(opps.map(r => [r, []]));
           own.forEach(m => { const r = teamFor(m.opponent, opps); if (r) { by.get(r).push(m); used.add(m.id); } });
+          if (mode === 'free') { freeFix = true; return; }   // own fixtures: nothing to count as missing
           const exp = opps.length * (mode === 'double' ? 2 : 1);
           expected += cut != null ? Math.min(cut, exp) : exp;
           const pre = (type === 'Indoor' ? 'Indoor. ' : '') + (t.stage ? t.stage + '. ' : '');
@@ -2856,12 +2911,13 @@ function gapsReport() {
           missing.forEach(([opp, venue]) => add({ team, season, type, date: '', opp, venue, game: 'Y', sc: 'Y', nodate: 'Y',
             note: pre + (mode === 'once' ? 'No game in the archive (each team played once)' : 'No game in the archive') }));
         });
-        if (tables.length) league.filter(m => !used.has(m.id)).forEach(m => addM(m, { dup: 'Y', note: `${where(m) ? where(m) + '. ' : ''}Opponent isn't in that season's ${type === 'Indoor' ? 'indoor ' : ''}table, so this is probably the wrong opponent or stage` }));
+        // a staged season may have a table for only some stages (e.g. the London Premier, but no Percentage League table): only check those
+        if (tables.length) league.filter(m => !used.has(m.id) && (!staged || tables.some(t => (t.stage || '') === (m.stage || '')))).forEach(m => addM(m, { dup: 'Y', note: `${where(m) ? where(m) + '. ' : ''}Opponent isn't in that season's ${type === 'Indoor' ? 'indoor ' : ''}table, so this is probably the wrong opponent or stage` }));
         const t0 = summaryTable({ season, tables }) || tables[0];
-        summary.push({ team, season, type, division: t0 ? t0.division : (league[0] ? league[0].competition : ''), expected: tables.length && season !== current ? expected : null, recorded: league.length, current: season === current });
+        summary.push({ team, season, type, division: t0 ? t0.division : (league[0] ? league[0].competition : ''), expected: tables.length && season !== current && !freeFix ? expected : null, freeFix, recorded: league.length, current: season === current });
       });
       // Cups and European competitions: no fixture list to check, but scorers and dates still count
-      ['Domestic cup', 'European cup', 'European indoor'].forEach(type => {
+      ['Domestic cup', 'County cup', 'European cup', 'European indoor'].forEach(type => {
         const ms = all.filter(m => typeOf(m) === type);
         if (ms.length) summary.push({ team, season, type, division: uniq(ms.map(m => m.competition)).join(', '), expected: null, recorded: ms.length, current: season === current });
       });
@@ -2869,6 +2925,17 @@ function gapsReport() {
       const seen = new Map();
       all.filter(m => m.date).forEach(m => { const k = m.date + '|' + m.opponent.toLowerCase(); seen.set(k, (seen.get(k) || []).concat(m)); });
       seen.forEach(list => { if (list.length > 1) list.forEach(m => addM(m, { dup: 'Y', note: `Entered ${list.length} times on the same date` })); });
+      // two different games on one day, outside tournaments (indoor, Europe, finals days): one date is probably wrong
+      const byDay = new Map();
+      all.filter(m => m.date && !['indoor', 'euro', 'euroindoor'].includes(compKind(m.competition))).forEach(m => byDay.set(m.date, (byDay.get(m.date) || []).concat(m)));
+      byDay.forEach(list => {
+        if (list.length < 2 || uniq(list.map(m => m.competition)).length < 2) return;
+        list.forEach(m => addM(m, { dup: 'Y', note: `Same day as ${list.filter(x => x !== m).map(x => `${x.opponent} (${x.competition})`).join(', ')}: check the date` }));
+      });
+      // London League clubs arranged their own fixtures, but each club counted once (once per division where stages exist)
+      const ll = new Map();
+      all.filter(m => FREE_FIXTURES_RE.test(m.competition) && !isPost(m)).forEach(m => { const k = (m.stage || '') + '|' + m.opponent.toLowerCase(); ll.set(k, (ll.get(k) || []).concat(m)); });
+      ll.forEach(list => { if (list.length > 1) list.forEach(m => addM(m, { dup: 'Y', note: `${list.length} London League games against ${m.opponent}; each club counted once, so one may be a friendly or another competition` })); });
       // scorers and dates on every recorded game: league, play-offs, cups, Europe and indoor
       all.forEach(m => {
         const st = scorersState(m);
@@ -2931,6 +2998,112 @@ function sheetXml(rows, opts) {
     `<sheetViews><sheetView workbookViewId="0"${opts.active ? ' tabSelected="1"' : ''}><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>` +
     `<cols>${cols}</cols><sheetData>${data}</sheetData>${opts.filter ? `<autoFilter ref="${opts.filter}"/>` : ''}</worksheet>`;
 }
+
+// ── Archive v league table: what the missing games must have been, and who they could be against
+function tableGapRows() {
+  const out = [];
+  const current = seasonFromDate(new Date().toISOString().slice(0, 10));
+  db.leagueTables.filter(t => !isPostTable(t)).forEach(t => {
+    const club = t.rows.find(r => CLUB_RE.test(r.team));
+    if (!club || club.p == null || t.season === current) return;   // season in progress: the table moves weekly
+    const rule = fixtureRule(t, t.season);
+    // a phase table matches games by stage (with "points carried over", every phase up to this one); others by competition
+    const inStage = m => !t.stage ? true : t.carry ? !!m.stage && stageOrder(m.stage) <= stageOrder(t.stage) : m.stage === t.stage;
+    const ms = db.matches.filter(m => m.team === t.team && m.season === t.season && !isPost(m) && countsForRecord(m)
+      && isIndoor(m) === isIndoorTable(t)
+      && (t.stage ? inStage(m) : (!t.division || !m.competition || m.competition === t.division)));
+    const known = ms.filter(m => result(m)), unknown = ms.filter(m => !result(m));
+    const rec = recordOf(known);
+    const miss = { p: club.p - ms.length };
+    // results the table still needs: games not in the archive plus games with no score
+    const need = { n: club.p - known.length };
+    ['w', 'd', 'l', 'gf', 'ga'].forEach(k => need[k] = club[k] != null ? club[k] - rec[k] : null);
+    if (miss.p === 0 && unknown.length === 0 && ['w', 'd', 'l', 'gf', 'ga'].every(k => !need[k])) return;
+    // can the needed results actually happen?
+    const probs = [];
+    if (['w', 'd', 'l', 'gf', 'ga'].some(k => need[k] != null && need[k] < 0)) probs.push('archive has more than the table in some column');
+    if (need.w != null && need.d != null && need.l != null && need.w + need.d + need.l !== need.n) probs.push(`W+D+L needed (${need.w + need.d + need.l}) doesn't equal games needed (${need.n})`);
+    if (need.gf != null && need.ga != null && need.w != null && need.l != null && !probs.length) {
+      const gd = need.gf - need.ga;
+      if (need.n === 0 && gd !== 0) probs.push('goals differ with no games left');
+      else if (need.w === 0 && need.l === 0 && gd !== 0) probs.push('only draws needed but goal difference isn\'t 0');
+      else if (need.l === 0 && gd < need.w) probs.push(`only wins/draws needed but goal difference ${gd} is less than ${need.w}`);
+      else if (need.w === 0 && gd > -need.l) probs.push(`only defeats/draws needed but goal difference ${gd} is more than ${-need.l}`);
+      else if (need.w > 0 && need.gf < need.w) probs.push(`${need.w} win(s) needed but only ${need.gf} goals for`);
+      else if (need.l > 0 && need.ga < need.l) probs.push(`${need.l} defeat(s) needed but only ${need.ga} goals against`);
+    }
+    // possible opponents: teams in the table Reading haven't played up to the allowed number of times
+    const opps = t.rows.filter(r => !CLUB_RE.test(r.team));
+    const by = new Map(opps.map(r => [r, []]));
+    ms.filter(m => !t.stage || m.stage === t.stage).forEach(m => { const r = teamFor(m.opponent, opps); if (r) by.get(r).push(m); });
+    const max = rule.mode === 'double' ? 2 : 1;
+    const poss = [];
+    by.forEach((list, r) => {
+      if (list.length >= max) return;
+      if (rule.mode === 'double') {
+        const h = list.some(m => m.venue === 'Home'), a = list.some(m => m.venue === 'Away');
+        poss.push(r.team + (list.length ? ` (${h ? 'away' : a ? 'home' : 'one more'})` : ''));
+      } else poss.push(r.team);
+    });
+    // likely dates: Saturdays in the league season with no Reading game recorded that day
+    let free = [];
+    if (miss.p > 0 || unknown.length) {
+      const dated = ms.filter(m => m.date).map(m => m.date).sort();
+      const y = parseInt(t.season, 10);
+      const from = dated.length >= 2 ? dated[0] : `${y}-09-01`, to = dated.length >= 2 ? dated[dated.length - 1] : `${y + 1}-04-30`;
+      const busy = new Set(db.matches.filter(m => m.team === t.team && m.date).map(m => m.date));
+      const d = new Date(from + 'T12:00:00Z');
+      while (d.getUTCDay() !== 6) d.setUTCDate(d.getUTCDate() + 1);
+      const end = new Date(to + 'T12:00:00Z');
+      const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      for (; d <= end; d.setUTCDate(d.getUTCDate() + 7)) {
+        const iso = d.toISOString().slice(0, 10);
+        if (!busy.has(iso) && !iso.endsWith('-12-25')) free.push(`${d.getUTCDate()} ${M[d.getUTCMonth()]}`);
+      }
+      if (dated.length < 2) free.unshift('(no dated games: whole season shown)');
+    }
+    out.push({
+      free: free.join(', '), nFree: free.filter(x => !x.startsWith('(')).length,
+      team: t.team, season: t.season, division: t.division + (t.stage ? ` (${t.stage})` : ''),
+      rule: rule.mode === 'free' ? 'Own fixtures (each club at most once)' : rule.mode === 'double' ? 'Home and away' : rule.mode === 'once' ? 'Each team once' : 'Not checked',
+      table: `${club.p} ${club.w ?? '?'}-${club.d ?? '?'}-${club.l ?? '?'} ${club.gf ?? '?'}-${club.ga ?? '?'}`,
+      archive: `${ms.length} ${rec.w}-${rec.d}-${rec.l} ${rec.gf}-${rec.ga}`,
+      missP: miss.p, unknown: unknown.length,
+      need: need.n ? `${need.w ?? '?'}W ${need.d ?? '?'}D ${need.l ?? '?'}L, ${need.gf ?? '?'}-${need.ga ?? '?'}` : '',
+      ok: probs.length ? 'Doesn\'t add up: ' + probs.join('; ') : 'OK',
+      unknownList: unknown.map(m => `${m.opponent} (${m.date || 'no date'})`).join(', '),
+      poss: poss.join(', '), nPoss: poss.length, current: t.season === current,
+    });
+  });
+  return out.sort((a, b) => a.team.localeCompare(b.team) || a.season.localeCompare(b.season));
+}
+// ── Cup runs with no end: Reading's last recorded tie wasn't a defeat or a final
+function unfinishedCups() {
+  const out = [], current = seasonFromDate(new Date().toISOString().slice(0, 10));
+  const G = new Map();
+  db.matches.filter(m => ['cup', 'county', 'euro', 'euroindoor'].includes(compKind(m.competition))).forEach(m => {
+    const k = m.team + '|' + m.season + '|' + m.competition;
+    if (!G.has(k)) G.set(k, []); G.get(k).push(m);
+  });
+  G.forEach(ms => {
+    const m0 = ms[0];
+    if (m0.season === current) return;
+    ms.sort(cupOrder);
+    const last = ms[ms.length - 1], r = result(last);
+    const isFinal = /\bfinal\b/i.test(last.round || '') && !/semi|quarter/i.test(last.round || '');
+    let why = '';
+    const placing = /place|placing|positional|classification|3rd|4th|5th|6th|7th|8th/i.test(last.round || '');
+    if ((isFinal || placing) && r) return;                      // won or lost the final, or a placing match
+    if (r === 'L' || (r === 'D' && soWon(last.so) === false)) return;   // knocked out
+    if (!r) why = last.status !== 'Played' ? `Last tie ${last.status.toLowerCase()}` : 'Last tie has no result';
+    else if (r === 'D' && !last.so) why = 'Last tie drawn, no shoot-out or replay recorded';
+    else why = isFinal ? 'Final result unclear' : 'Won last recorded tie: next round missing';
+    out.push({ team: m0.team, season: m0.season, type: KIND_LABEL[compKind(m0.competition)], comp: m0.competition,
+      games: ms.length, lastDate: last.date || '', lastRound: last.round || '', lastOpp: last.opponent,
+      lastScore: last.gf != null && last.ga != null ? `${last.gf}-${last.ga}${last.so ? (soKnown(last.so) ? ` (${soText(last.so)} SO)` : ` (${soWon(last.so) ? 'won' : 'lost'} SO)`) : ''}` : '', why });
+  });
+  return out.sort((a, b) => a.team.localeCompare(b.team) || a.season.localeCompare(b.season) || a.comp.localeCompare(b.comp));
+}
 async function buildGapsXlsx(rep) {
   const JSZip = await loadJSZip();
   const T = rep.multiTeam;
@@ -2947,16 +3120,36 @@ async function buildGapsXlsx(rep) {
     const r = i + 2, sc = colName(T ? 1 : 0), tyc = colName(T ? 2 : 1), tc = 'A';
     const crit = `'To do'!$${C('Season')}:$${C('Season')},${sc}${r},'To do'!$${C('Type')}:$${C('Type')},${tyc}${r}` + (T ? `,'To do'!$A:$A,${tc}${r}` : '');
     const cnt = k => ({ f: `COUNTIFS(${crit},'To do'!$${C(k)}:$${C(k)},"Y")`, s: 4 });
-    s2.push([...(T ? [x.team] : []), x.season, x.type, x.division, x.expected == null ? { v: '', s: 4 } : { v: x.expected, s: 4 }, { v: x.recorded, s: 4 },
+    s2.push([...(T ? [x.team] : []), x.season, x.type, x.division, x.freeFix ? { v: 'No set fixtures', s: 4 } : x.expected == null ? { v: '', s: 4 } : { v: x.expected, s: 4 }, { v: x.recorded, s: 4 },
       cnt('Game missing'), cnt('Result missing'), cnt('Scorers missing or incomplete'),
       { f: `ROUNDUP(COUNTIFS(${crit},'To do'!$${C('Venue clash or duplicate')}:$${C('Venue clash or duplicate')},"Y")/2,0)`, s: 4 }, cnt('No date')]);
   });
+  // Sheet 3: archive v table
+  const tg = tableGapRows();
+  const th3 = [...(T ? ['Team'] : []), 'Season', 'Division', 'Fixture format', 'Table (P W-D-L F-A)', 'Archive (P W-D-L F-A)', 'Games not in archive', 'Games with no score', 'Results still needed', 'Check', 'Games with no score', 'Possible opponents', 'No. possible', 'Likely dates (free Saturdays)', 'No. free'];
+  const s3 = [th3.map(H)].concat(tg.map(x => [...(T ? [x.team] : []), x.season, x.division, x.rule, x.table, x.archive,
+    { v: x.missP, s: x.missP ? 2 : 4 }, { v: x.unknown, s: x.unknown ? 6 : 4 }, x.need, x.ok === 'OK' ? x.ok : { v: x.ok, s: 2 }, x.unknownList, x.poss, { v: x.nPoss, s: 4 }, x.free, { v: x.nFree, s: 4 }]));
+  if (!tg.length) s3.push([{ v: 'Every league table matches the archive.', s: 8 }]);
+  s3.push([]);
+  ['One row per league table where the archive and Reading\'s line in the table differ. "Results still needed" is the table minus the archive\'s known results, so it covers both missing games and games with no score.',
+   '"Check" says whether those results can actually happen (e.g. wins needed but too few goals). If not, a score in the archive or the printed table is probably wrong.',
+   'Likely dates are Saturdays between Reading\'s first and last dated league games that season with no Reading game of any kind recorded that day. Midweek games (e.g. against the universities) and rearranged fixtures can fall outside them.',
+   'Possible opponents are teams in that table Reading haven\'t yet played the allowed number of times: once for London League seasons (clubs arranged their own fixtures, so not every club was played) and once-only formats, twice for home and away.']
+    .forEach(t => s3.push([{ v: t, s: 8 }]));
+  // Sheet 4: unfinished cup runs
+  const uc = unfinishedCups();
+  const th4 = [...(T ? ['Team'] : []), 'Season', 'Type', 'Competition', 'Ties in archive', 'Last tie date', 'Last round', 'Last opponent', 'Last score', 'Why it looks unfinished'];
+  const s4 = [th4.map(H)].concat(uc.map(x => [...(T ? [x.team] : []), x.season, x.type, x.comp, { v: x.games, s: 4 }, x.lastDate ? { d: x.lastDate } : '', x.lastRound, x.lastOpp, x.lastScore, { v: x.why, s: 2 }]));
+  if (!uc.length) s4.push([{ v: 'Every cup run ends in a defeat or a final.', s: 8 }]);
+  s4.push([]);
+  s4.push([{ v: 'Cup, county cup and European competitions where Reading\'s last recorded tie was a win (and not the final), a draw with no shoot-out, or has no result: the tie that knocked them out, or the final, is probably missing. European group stages can show here by mistake if the group\'s last game was a win.', s: 8 }]);
   const lr = s2.length, off = T ? 1 : 0;
   s2.push([...(T ? [''] : []), { v: 'Total', s: 5 }, '', '', ...[3, 4, 5, 6, 7, 8, 9].map(c => ({ f: `SUM(${colName(c + off)}2:${colName(c + off)}${lr})`, s: 7 }))]);
   s2.push([]);
   ['Expected and missing games are checked for outdoor and indoor leagues (from their tables). Cups and European competitions have no fixture list, so only their scorers, dates and duplicates are checked. Scorers and dates are checked on every recorded game.',
    'Games in archive counts league games (not play-offs or finals) for League and Indoor, and every game for cups and Europe.',
    'Expected fixtures follow each league table\'s fixture setting (automatic: everyone once up to 1995-96; home and away 1996-97 to 2021-22 and outside the Premier Division; once per phase in the Premier Division from 2022-23).',
+   'London League seasons (1970s and 1980s) had no fixture list: clubs arranged their own games, so the number played varies and not every club met every other. They show "No set fixtures" instead of an expected number, and no games are listed as missing; compare the games in the archive with Reading\'s P in that season\'s table instead.',
    `The current season (${seasonFromDate(new Date().toISOString().slice(0, 10))}) is in progress, so its unplayed fixtures aren't counted as missing.`,
    'Problems count each pair of clashing games once, plus any game against a team not in that season\'s table.',
    `Built by the Reading HC archive on ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}.`].forEach(t => s2.push([{ v: t, s: 8 }]));
@@ -2976,14 +3169,18 @@ async function buildGapsXlsx(rep) {
 <xf numFmtId="0" fontId="4" fillId="0" borderId="0" xfId="0" applyFont="1" applyAlignment="1"><alignment horizontal="center"/></xf>
 <xf numFmtId="0" fontId="3" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`;
   const w1 = [...(T ? [12] : []), 10, 15, 13, 28, 14, 10, 10, 14, 14, 9, 70], w2 = [...(T ? [12] : []), 10, 15, 44, 14, 14, 12, 12, 16, 16, 10];
+  const w3 = [...(T ? [12] : []), 10, 30, 22, 18, 18, 11, 11, 22, 40, 40, 90, 10, 90, 10];
+  const w4 = [...(T ? [12] : []), 10, 15, 40, 10, 13, 18, 26, 14, 50];
   const zip = new JSZip();
-  zip.file('[Content_Types].xml', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/worksheets/sheet2.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`);
+  zip.file('[Content_Types].xml', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/worksheets/sheet2.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/worksheets/sheet3.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/worksheets/sheet4.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`);
   zip.file('_rels/.rels', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`);
-  zip.file('xl/workbook.xml', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="To do" sheetId="1" r:id="rId1"/><sheet name="By season" sheetId="2" r:id="rId2"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">'To do'!$A$1:$${colName(nc - 1)}$${last}</definedName></definedNames><calcPr calcId="191029" fullCalcOnLoad="1"/></workbook>`);
-  zip.file('xl/_rels/workbook.xml.rels', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet2.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`);
+  zip.file('xl/workbook.xml', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="To do" sheetId="1" r:id="rId1"/><sheet name="By season" sheetId="2" r:id="rId2"/><sheet name="Archive v table" sheetId="3" r:id="rId4"/><sheet name="Unfinished cups" sheetId="4" r:id="rId5"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">'To do'!$A$1:$${colName(nc - 1)}$${last}</definedName></definedNames><calcPr calcId="191029" fullCalcOnLoad="1"/></workbook>`);
+  zip.file('xl/_rels/workbook.xml.rels', `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet2.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/><Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet3.xml"/><Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet4.xml"/></Relationships>`);
   zip.file('xl/styles.xml', styles);
   zip.file('xl/worksheets/sheet1.xml', sheetXml(s1, { widths: w1, filter: `A1:${colName(nc - 1)}${last}`, active: true }));
   zip.file('xl/worksheets/sheet2.xml', sheetXml(s2, { widths: w2 }));
+  zip.file('xl/worksheets/sheet3.xml', sheetXml(s3, { widths: w3 }));
+  zip.file('xl/worksheets/sheet4.xml', sheetXml(s4, { widths: w4 }));
   return zip.generateAsync({ type: 'blob', mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
 }
 function gapsCSV(rep) {
@@ -2996,6 +3193,12 @@ function renderGapsSummary() {
   $('#gaps-summary').textContent = rep.rows.length
     ? `${n('game')} games missing, ${n('res')} with no result, ${n('sc')} with scorers missing or incomplete, ${n('dup')} venue or duplicate problems, ${n('nodate')} with no date.`
     : 'Nothing to find: every game, score, scorer and date is in.';
+  const free = (rep.summary || []).filter(x => x.freeFix).length;
+  const tg = tableGapRows(), bad = tg.filter(x => x.ok !== 'OK').length;
+  if (tg.length) $('#gaps-summary').textContent += ` ${tg.length} league table${tg.length === 1 ? ' differs' : 's differ'} from the archive${bad ? ` (${bad} can't be made to add up)` : ''}: see the "Archive v table" sheet.`;
+  const uc = unfinishedCups().length;
+  if (uc) $('#gaps-summary').textContent += ` ${uc} cup run${uc === 1 ? ' has' : 's have'} no recorded exit or final: see the "Unfinished cups" sheet.`;
+  if (free) $('#gaps-summary').textContent += ` ${free} London League season${free === 1 ? ' has' : 's have'} no set fixture list (clubs arranged their own games), so missing games there aren't counted; check them against the P column in each table.`;
 }
 $('#btn-gaps').addEventListener('click', async () => {
   const btn = $('#btn-gaps'), rep = gapsReport(), stamp = new Date().toISOString().slice(0, 10);
