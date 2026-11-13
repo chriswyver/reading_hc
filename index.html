@@ -374,6 +374,7 @@
       <div><label class="f" for="mf-team">Team</label><select id="mf-team"></select></div>
       <div><label class="f" for="mf-kind">Type</label><select id="mf-kind"></select></div>
       <div><label class="f" for="mf-comp">Competition</label><select id="mf-comp"></select></div>
+      <div class="edit-only"><label class="f" for="mf-gaps">Show</label><select id="mf-gaps"><option value="">All matches</option><option value="scorers">Scorers incomplete</option></select></div>
       <div class="wide"><label class="f" for="mf-q">Search opponent or player</label><input type="search" id="mf-q" placeholder="e.g. Surbiton"></div>
     </div>
   </div>
@@ -1213,6 +1214,8 @@ function renderMatches() {
   fillSelect($('#mf-comp'), compsOfKind($('#mf-kind').value), 'All competitions');
   const q = $('#mf-q').value.trim().toLowerCase();
   let ms = filteredMatches('mf');
+  const gaps = readOnly ? '' : $('#mf-gaps').value;
+  if (gaps === 'scorers') ms = ms.filter(m => ['part', 'none'].includes(scorersState(m)));
   if (q) ms = ms.filter(m => m.opponent.toLowerCase().includes(q) ||
     m.lineup.some(l => l.player.toLowerCase().includes(q)) || m.goals.some(g => g.player.toLowerCase().includes(q)));
   // Season first so undated matches stay in their season; undated ones sit at the end of it
@@ -1236,12 +1239,12 @@ function renderMatches() {
   // First time through, open only the most recent season
   if (!seasonsInit) { Array.from(bySeason.keys()).slice(1).forEach(k => collapsedSeasons.add(k)); seasonsInit = true; }
   // Without a search or season filter, list every season in range so gaps show
-  if (!q && !$('#mf-season').value) {
+  if (!q && !gaps && !$('#mf-season').value) {
     const full = new Map(allSeasons().map(k => [k, bySeason.get(k) || []]));
     if (bySeason.has('Unknown season')) full.set('Unknown season', bySeason.get('Unknown season'));
     bySeason = full;
   }
-  const forceOpen = !!q || !!$('#mf-season').value;   // searching or a single season: show everything
+  const forceOpen = !!q || !!gaps || !!$('#mf-season').value;   // searching or a single season: show everything
   let html = bySeason.size > 1 && !forceOpen
     ? '<div class="list-tools"><button class="btn btn-secondary btn-sm" data-seasons="open">Expand all</button><button class="btn btn-secondary btn-sm" data-seasons="close">Collapse all</button></div>' : '';
   bySeason.forEach((list, season) => {
@@ -1274,7 +1277,7 @@ function renderMatches() {
   });
   $('#matches-list').innerHTML = html;
 }
-['#mf-season', '#mf-team', '#mf-kind', '#mf-comp'].forEach(s => $(s).addEventListener('change', renderMatches));
+['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-gaps'].forEach(s => $(s).addEventListener('change', renderMatches));
 $('#mf-q').addEventListener('input', renderMatches);
 const collapsedSeasons = new Set();
 let seasonsInit = false;
@@ -1526,7 +1529,7 @@ $('#btn-save-match').addEventListener('click', () => {
   toast(editingId ? 'Match saved' : 'Match added');
   editorOpen = false; openMatches.add(m.id); collapsedSeasons.delete(m.season || 'Unknown season');
   // show the saved match in context
-  $('#mf-season').value = ''; $('#mf-team').value = ''; $('#mf-kind').value = ''; $('#mf-comp').value = ''; $('#mf-q').value = '';
+  $('#mf-season').value = ''; $('#mf-team').value = ''; $('#mf-kind').value = ''; $('#mf-comp').value = ''; $('#mf-gaps').value = ''; $('#mf-q').value = '';
   show('matches');
   const row = document.querySelector(`tr.mrow[data-id="${m.id}"]`); if (row) row.scrollIntoView({ block: 'center' });
 });
@@ -1843,7 +1846,7 @@ $('#pl-profile').addEventListener('click', e => {
   const row = e.target.closest('tr[data-match]');
   if (row) {
     openMatches.add(row.dataset.match);
-    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-q'].forEach(s => $(s).value = '');
+    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-gaps', '#mf-q'].forEach(s => $(s).value = '');
     show('matches');
     const tr = document.querySelector(`tr.mrow[data-id="${row.dataset.match}"]`); if (tr) tr.scrollIntoView({ block: 'center' });
   }
@@ -1915,7 +1918,7 @@ $('#opp-body').addEventListener('click', e => {
   if (mr) {
     const m = db.matches.find(x => x.id === mr.dataset.match);
     openMatches.add(m.id); collapsedSeasons.delete(m.season || 'Unknown season');
-    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-q'].forEach(x => $(x).value = '');
+    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-gaps', '#mf-q'].forEach(x => $(x).value = '');
     show('matches');
     const tr = document.querySelector(`tr.mrow[data-id="${m.id}"]`); if (tr) tr.scrollIntoView({ block: 'center' });
     return;
@@ -2529,7 +2532,7 @@ $('#league-body').addEventListener('click', e => {
   if (tie) {
     const m = db.matches.find(x => x.id === tie.dataset.match); if (!m) return;
     openMatches.add(m.id); collapsedSeasons.delete(m.season || 'Unknown season');
-    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-q'].forEach(x => $(x).value = '');
+    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-gaps', '#mf-q'].forEach(x => $(x).value = '');
     show('matches');
     const tr = document.querySelector(`tr.mrow[data-id="${m.id}"]`); if (tr) tr.scrollIntoView({ block: 'center' });
     return;
@@ -3441,7 +3444,7 @@ $('#opp-page').addEventListener('click', e => {
   if (row) {
     const m = db.matches.find(x => x.id === row.dataset.match);
     openMatches.add(m.id); collapsedSeasons.delete(m.season || 'Unknown season');
-    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-q'].forEach(x => $(x).value = '');
+    ['#mf-season', '#mf-team', '#mf-kind', '#mf-comp', '#mf-gaps', '#mf-q'].forEach(x => $(x).value = '');
     show('matches');
     const tr = document.querySelector(`tr.mrow[data-id="${m.id}"]`); if (tr) tr.scrollIntoView({ block: 'center' });
   }
