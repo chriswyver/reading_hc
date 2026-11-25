@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20112%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22crest-clip%22%3E%3Cpath%20d%3D%22M50%205C62%2011%2078%2011%2092%207V50C92%2080%2073%2097%2050%20107C27%2097%208%2080%208%2050V7C22%2011%2038%2011%2050%205Z%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath%20d%3D%22M50%205C62%2011%2078%2011%2092%207V50C92%2080%2073%2097%2050%20107C27%2097%208%2080%208%2050V7C22%2011%2038%2011%2050%205Z%22%20fill%3D%22%231f4f8f%22/%3E%3Cg%20clip-path%3D%22url%28%23crest-clip%29%22%3E%3Cg%20transform%3D%22rotate%28-33%2050%2058%29%22%3E%3Crect%20x%3D%22-30%22%20y%3D%2245%22%20width%3D%22160%22%20height%3D%2224%22%20fill%3D%22%239fd0f0%22/%3E%3Crect%20x%3D%22-30%22%20y%3D%2261%22%20width%3D%22160%22%20height%3D%222.8%22%20fill%3D%22%231f4f8f%22/%3E%3C/g%3E%3C/g%3E%3Cpath%20d%3D%22M50%205C62%2011%2078%2011%2092%207V50C92%2080%2073%2097%2050%20107C27%2097%208%2080%208%2050V7C22%2011%2038%2011%2050%205Z%22%20fill%3D%22none%22%20stroke%3D%22%239fd0f0%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E">
 <title>Reading HC | Men's 1st XI Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('rhcTheme')||'clubhouse'}catch(e){document.documentElement.dataset.theme='clubhouse'}</script>
 <style>
   :root {
     /* Reading HC kit: sky blue home shirt, navy shorts */
@@ -319,23 +321,221 @@
   }
 .mp-nav{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:8px 0 4px;}
 .mp-nav .btn{max-width:48%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rec-list{margin:0;padding-left:0;list-style:none;}
+.rec-list li{padding:5px 0;border-bottom:1px solid var(--line,#e3e8ef);}
+.rec-list .rv{display:inline-block;min-width:64px;font-weight:700;}
+.gap-note{font-size:13px;color:var(--muted,#667);margin:6px 0 14px;}
+.scroll-box{max-height:420px;overflow:auto;}
+details.ck{border-bottom:1px solid var(--line,#e3e8ef);padding:6px 0;}
+details.ck summary{cursor:pointer;}
+.ck-list{margin:8px 0 4px 18px;}
+.ck-list li{margin:3px 0;}
+.ck-list .x{font-size:12px;color:var(--muted,#667);background:none;border:0;cursor:pointer;text-decoration:underline;}
+table.cov{border-collapse:separate;border-spacing:2px;font-size:12px;}
+table.cov th{font-weight:600;padding:2px 6px;text-align:left;white-space:nowrap;}
+table.cov td.cv,table.cov td.cv-empty{width:44px;height:22px;text-align:center;border-radius:3px;}
+table.cov td.cv-empty{background:#f1f3f6;}
+table.cov tr[data-cov-season]{cursor:pointer;}
+table.cov tr[data-cov-season]:hover th{text-decoration:underline;}
+.pl-chart{display:flex;align-items:flex-end;gap:3px;height:120px;margin:8px 0 4px;}
+.pl-chart .bar{flex:1;min-width:6px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
+.pl-chart .bar i{display:block;width:100%;background:var(--navy,#13274e);border-radius:2px 2px 0 0;}
+.pl-chart .bar span{font-size:10px;color:var(--muted,#667);}
+.pl-chart-x{display:flex;gap:3px;font-size:10px;color:var(--muted,#667);}
+.pl-chart-x span{flex:1;min-width:6px;text-align:center;overflow:hidden;white-space:nowrap;}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+.home-grid .panel{margin-bottom:16px;}
+.big-rec{font-size:20px;font-weight:700;margin:4px 0 10px;}
+#home-latest p{margin:4px 0;}
+.honours{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;}
+.honour{border:1px solid var(--line,#e3e8ef);border-radius:8px;padding:10px 12px;background:#fafbfc;}
+.honour.win{border-color:#d9b44a;background:#fffaf0;}
+.honour .h-title{font-weight:700;margin-bottom:4px;}
+.honour .h-years{font-size:13px;line-height:1.7;}
+.lead-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px;}
+.lead-card{background:var(--white,#fff);border-radius:10px;padding:14px 16px;border:1px solid var(--line,#e3e8ef);display:flex;flex-direction:column;gap:2px;}
+.lead-card .lab{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#667);}
+.lead-card b{font-size:34px;line-height:1.1;color:var(--navy,#13274e);}
+.lead-card .sub{font-size:14px;}
+.decades{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;}
+.decade{border:1px solid var(--line,#e3e8ef);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;}
+.dec-head{font-size:22px;font-weight:800;background:none;border:0;padding:0;text-align:left;cursor:pointer;color:var(--navy,#13274e);}
+.dec-seasons{font-size:12px;margin-top:4px;line-height:1.7;}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}
+.tile{background:var(--navy,#13274e);color:#fff;border:0;border-radius:10px;padding:16px 18px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;}
+.tile b{font-size:20px;}
+.tile span{font-size:13px;opacity:.85;}
+.tile:hover{filter:brightness(1.15);}
+.comp-row{display:grid;grid-template-columns:80px 1fr 220px;align-items:center;gap:12px;margin:6px 0;}
+.pbar{height:12px;background:#e8ecf2;border-radius:6px;overflow:hidden;display:block;}
+.pbar i{display:block;height:100%;background:var(--navy,#13274e);}
+@media (max-width:820px){.home-grid,.lead-row,.tiles{grid-template-columns:1fr 1fr;}.home-grid{grid-template-columns:1fr;}.comp-row{grid-template-columns:70px 1fr;}.comp-row .small{grid-column:1/-1;}}
+
+/* ===== Theme switch ===== */
+.theme-switch{display:inline-flex;flex-shrink:0;border-radius:999px;padding:3px;gap:2px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);}
+.theme-switch button{background:none;border:0;border-radius:999px;padding:5px 12px;font:600 13px/1.2 var(--body);color:inherit;opacity:.75;cursor:pointer;white-space:nowrap;}
+.theme-switch button[aria-selected="true"]{opacity:1;background:var(--sky);color:var(--navy);}
+
+/* ===== Clubhouse: navy and gold, serif ===== */
+html[data-theme="clubhouse"]{--navy:#13233f;--navy-2:#1d3a6e;--sky:#c9a24a;--sky-2:#e2c070;--sky-pale:#f5efdc;--paper:#f7f4ec;--ink:#1b1d24;--muted:#6b6a5c;--line:#e6dfcb;--display:'Playfair Display',Georgia,serif;--body:'Source Serif 4',Georgia,serif;}
+html[data-theme="clubhouse"] body{font-size:16px;}
+html[data-theme="clubhouse"] header{border-bottom:0;box-shadow:0 2px 12px rgba(19,35,63,.25);}
+html[data-theme="clubhouse"] .brand{font-size:24px;font-weight:600;}
+html[data-theme="clubhouse"] .brand small{font-family:var(--body);font-size:13px;color:var(--sky-2);}
+html[data-theme="clubhouse"] nav button{font-family:var(--body);font-size:15px;color:#e8e4d8;border-bottom-width:2px;padding:24px 12px 20px;}
+html[data-theme="clubhouse"] nav button.active{color:var(--sky-2);border-bottom-color:var(--sky-2);}
+html[data-theme="clubhouse"] h1{font-size:40px;}
+html[data-theme="clubhouse"] h2{font-size:23px;}
+html[data-theme="clubhouse"] h3{font-size:18px;}
+html[data-theme="clubhouse"] .panel{border:0;border-radius:10px;box-shadow:0 2px 12px rgba(19,35,63,.1);}
+html[data-theme="clubhouse"] .tbl th{background:var(--navy);color:#fff;border-bottom:0;font-family:var(--body);font-size:14px;}
+html[data-theme="clubhouse"] .tbl tbody tr:nth-child(even)>td{background:#fbf9f3;}
+html[data-theme="clubhouse"] .tbl tbody tr:hover>td{background:var(--sky-pale);}
+html[data-theme="clubhouse"] .record{border:0;gap:12px;background:none;overflow:visible;}
+html[data-theme="clubhouse"] .record div{background:var(--navy);border:0;border-radius:10px;padding:16px 18px;}
+html[data-theme="clubhouse"] .record b{color:var(--sky-2);font-size:34px;}
+html[data-theme="clubhouse"] .record span{color:#c8cfdc;text-transform:uppercase;letter-spacing:.1em;font-size:11px;}
+html[data-theme="clubhouse"] .lead-card{border:0;border-top:4px solid var(--sky);box-shadow:0 2px 12px rgba(19,35,63,.1);}
+html[data-theme="clubhouse"] .lead-card b{font-family:var(--display);}
+html[data-theme="clubhouse"] .honour{background:#fff;}
+html[data-theme="clubhouse"] .honour.win{background:#fbf6e6;border-color:#e6d9b0;}
+html[data-theme="clubhouse"] .score .them{background:var(--sky-pale);color:var(--navy);}
+html[data-theme="clubhouse"] .seg button,html[data-theme="clubhouse"] .tabs button{font-family:var(--body);font-size:15px;}
+html[data-theme="clubhouse"] .btn{border-radius:6px;}
+html[data-theme="clubhouse"] .tile b,html[data-theme="clubhouse"] .dec-head{font-family:var(--display);}
+
+/* ===== Almanack: printed annual ===== */
+html[data-theme="almanack"]{--navy:#1c1a17;--navy-2:#8f1d1d;--sky:#8f1d1d;--sky-2:#b9ae8f;--sky-pale:#ebe3c9;--paper:#f3eddc;--white:#faf6ea;--ink:#1c1a17;--muted:#5f584a;--line:#cfc5a8;--win:#2f5e34;--draw:#7a5a10;--loss:#8f1d1d;--display:'Libre Caslon Display',Georgia,serif;--body:'EB Garamond',Georgia,serif;}
+html[data-theme="almanack"] body{font-size:17px;line-height:1.45;}
+html[data-theme="almanack"] header{background:var(--paper);color:var(--ink);border-bottom:3px double var(--ink);}
+html[data-theme="almanack"] .header-inner{flex-wrap:wrap;justify-content:center;gap:0 24px;}
+html[data-theme="almanack"] .brand{font-weight:400;font-size:34px;text-align:center;padding:14px 0 6px;width:100%;}
+html[data-theme="almanack"] .brand small{font-family:var(--body);font-style:italic;font-size:15px;color:var(--muted);}
+html[data-theme="almanack"] nav{margin:0;border-top:1px solid var(--ink);justify-content:center;}
+html[data-theme="almanack"] nav button{font-family:var(--body);font-variant:small-caps;letter-spacing:.1em;font-size:17px;color:var(--ink);padding:6px 12px 6px;border-bottom-width:0;margin:0;}
+html[data-theme="almanack"] nav button.active{color:var(--sky);font-weight:700;}
+html[data-theme="almanack"] .theme-switch{background:none;border-color:var(--line);margin:4px 0 6px;}
+html[data-theme="almanack"] .theme-switch button[aria-selected="true"]{background:var(--ink);color:var(--paper);}
+html[data-theme="almanack"] h1{font-weight:400;font-size:46px;}
+html[data-theme="almanack"] h2{font-weight:400;font-size:27px;border-bottom:1px solid var(--ink);padding-bottom:3px;}
+html[data-theme="almanack"] h3{font-family:var(--body);font-variant:small-caps;letter-spacing:.1em;font-weight:600;font-size:17px;}
+html[data-theme="almanack"] .panel{background:none;border:0;border-radius:0;padding:4px 0 18px;}
+html[data-theme="almanack"] .tbl{font-size:16px;}
+html[data-theme="almanack"] .tbl th{font-family:var(--body);font-variant:small-caps;letter-spacing:.08em;font-size:16px;color:var(--ink);border-bottom:1px solid var(--ink);}
+html[data-theme="almanack"] .tbl td{border-bottom:1px dotted var(--line);}
+html[data-theme="almanack"] .record{background:none;border:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);border-radius:0;}
+html[data-theme="almanack"] .record div{border-right:1px solid var(--line);}
+html[data-theme="almanack"] .record b{font-weight:400;color:var(--ink);}
+html[data-theme="almanack"] .record span{font-variant:small-caps;letter-spacing:.06em;}
+html[data-theme="almanack"] .btn,html[data-theme="almanack"] .seg,html[data-theme="almanack"] input,html[data-theme="almanack"] select,html[data-theme="almanack"] textarea{border-radius:0;}
+html[data-theme="almanack"] .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+html[data-theme="almanack"] .seg button,html[data-theme="almanack"] .tabs button{font-family:var(--body);font-variant:small-caps;letter-spacing:.06em;font-size:17px;background:transparent;}
+html[data-theme="almanack"] .seg button.on{background:var(--ink);}
+html[data-theme="almanack"] .lead-card,html[data-theme="almanack"] .honour,html[data-theme="almanack"] .honour.win,html[data-theme="almanack"] .decade{background:none;border:0;border-top:1px solid var(--ink);border-radius:0;padding-left:0;}
+html[data-theme="almanack"] .lead-card .lab{font-variant:small-caps;text-transform:none;letter-spacing:.1em;font-size:15px;}
+html[data-theme="almanack"] .lead-card b{font-family:var(--display);font-weight:400;color:var(--sky);}
+html[data-theme="almanack"] .honour .h-title{font-variant:small-caps;letter-spacing:.08em;}
+html[data-theme="almanack"] .honour .h-years{font-size:16px;}
+html[data-theme="almanack"] .tile{background:none;color:var(--ink);border:1px solid var(--ink);border-radius:0;}
+html[data-theme="almanack"] .tile b{font-family:var(--display);font-weight:400;font-size:22px;}
+html[data-theme="almanack"] .dec-head{font-family:var(--display);font-weight:400;}
+html[data-theme="almanack"] .score{border-radius:0;font-family:var(--body);}
+html[data-theme="almanack"] .score .them{background:#e0d6b8;color:var(--ink);}
+html[data-theme="almanack"] .pbar{border-radius:0;background:#e0d6b8;}
+html[data-theme="almanack"] .link,html[data-theme="almanack"] .yr-link{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sky-2);text-underline-offset:3px;font-weight:500;}
+html[data-theme="almanack"] .link:hover{color:var(--sky);}
+html[data-theme="almanack"] .tag{border-radius:0;}
+html[data-theme="almanack"] .dlg-head{background:var(--ink);}
+
+/* Centred numbers in the player stats table */
+.tbl.ctr th.n,.tbl.ctr td.n{text-align:center;}
+.tbl tr.grp th.grp-h{border-bottom:1px solid var(--line);text-align:center;}
+html[data-theme="clubhouse"] .tbl tr.grp th{background:var(--navy);}
+html[data-theme="clubhouse"] .tbl tr.grp th.grp-h{border-bottom:1px solid rgba(255,255,255,.35);}
+html[data-theme="almanack"] .tbl tr.grp th{border-bottom:0;}
+html[data-theme="almanack"] .tbl tr.grp th.grp-h{border-bottom:1px solid var(--ink);}
+/* Homepage summary tiles */
+.home-rec div{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.home-rec .rec-sub{display:block;font-style:normal;font-size:12px;margin-top:6px;color:var(--muted);}
+.home-rec .rec-bar{display:none;width:100%;height:6px;margin-top:6px;}
+html[data-theme="clubhouse"] .home-rec .rec-sub{color:#e8e4d8;}
+html[data-theme="clubhouse"] .home-rec .rec-bar{display:block;background:rgba(255,255,255,.18);}
+html[data-theme="clubhouse"] .home-rec .rec-bar i{background:var(--sky-2);}
+html[data-theme="almanack"] .home-rec .rec-sub{font-style:italic;font-size:15px;}
+
+/* Header: wrap instead of scrolling, no scrollbars */
+.header-inner{flex-wrap:wrap;row-gap:0;gap:0 16px;}
+nav{overflow:visible;flex-wrap:wrap;justify-content:flex-end;scrollbar-width:none;}
+nav::-webkit-scrollbar{display:none;}
+nav button{padding-left:10px;padding-right:10px;}
+html[data-theme="clubhouse"] nav button{padding:22px 10px 18px;margin-bottom:0;}
+.theme-switch{margin:6px 0 6px auto;}
+.theme-switch button{padding:4px 10px;font-size:12px;}
+html[data-theme="almanack"] .theme-switch{margin:4px auto 6px;}
+@media (max-width:820px){nav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;}.theme-switch{margin-left:0;}}
+.home-lt td,.home-lt th{padding:6px 8px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand .crest{width:38px;height:43px;flex-shrink:0;}
+html[data-theme="almanack"] .brand{justify-content:center;text-align:left;}
+html[data-theme="almanack"] .brand .crest{width:46px;height:52px;}
+@media (max-width:820px){.brand .crest{width:30px;height:34px;}}
+.next-fx{margin-top:8px!important;padding-top:8px;border-top:1px solid var(--line);}
+
+/* ===== Snagging fixes ===== */
+.seg{flex-wrap:wrap;max-width:100%;}
+.rec-list li{display:flex;gap:10px;align-items:baseline;}
+.rec-list li>.rv{flex:0 0 auto;}
+.rec-list li>.rt{flex:1;min-width:0;}
+.dec-rec{display:flex;gap:10px;}
+.dec-rec span{white-space:nowrap;}
+.opp-exp{cursor:pointer;margin-right:2px;}
+.opp-name{font-weight:700;text-align:left;}
+.d-short{display:none;}
+html[data-theme="almanack"] .pl-list{margin:10px 0 0;}
+@media (max-width:820px){
+  header{position:sticky;}
+  .header-inner{flex-wrap:wrap;align-items:center;padding-top:6px;}
+  .brand{order:1;flex:1;font-size:17px!important;min-width:0;white-space:nowrap;}
+  .theme-switch button{padding:4px 8px;font-size:11px;}
+  #lt-summary td:nth-child(3){min-width:190px;}
+  .brand small{display:none;}
+  .brand .crest{width:28px!important;height:32px!important;}
+  .theme-switch{order:2;margin:0!important;}
+  nav{order:3;width:100%;-webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent);}
+  html[data-theme="clubhouse"] nav button{padding:10px 10px 8px;}
+  html[data-theme="almanack"] .brand{width:auto;justify-content:flex-start;padding:6px 0;}
+  html[data-theme="almanack"] nav button{padding:6px 10px;}
+}
+@media (max-width:600px){
+  .d-long{display:none;}
+  .d-short{display:inline;white-space:nowrap;}
+  .home-rec{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .home-rec div:last-child{grid-column:1/-1;}
+  .home-rec b{white-space:nowrap;font-size:28px!important;}
+}
+@media (max-width:820px){.theme-switch{margin:6px 0;}html[data-theme="almanack"] .brand{font-size:26px;}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <div class="brand">Reading Hockey Club<small>Men's 1st XI archive</small></div>
+    <div class="brand"><svg class="crest" viewBox="0 0 100 112" role="img" aria-label="Reading Hockey Club crest"><defs><clipPath id="crest-clip"><path d="M50 5C62 11 78 11 92 7V50C92 80 73 97 50 107C27 97 8 80 8 50V7C22 11 38 11 50 5Z"/></clipPath></defs><path d="M50 5C62 11 78 11 92 7V50C92 80 73 97 50 107C27 97 8 80 8 50V7C22 11 38 11 50 5Z" fill="#1f4f8f"/><g clip-path="url(#crest-clip)"><g transform="rotate(-33 50 58)"><rect x="-30" y="45" width="160" height="24" fill="#9fd0f0"/><rect x="-30" y="61" width="160" height="2.8" fill="#1f4f8f"/></g></g><path d="M50 5C62 11 78 11 92 7V50C92 80 73 97 50 107C27 97 8 80 8 50V7C22 11 38 11 50 5Z" fill="none" stroke="#9fd0f0" stroke-width="4" stroke-linejoin="round"/></svg><span>Reading Hockey Club<small>Men's 1st XI archive</small></span></div>
     <nav id="nav">
       <button data-page="home" class="active">Home</button>
       <button data-page="matches">Matches</button>
       <button data-page="edit" class="edit-only">Add match</button>
       <button data-page="stats">Stats</button>
+      <button data-page="records">Records</button>
       <button data-page="players">Players</button>
       <button data-page="opponents">Opponents</button>
       <button data-page="league">Tables</button>
       <button data-page="data" class="edit-only">Data</button>
     </nav>
+    <div class="theme-switch" role="tablist" aria-label="Site style">
+      <button role="tab" data-theme-set="clubhouse">Clubhouse</button>
+      <button role="tab" data-theme-set="almanack">Almanack</button>
+    </div>
   </div>
 </header>
 
@@ -348,18 +548,32 @@
     <p class="lede">Every men's 1st XI league (London League from 1972, National League from 1988), cup, European and indoor match we've been able to trace, with scorers, lineups where they survive, league tables and player records.</p>
   </div>
   <div id="home-summary"></div>
-  <div class="panel" id="home-data"></div>
-  <div class="panel">
-    <h2>Finding your way around</h2>
-    <ul class="steps">
-      <li><strong>Matches</strong>: every game by season. Click a match to see the scorers and, where known, the lineup. Filter by season, team, type or competition, or search for an opponent or player.</li>
-      <li><strong>Stats</strong>: top scorers and appearances, or season-by-season records. Switch between outdoor and indoor.</li>
-      <li><strong>Players</strong>: a page for every player, with their goals, appearances and matches.</li>
-      <li><strong>Opponents</strong>: Reading's record against every club. Click a club for its own page.</li>
-      <li><strong>Tables</strong>: final league tables, cup runs, European campaigns and indoor seasons.</li>
-    </ul>
-    <p class="muted small" style="margin-top:10px;">Dates, scores and scorers come from newspaper archives, club records and England Hockey. Gaps are marked: "Score not known", "Date unknown", or "Unknown" for a goal whose scorer couldn't be traced.</p>
+  <div class="home-grid">
+    <div><div class="panel" id="home-latest"></div><div class="panel" id="home-table"></div></div>
+    <div class="panel" id="home-otd"></div>
   </div>
+  <div class="panel" id="home-honours"></div>
+  <div id="home-leaders"></div>
+  <div class="panel" id="home-decades"></div>
+  <div id="home-tiles"></div>
+  <div class="panel" id="home-data"></div>
+  <p class="muted small" style="margin-top:10px;">Dates, scores and scorers come from newspaper archives, club records and England Hockey. Gaps are marked: "Score not known", "Date unknown", or "Unknown" for a goal whose scorer couldn't be traced.</p>
+</section>
+
+<!-- ══════════ SEASON PAGE ══════════ -->
+<section id="page-season" class="page">
+  <div id="season-page"></div>
+</section>
+
+<!-- ══════════ RECORDS ══════════ -->
+<section id="page-records" class="page">
+  <h1>Records</h1>
+  <p class="lede">Biggest wins and defeats, runs, hat-tricks, appearances and goals. Each section says what's missing from the archive that could change it.</p>
+  <div class="panel tight"><div class="filters">
+    <div><label class="f" for="rc-team">Team</label><select id="rc-team"></select></div>
+    <div><label class="f" for="rc-kind">Competitions</label><select id="rc-kind"><option value="outdoor">All outdoor</option><option value="indoor">All indoor</option><option value="all">Everything</option></select></div>
+  </div></div>
+  <div id="records-body"></div>
 </section>
 
 <!-- ══════════ MATCH PAGE ══════════ -->
@@ -475,7 +689,7 @@
 <!-- ══════════ STATS ══════════ -->
 <section id="page-stats" class="page">
   <h1>Stats</h1>
-  <p class="lede">Appearances, goals and seasons played for every player who has turned out in a National League match.</p>
+  <p class="lede">Appearances, goals and seasons for every player in the archive, across league, cup, European and indoor matches.</p>
   <div class="panel tight">
     <div class="filters">
       <div><label class="f" for="sf-season">Season</label><select id="sf-season"></select></div>
@@ -600,6 +814,22 @@
       <div><label class="f" for="rn-to">New name</label><input type="text" id="rn-to" list="dl-rn"></div>
       <div style="align-self:end;"><button class="btn btn-primary" id="btn-rename">Rename</button></div>
     </div>
+  </div>
+  <div class="panel">
+    <h2>Data check</h2>
+    <p class="muted small" style="margin-bottom:10px;">Possible mistakes worth a look. Click a match or player to open it. Nothing is changed automatically. "Ignore" is saved in the data file, so a check you've ruled out stays hidden.</p>
+    <div id="checks"></div>
+  </div>
+  <div class="panel">
+    <h2>Coverage map</h2>
+    <p class="muted small" style="margin-bottom:10px;">Played matches by season and month. The darker the cell, the more of those matches have a complete record. Click a cell to open that season.</p>
+    <div class="seg" id="cov-what" style="margin-bottom:10px;"><button data-w="lineup" class="on">Line-ups</button><button data-w="scorers">Scorers</button></div>
+    <div id="coverage"></div>
+  </div>
+  <div class="panel">
+    <h2>Recent changes</h2>
+    <p class="muted small" style="margin-bottom:10px;">The last 15 changes made in this browser. Undoing one also undoes every change above it.</p>
+    <div id="undo-list"></div>
   </div>
   <div class="panel">
     <h2>Players with no appearances or goals</h2>
@@ -795,7 +1025,7 @@ function roundTag(m) {
 }
 // Which bracket column each round sits in
 const ROUND_COL   = { 'First round': 0, 'Positional': 0, 'Quarter-final': 0, 'Semi-final': 1, 'Second round': 1, 'Final': 2, '3rd place': 2 };
-const STATUSES    = ['Played', 'Awarded win', 'Awarded loss', 'Walkover win', 'Walkover loss', 'Postponed', 'Cancelled', 'Abandoned'];
+const STATUSES    = ['Played', 'Fixture', 'Awarded win', 'Awarded loss', 'Walkover win', 'Walkover loss', 'Postponed', 'Cancelled', 'Abandoned'];
 // Walkovers decide a tie (so cups show who went through) but no match was played,
 // so they don't count in played/won/lost records or appearances.
 const GOAL_TYPES  = { FG: 'Field goal', PC: 'Penalty corner', PS: 'Penalty stroke', '': 'Not recorded' };
@@ -834,6 +1064,14 @@ function seasonFromDate(d) {
   const start = m >= 8 ? y : y - 1;           // hockey season runs Sept–April
   return start + '-' + String((start + 1) % 100).padStart(2, '0');
 }
+// Table date cell: full date on wide screens, short (6 Oct 02) on phones
+function dateCell(d) {
+  if (!d) return esc(fmtDate(d));
+  const dt = new Date(d + 'T12:00:00');
+  if (isNaN(dt)) return esc(d);
+  const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `<span class="d-long">${esc(fmtDate(d))}</span><span class="d-short">${dt.getDate()} ${M[dt.getMonth()]} ${String(dt.getFullYear()).slice(2)}</span>`;
+}
 function fmtDate(d) {
   if (!d) return 'Date unknown';
   const dt = new Date(d + 'T12:00:00');
@@ -853,7 +1091,7 @@ const soKnown = so => !!so && so.gf != null && so.ga != null;
 const soWon = so => !so ? null : soKnown(so) ? so.gf > so.ga : !!so.won;
 const soText = so => soKnown(so) ? `${so.gf}–${so.ga}` : 'score not known';
 const countsForRecord = m => ['Played', 'Awarded win', 'Awarded loss'].includes(m.status);
-const canHaveLineup   = m => !['Postponed', 'Cancelled', 'Awarded win', 'Awarded loss', 'Walkover win', 'Walkover loss'].includes(m.status);
+const canHaveLineup   = m => !['Fixture', 'Postponed', 'Cancelled', 'Awarded win', 'Awarded loss', 'Walkover win', 'Walkover loss'].includes(m.status);
 
 function toast(msg) {
   const t = $('#toast'); t.textContent = msg; t.classList.add('show');
@@ -929,6 +1167,7 @@ function normalise(d) {
     })).filter(x => x.a && x.b),
   }));
   if (d.publishedSeasons) o.publishedSeasons = d.publishedSeasons;
+  if (Array.isArray(d.ignoredChecks)) o.ignoredChecks = d.ignoredChecks.filter(x => typeof x === 'string');
   o.compKinds = {};
   Object.entries(d.compKinds || {}).forEach(([k, v]) => { if (KINDS.includes(v)) o.compKinds[k] = v; });
   o.oppInfo = {};
@@ -993,8 +1232,36 @@ function loadLocal() {
   try { const raw = localStorage.getItem(LS_KEY); if (raw) return normalise(JSON.parse(raw)); } catch (e) {}
   return emptyDB();
 }
-function saveDB() {
+// ── Change log (undo) ──
+let undoLog = [], lastSnap = null;
+const strHash = t => { let h = 5381; for (let i = 0; i < t.length; i += 7) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return h + ':' + t.length; };
+function recordChange(label) {
+  const now = JSON.stringify(db);
+  if (lastSnap != null && now !== lastSnap) {
+    undoLog.unshift({ label: label || 'Change', time: Date.now(), before: lastSnap, afterHash: strHash(now) });
+    undoLog = undoLog.slice(0, 15);
+    idbSet('undoLog', undoLog).catch(() => {});
+  }
+  lastSnap = now;
+}
+async function loadUndoLog() {
+  lastSnap = JSON.stringify(db);
+  try { const l = await idbGet('undoLog'); if (Array.isArray(l) && l.length && l[0].afterHash === strHash(lastSnap)) undoLog = l; } catch (e) {}
+}
+function undoTo(i) {
+  const e = undoLog[i]; if (!e) return;
+  const n = i + 1;
+  if (!confirm(`Undo "${e.label}"${n > 1 ? ` and the ${n - 1} later change${n > 2 ? 's' : ''} above it` : ''}? The data goes back to how it was before that change.`)) return;
+  db = normalise(JSON.parse(e.before));
+  undoLog = undoLog.slice(n);
+  lastSnap = null; saveDB(); lastSnap = JSON.stringify(db);
+  if (undoLog.length) undoLog[0].afterHash = strHash(lastSnap);
+  idbSet('undoLog', undoLog).catch(() => {});
+  refreshDatalists(); renderData(); toast('Undone');
+}
+function saveDB(label) {
   if (readOnly) return;
+  recordChange(label);
   if (fileMode && fileHandle) {
     writeToHandle(fileHandle, db).catch(e => {
       console.error('File save failed', e);
@@ -1067,10 +1334,11 @@ async function disconnectFile() {
 // ════════════════════════════════════════════════════════════
 // NAVIGATION
 // ════════════════════════════════════════════════════════════
-const PAGES = ['home', 'match', 'matches', 'edit', 'stats', 'players', 'opponents', 'opponent', 'league', 'data'];
+const PAGES = ['home', 'match', 'season', 'records', 'matches', 'edit', 'stats', 'players', 'opponents', 'opponent', 'league', 'data'];
 let currentPage = 'home';
 let oppName = '';
 let matchId = '';
+let seasonKey = '', seasonTeam = '', seasonComp = '';
 function parseHash() {
   const [page, ...rest] = location.hash.slice(1).split('/');
   return [page || 'home', rest.length ? decodeURIComponent(rest.join('/')) : undefined];
@@ -1078,14 +1346,17 @@ function parseHash() {
 function show(page, push = true, arg) {
   if (!PAGES.includes(page) || (readOnly && ['edit', 'data'].includes(page))) page = 'home';
   if (page === 'match') { if (arg !== undefined) matchId = arg; if (!db.matches.some(m => m.id === matchId)) page = 'matches'; }
+  if (page === 'season') { if (arg !== undefined && arg !== seasonKey) { seasonKey = arg; seasonComp = ''; } if (!db.matches.some(m => m.season === seasonKey)) page = 'matches'; }
   currentPage = page;
   $$('.page').forEach(p => p.classList.toggle('active', p.id === 'page-' + page));
-  $$('#nav button').forEach(b => b.classList.toggle('active', b.dataset.page === (page === 'opponent' ? 'opponents' : page === 'match' ? 'matches' : page)));
+  $$('#nav button').forEach(b => b.classList.toggle('active', b.dataset.page === (page === 'opponent' ? 'opponents' : page === 'match' || page === 'season' ? 'matches' : page)));
   if (page === 'players' && arg !== undefined) profileName = arg;
   if (page === 'opponent' && arg !== undefined) { if (arg !== oppName) { editingOpp = false; oppSurface = 'all'; } oppName = arg; }
   if (page === 'home') renderHome();
   if (page === 'opponent') renderOpponentPage();
   if (page === 'match') renderMatchPage();
+  if (page === 'season') renderSeasonPage();
+  if (page === 'records') renderRecords();
   if (page === 'matches') renderMatches();
   if (page === 'edit' && !editorOpen) openEditor(null);
   if (page === 'stats') renderStats();
@@ -1094,7 +1365,7 @@ function show(page, push = true, arg) {
   if (page === 'league') renderLeague();
   if (page === 'data') renderData();
   if (page !== 'edit') editorOpen = false;
-  const hash = '#' + page + (page === 'players' && profileName ? '/' + encodeURIComponent(profileName) : page === 'opponent' && oppName ? '/' + encodeURIComponent(oppName) : page === 'match' && matchId ? '/' + encodeURIComponent(matchId) : '');
+  const hash = '#' + page + (page === 'players' && profileName ? '/' + encodeURIComponent(profileName) : page === 'opponent' && oppName ? '/' + encodeURIComponent(oppName) : page === 'match' && matchId ? '/' + encodeURIComponent(matchId) : page === 'season' && seasonKey ? '/' + encodeURIComponent(seasonKey) : '');
   if (push) history.pushState({ page }, '', hash); else history.replaceState({ page }, '', hash);
   window.scrollTo(0, 0);
 }
@@ -1103,7 +1374,12 @@ $('#nav').addEventListener('click', e => {
   if (b.dataset.page === 'edit') editorOpen = false;     // nav "Add match" always starts blank
   show(b.dataset.page);
 });
-document.addEventListener('click', e => { const b = e.target.closest('[data-match-page]'); if (!b) return; e.preventDefault(); e.stopPropagation(); show('match', true, b.dataset.matchPage); }, true);
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-match-page],[data-mlink],[data-season-page]'); if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  if (b.dataset.seasonPage) show('season', true, b.dataset.seasonPage);
+  else show('match', true, b.dataset.matchPage || b.dataset.mlink);
+}, true);
 window.addEventListener('popstate', () => { const [p, a] = parseHash(); show(p, false, a); });
 
 // ════════════════════════════════════════════════════════════
@@ -1233,11 +1509,12 @@ function renderMatches() {
     m.lineup.some(l => l.player.toLowerCase().includes(q)) || m.goals.some(g => g.player.toLowerCase().includes(q)));
   // Season first so undated matches stay in their season; undated ones sit at the end of it
   ms.sort((a, b) => b.season.localeCompare(a.season) || (!a.date) - (!b.date) || b.date.localeCompare(a.date));
+  const multiStage = new Set(uniq(db.matches.filter(m => m.stage).map(m => m.season)).filter(se => uniq(db.matches.filter(m => m.season === se && m.stage).map(m => m.stage)).length > 1));
 
-  const played = db.matches.filter(countsForRecord).length;
-  const withLu = db.matches.filter(m => m.lineupKnown).length;
+  const lpAll = db.matches.filter(canHaveLineup).filter(countsForRecord), lokAll = lpAll.filter(m => lineupState(m) === 'ok').length;
+  const nFx = db.matches.filter(m => m.status === 'Fixture').length;
   $('#matches-lede').textContent = db.matches.length
-    ? `${db.matches.length} matches in the archive. Lineups are recorded for ${withLu} of ${played} played. Click a match to see the lineup and scorers, or open its own page.`
+    ? `${lpAll.length.toLocaleString('en-GB')} matches played${nFx ? ` and ${nFx} fixture${nFx === 1 ? '' : 's'} to come` : ''}. Complete line-ups for ${lokAll.toLocaleString('en-GB')} of them (${lpAll.length ? Math.round(lokAll / lpAll.length * 100) : 0}%). Click a match to see the line-up and scorers, or open its own page.`
     : '';
   $('#matches-record').innerHTML = ms.length ? recordStrip(recordOf(ms)) + goalGapHTML(ms) : '';
 
@@ -1274,13 +1551,14 @@ function renderMatches() {
     const scDone = sc.filter(m => scorersState(m) === 'ok').length;
     html += `<div class="season-block${closed ? ' closed' : ''}"><div class="season-head">
       <button class="season-toggle" data-season="${esc(season)}" aria-expanded="${!closed}"><span class="chev">&#9662;</span><h2>${esc(season)}</h2>
-      <span class="muted small">P ${r.p}, W ${r.w}, D ${r.d}, L ${r.l}, goals ${r.gf}–${r.ga}${lu.length ? `, ${luDone} of ${lu.length} line ups complete` : ''}${sc.length ? `, ${scDone} of ${sc.length} scorers complete` : ''}</span></button></div>
+      <span class="muted small">P ${r.p}, W ${r.w}, D ${r.d}, L ${r.l}, goals ${r.gf}–${r.ga}${lu.length ? `, ${luDone} of ${lu.length} line ups complete` : ''}${sc.length ? `, ${scDone} of ${sc.length} scorers complete` : ''}</span></button>
+      <button class="btn btn-secondary btn-sm" data-season-page="${esc(season)}" style="margin-left:auto;">Season page</button></div>
       <div class="season-body panel" style="padding:0;"><div class="tbl-wrap"><table class="tbl"><thead><tr>
       <th>Date</th><th class="hide-sm">Team</th><th class="hide-sm">Competition</th><th></th><th>Opponent</th><th>Score</th><th></th><th class="c">Line up</th><th class="c">Scorers</th></tr></thead><tbody>`;
     list.forEach(m => {
       const res = result(m), open = openMatches.has(m.id);
       html += `<tr class="mrow r-${res}${open ? ' open' : ''}" data-id="${m.id}" tabindex="0">
-        <td>${esc(fmtDate(m.date))}</td><td class="hide-sm">${esc(m.team)}</td><td class="hide-sm">${esc(m.competition)}${m.stage ? `<span class="tag">${esc(m.stage)}</span>` : ''}${isCupMatch(m) ? (m.round ? `<span class="tag">${esc(m.round)}</span>` : '') : isPost(m) ? `<span class="tag">${esc(roundTag(m))}</span>` : ''}</td>
+        <td>${dateCell(m.date)}</td><td class="hide-sm">${esc(m.team)}</td><td class="hide-sm">${esc(m.competition)}${m.stage && multiStage.has(m.season) ? `<span class="tag">${esc(m.stage)}</span>` : ''}${isCupMatch(m) ? (m.round ? `<span class="tag">${esc(m.round)}</span>` : '') : isPost(m) ? `<span class="tag">${esc(roundTag(m))}</span>` : ''}</td>
         <td><span class="ha" title="${esc(m.venue)}">${m.venue === 'Home' ? 'H' : m.venue === 'Away' ? 'A' : 'N'}</span></td>
         <td class="opp">${oppHTML(m.opponent)}</td><td>${scoreHTML(m)}</td>
         <td><span class="res ${res}">${res}</span></td><td class="c">${markCell(lineupState(m), 'Line up')}</td><td class="c">${markCell(scorersState(m), 'Scorers')}</td></tr>`;
@@ -1490,7 +1768,7 @@ $('#btn-delete-match').addEventListener('click', () => {
   const m = db.matches.find(x => x.id === editingId); if (!m) return;
   if (!confirm(`Delete the match against ${m.opponent} on ${fmtDate(m.date)}?`)) return;
   db.matches = db.matches.filter(x => x.id !== editingId);
-  saveDB(); editorOpen = false; toast('Match deleted'); show('matches');
+  saveDB(`Deleted match v ${m.opponent} (${fmtDate(m.date)})`); editorOpen = false; toast('Match deleted'); show('matches');
 });
 
 $('#btn-save-match').addEventListener('click', () => {
@@ -1537,7 +1815,7 @@ $('#btn-save-match').addEventListener('click', () => {
   ensurePlayers([...m.lineup.map(l => l.player), ...m.goals.map(g => g.player)]);
   const i = db.matches.findIndex(x => x.id === m.id);
   if (i >= 0) db.matches[i] = m; else db.matches.push(m);
-  saveDB();
+  saveDB(`${i >= 0 ? 'Edited' : 'Added'} match v ${m.opponent} (${fmtDate(m.date)})`);
   toast(editingId ? 'Match saved' : 'Match added');
   editorOpen = false; openMatches.add(m.id); collapsedSeasons.delete(m.season || 'Unknown season');
   // show the saved match in context
@@ -1622,11 +1900,13 @@ function seasonStats(matches) {
     const top = Math.max(0, ...goals.values());
     const topNames = top ? Array.from(goals).filter(([, v]) => v === top).map(([n]) => n) : [];
     const pl = s.ms.filter(countsForRecord).length, lu = s.ms.filter(m => m.lineupKnown).length;
-    const lt = db.leagueTables.find(t => t.season === s.season && t.team === s.team && t.division === s.comp)
-      || db.leagueTables.find(t => t.season === s.season && t.team === s.team);
+    const kind = compKind(s.comp), isTableComp = kind === 'league' || kind === 'indoor';
+    const lt = !isTableComp ? null : db.leagueTables.find(t => t.season === s.season && t.team === s.team && t.division === s.comp)
+      || (kind === 'league' ? db.leagueTables.find(t => t.season === s.season && t.team === s.team && !isIndoorTable(t)) : null);
     const row = lt && lt.rows.find(x => CLUB_RE.test(x.team));
+    const outcome = isTableComp ? '' : cupOutcome(s.ms.slice().sort(cupOrder));
     return { ...s, ...r, gd: r.gf - r.ga, pts: r.w * 3 + r.d, top, topNames, coverage: pl ? lu / pl : 0, luText: `${lu}/${pl}`,
-      finish: row ? row.pos : null, of: lt ? lt.rows.length : null };
+      finish: row ? row.pos : null, of: lt ? lt.rows.length : null, outcome };
   });
 }
 
@@ -1676,8 +1956,8 @@ function renderStats() {
     const s = statsSort, tip = statCatTips(ms);
     const cats = statsSurface === 'indoor' ? [['League', 'Domestic'], ['Euro', 'Europe']] : [['League', 'League'], ['Post', 'Play-offs'], ['Cup', 'Cup'], ['County', 'County'], ['Euro', 'Europe']];
     const n = v => v || '';
-    $('#stats-body').innerHTML = `<div class="panel" style="padding:0;"><div class="tbl-wrap"><table class="tbl sortable" id="tbl-players"><thead>
-      <tr class="grp"><th></th><th></th>${showApps ? '<th colspan="${cats.length + 1}" class="c" style="border-bottom:1px solid var(--line);">Appearances</th>' : ''}<th colspan="${cats.length + 1}" class="c" style="border-bottom:1px solid var(--line);">Goals</th>${showApps ? '<th></th>' : ''}<th></th><th></th><th></th></tr>
+    $('#stats-body').innerHTML = `<div class="panel" style="padding:0;"><div class="tbl-wrap"><table class="tbl sortable ctr" id="tbl-players"><thead>
+      <tr class="grp"><th></th><th></th>${showApps ? `<th colspan="${cats.length + 1}" class="c grp-h">Appearances</th>` : ''}<th colspan="${cats.length + 1}" class="c grp-h">Goals</th>${showApps ? '<th></th>' : ''}<th></th><th></th><th></th></tr>
       <tr><th class="n">#</th>${th('name', 'Player', s)}
       ${showApps ? th('apps', 'Total', s, 'n') + cats.map(([k, l]) => th('a' + k, l, s, 'n hide-sm', tip[k])).join('') : ''}
       ${th('goals', 'Total', s, 'n')}${cats.map(([k, l]) => th('g' + k, l, s, 'n', tip[k])).join('')}
@@ -1707,7 +1987,7 @@ function renderStats() {
       ${rows.map(r => r.gap ? `<tr><td>${esc(r.season)}</td><td colspan="12" class="muted">No matches recorded</td></tr>` : `<tr><td>${esc(r.season)}</td><td>${esc(r.team)}</td><td class="hide-sm">${esc(r.comp)}</td>
         <td class="n">${r.p}</td><td class="n">${r.w}</td><td class="n">${r.d}</td><td class="n">${r.l}</td><td class="n">${r.gf}</td><td class="n">${r.ga}</td>
         <td class="n hide-sm">${r.gd > 0 ? '+' : ''}${r.gd}</td>
-        <td class="n">${r.finish ? `${ordinal(r.finish)}<span class="muted small"> of ${r.of}</span>` : '<span class="muted">–</span>'}</td>
+        <td class="n">${r.finish ? `${ordinal(r.finish)}<span class="muted small"> of ${r.of}</span>` : r.outcome ? (r.outcome === 'Winners' ? '<b>Winners</b>' : esc(r.outcome)) : '<span class="muted">–</span>'}</td>
         <td>${r.topNames.length ? r.topNames.map(n => `<button class="link" data-player="${esc(n)}">${esc(n)}</button>`).join(', ') + ` <span class="muted">${r.top}</span>` : '<span class="muted">–</span>'}</td>
         <td class="n hide-sm">${r.luText}</td></tr>`).join('')}
       </tbody></table></div></div>
@@ -1798,11 +2078,28 @@ function renderProfile() {
   const cells = [['Appearances', r.apps], ['Goals', r.goals], ['Seasons', r.nSeasons], ['First season', r.first || '–'], ['Last season', r.last || '–']];
   html += `<div class="record">${cells.map(([l, v]) => `<div><b>${esc(v)}</b><span>${l}</span></div>`).join('')}</div>`;
   const facts = [];
-  if (ms.length) facts.push(`First recorded match: ${fmtDate(ms[0].date)} against ${ms[0].opponent}.`);
-  if (r.goals) facts.push(`Goals: ${[['FG', 'field'], ['PC', 'penalty corner'], ['PS', 'penalty stroke']].filter(([k]) => r[k]).map(([k, l]) => `${r[k]} ${l}`).join(', ') || 'types not recorded'}${r.goals - r.FG - r.PC - r.PS > 0 && (r.FG || r.PC || r.PS) ? `, ${r.goals - r.FG - r.PC - r.PS} not recorded` : ''}.`);
+  if (r.goals && (r.FG || r.PC || r.PS)) facts.push(`Goals: ${[['FG', 'field'], ['PC', 'penalty corner'], ['PS', 'penalty stroke']].filter(([k]) => r[k]).map(([k, l]) => `${r[k]} ${l}`).join(', ') || 'types not recorded'}${r.goals - r.FG - r.PC - r.PS > 0 && (r.FG || r.PC || r.PS) ? `, ${r.goals - r.FG - r.PC - r.PS} not recorded` : ''}.`);
   if (r.gk) facts.push(`Played in goal ${r.gk} time${r.gk === 1 ? '' : 's'}.`);
   if (teams.length > 1) facts.push(`Played for ${teams.join(' and ')}.`);
   if (facts.length) html += `<p style="margin-bottom:18px;">${esc(facts.join(' '))}</p>`;
+
+  // Debut, last match, goals chart, team-mates
+  const cm = r.matches.slice().sort(chrono), deb = cm[0], lst = cm[cm.length - 1];
+  const appsIn = cm.filter(m => m.lineupKnown && m.lineup.some(l => l.player === name));
+  html += `<div class="two-col"><div class="panel"><h2>First and last</h2><p><b>First recorded match:</b> ${mLink(deb)}</p>
+    ${lst !== deb ? `<p style="margin-top:6px;"><b>Last recorded match:</b> ${mLink(lst)}</p>` : ''}
+    ${appsIn.length && appsIn[0] !== deb ? `<p class="muted small" style="margin-top:6px;">First line-up appearance: ${mLink(appsIn[0])}</p>` : ''}</div>`;
+  const bySeas = new Map(); r.bySeason.forEach(x => { const o = bySeas.get(x.season) || { apps: 0, goals: 0 }; o.apps += x.apps; o.goals += x.goals; bySeas.set(x.season, o); });
+  const allS = allSeasons().slice().sort(), sKeys = Array.from(bySeas.keys()).sort(), span = allS.slice(allS.indexOf(sKeys[0]), allS.indexOf(sKeys[sKeys.length - 1]) + 1);
+  const maxG = Math.max(1, ...Array.from(bySeas.values()).map(x => x.goals));
+  html += `<div class="panel"><h2>Goals by season</h2>${r.goals ? `<div class="pl-chart">${span.map(S => { const x = bySeas.get(S) || { goals: 0, apps: 0 };
+      return `<div class="bar" title="${esc(S)}: ${x.goals} goal${x.goals === 1 ? '' : 's'}, ${x.apps} app${x.apps === 1 ? '' : 's'}">${x.goals ? `<span>${x.goals}</span>` : ''}<i style="height:${Math.round(x.goals / maxG * 100)}px"></i></div>`; }).join('')}</div>
+    <div class="pl-chart-x">${span.map((S, i) => `<span>${i === 0 || i === span.length - 1 || span.length <= 12 ? "'" + esc(S.slice(2, 4)) : ''}</span>`).join('')}</div>` : '<p class="muted">No goals recorded.</p>'}</div></div>`;
+  const mates = new Map();
+  appsIn.forEach(m => m.lineup.forEach(l => { if (l.player !== name) mates.set(l.player, (mates.get(l.player) || 0) + 1); }));
+  const mt = Array.from(mates).sort((a, b) => b[1] - a[1] || byName(a[0], b[0])).slice(0, 12);
+  if (mt.length) html += `<div class="panel"><h2>Played most often with</h2><p class="muted small" style="margin-bottom:8px;">Matches together in recorded line-ups (${appsIn.length} with ${esc(name)} in them).</p>
+    <div class="btn-row">${mt.map(([n, c]) => `<span class="tag" style="font-size:13px;padding:3px 8px;">${pLink(n)} ${c}</span>`).join('')}</div></div>`;
 
   const seasons = Array.from(r.bySeason.values()).sort((a, b) => a.season.localeCompare(b.season) || a.team.localeCompare(b.team));
   html += `<div class="panel"><h2>By season</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Season</th><th>Team</th><th class="n">Apps</th><th class="n">Goals</th></tr></thead><tbody>
@@ -1814,7 +2111,7 @@ function renderProfile() {
       const g = m.goals.filter(x => x.player === name).length;
       const inLu = m.lineupKnown && m.lineup.find(l => l.player === name);
       const note = inLu ? (inLu.gk ? 'GK' : '') : (m.lineupKnown ? 'scored, not in lineup' : 'no lineup');
-      return `<tr class="goto" data-match="${m.id}"><td>${esc(fmtDate(m.date))}</td><td class="hide-sm">${esc(m.team)}</td>
+      return `<tr class="goto" data-match="${m.id}"><td>${dateCell(m.date)}</td><td class="hide-sm">${esc(m.team)}</td>
         <td><span class="ha">${m.venue === 'Away' ? 'A' : m.venue === 'Home' ? 'H' : 'N'}</span></td><td>${oppHTML(m.opponent)}</td><td>${scoreHTML(m)}</td>
         <td class="n">${g || ''}</td><td class="small muted hide-sm">${note}</td></tr>`;
     }).join('')}</tbody></table></div></div>`;
@@ -1837,7 +2134,7 @@ $('#pl-profile').addEventListener('click', e => {
   if (e.target.closest('#pl-delete')) {
     if (!confirm(`Delete ${profileName} from the player list?`)) return;
     db.players = db.players.filter(p => p.name !== profileName);
-    saveDB(); editingProfile = false; toast('Player deleted'); show('players', false, ''); return;
+    saveDB(`Deleted player ${profileName}`); editingProfile = false; toast('Player deleted'); show('players', false, ''); return;
   }
   if (e.target.closest('#pl-save')) {
     const from = profileName, to = $('#pl-name').value.trim().replace(/\s+/g, ' '), notes = $('#pl-notes').value.trim();
@@ -1851,10 +2148,11 @@ $('#pl-profile').addEventListener('click', e => {
     const finalName = to === from ? from : (db.players.find(p => p.name.toLowerCase() === to.toLowerCase()) || {}).name || to;
     const pl = db.players.find(p => p.name === finalName);
     if (pl) pl.notes = notes;
-    saveDB(); editingProfile = false; toast(to === from ? 'Player saved' : 'Name updated');
+    saveDB(to === from ? `Edited player ${from}` : `Renamed or merged player ${from} → ${finalName}`); editingProfile = false; toast(to === from ? 'Player saved' : 'Name updated');
     show('players', false, finalName);
     return;
   }
+  const mate = e.target.closest('[data-player]'); if (mate) { openProfile(mate.dataset.player); return; }
   const row = e.target.closest('tr[data-match]');
   if (row) show('match', true, row.dataset.match);
 });
@@ -1900,7 +2198,7 @@ function renderOpponents() {
     ${rows.map(r => {
       const open = openOpps.has(r.name);
       let h = `<tr class="sum-row${open ? ' open' : ''}" data-opp="${esc(r.name)}" style="cursor:pointer;">
-        <td><span class="yr-link${open ? ' open' : ''}">${oppHTML(r.name)}</span> <button class="btn btn-secondary btn-sm" data-opp-page="${esc(r.name)}" style="margin-left:6px;padding:1px 8px;font-size:12px;">Page</button></td>
+        <td><span class="yr-link opp-exp${open ? ' open' : ''}" title="Show matches here"></span><button class="link opp-name" data-opp-page="${esc(r.name)}">${oppHTML(r.name)}</button></td>
         <td class="n">${r.p}</td><td class="n">${r.w}</td><td class="n">${r.d}</td><td class="n">${r.l}</td>
         <td class="n hide-sm">${r.gf}</td><td class="n hide-sm">${r.ga}</td><td class="n hide-sm">${r.gd > 0 ? '+' : ''}${r.gd}</td>
         <td class="n hide-sm">${r.p ? Math.round(r.pct * 100) + '%' : '–'}</td><td>${fd(r.first)}</td><td>${fd(r.last)}</td></tr>`;
@@ -2047,7 +2345,8 @@ function renderLeague() {
     const freeFix = g.tables.some(x => !isPostTable(x) && fixtureRule(x, g.season).mode === 'free');
     const missTag = freeFix ? ` <span class="tag" title="${esc(FREE_FIXTURES_NOTE)}">own fixtures</span>` : miss == null ? '' : miss ? ` <span class="tag miss-badge" title="League games not yet in the archive">${miss} missing</span>` : ' <span class="tag ok-badge edit-only" title="Every league game is in the archive">all games in</span>';
     const outcome = ['champ', 'prom', 'rel'].map(k => MARKS.find(x => x.k === k)).find(mk => mk && leagueTablesOf(g).some(x => ((x.rows.find(r => CLUB_RE.test(r.team)) || {}).marks || []).includes(mk.k)));
-    const div = `${esc(t.division)}${t.stage ? ` <span class="muted small" style="font-weight:400;">${esc(t.stage)}</span>` : ''}${outcome ? ` <span class="tag mk-${outcome.k}">${outcome.label}</span>` : ''}${badge ? badge.split(' · ').map(b => ` <span class="tag ${/winners$/i.test(b) ? 'po-win' : 'po-other'}">${esc(b)}</span>`).join('') : ''}${missTag}`;
+    const multiPh = leagueTablesOf(g).length > 1;
+    const div = `${esc(t.division)}${t.stage && multiPh ? ` <span class="muted small" style="font-weight:400;">${esc(t.stage)}</span>` : ''}${outcome ? ` <span class="tag mk-${outcome.k}">${outcome.label}</span>` : ''}${badge ? badge.split(' · ').map(b => ` <span class="tag ${/winners$/i.test(b) ? 'po-win' : 'po-other'}">${esc(b)}</span>`).join('') : ''}${missTag}`;
     // Colour the summary row by any outcome Reading got in any stage
     // (when a season ends with a National stage, only that table's outcome counts: the regional stage's play-off spot is just the route there)
     const natT = leagueTablesOf(g).find(x => /^national/i.test(x.stage) && x.rows.some(r => CLUB_RE.test(r.team)));
@@ -2061,7 +2360,7 @@ function renderLeague() {
       tgdSum += gd || 0;
       body += `<tr class="sum-row${open ? ' open' : ''} ${markClass({ marks: allMarks }).replace('st-', 'bar-')}" data-season="${esc(g.season)}"><td>${link}</td>
         <td class="n"><strong>${club.pos ?? '–'}</strong><span class="muted" style="font-weight:400;">/${Math.min(...t.rows.map(r => r.pos ?? 1)) === 1 ? t.rows.length : Math.max(...leagueTablesOf(g).map(x => x.rows.length))}</span></td>
-        <td>${div}${line !== club ? ' <span class="muted small" style="font-weight:400;">all phases</span>' : ''}</td>${COLS.map(k => `<td class="n">${line[k] ?? '–'}</td>`).join('')}
+        <td>${div}${line !== club && multiPh ? ' <span class="muted small" style="font-weight:400;">all phases</span>' : ''}</td>${COLS.map(k => `<td class="n">${line[k] ?? '–'}</td>`).join('')}
         <td class="n">${gd == null ? '–' : (gd > 0 ? '+' : '') + gd}</td><td class="n"><strong>${freeFix && line.pct != null ? `<span title="London League placings went by percentage of points won">${line.pct.toFixed(1)}%</span>` : line.pts ?? (line.pct != null ? line.pct.toFixed(1) + '%' : '–')}</strong></td></tr>`;
     } else {
       body += `<tr class="sum-row${open ? ' open' : ''}" data-season="${esc(g.season)}"><td>${link}</td><td colspan="10" class="muted">${esc(t.division)}, no Reading row in this table</td></tr>`;
@@ -2074,7 +2373,7 @@ function renderLeague() {
     <div style="padding:16px 18px 6px;"><h2 style="margin-bottom:2px;">Reading: season by season</h2>
     <p class="muted small">Click a season to see the full league table and Reading's results. Click a result to see the line up and scorers.</p></div>
     <div class="tbl-wrap"><table class="tbl" id="lt-summary"><thead><tr><th>Season</th><th class="n">Pos</th><th>Division</th>
-      <th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n">GD</th><th class="n" title="Points; % for London League seasons, which were placed by percentage">Pts</th></tr></thead>
+      <th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GF</th><th class="n">GA</th><th class="n">GD</th><th class="n" title="Points; % for London League seasons, which were placed by percentage">${db.leagueTables.some(t => t.rows.some(r => r.pct != null && r.pts == null)) ? 'Pts / %' : 'Pts'}</th></tr></thead>
     <tbody>${body}</tbody></table></div>
     <div style="padding:0 18px 12px;">${legendHTML(summaryRows)}</div></div>`;
 }
@@ -2102,7 +2401,7 @@ function cupResultsHTML(ms) {
   return `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th><th>Round</th><th></th><th>Opponent</th><th>Score</th><th></th><th class="c">Line up</th><th class="c">Scorers</th></tr></thead><tbody>
     ${ms.map(m => {
       const res = result(m), open = openLtMatches.has(m.id);
-      return `<tr class="lt-match${open ? ' open' : ''}" data-ltm="${m.id}"><td>${esc(fmtDate(m.date))}</td><td>${esc(m.round || '')}</td>
+      return `<tr class="lt-match${open ? ' open' : ''}" data-ltm="${m.id}"><td>${dateCell(m.date)}</td><td>${esc(m.round || '')}</td>
         <td><span class="ha">${m.venue === 'Away' ? 'A' : m.venue === 'Home' ? 'H' : 'N'}</span></td><td class="opp">${oppHTML(m.opponent)}</td>
         <td>${scoreHTML(m)}</td><td><span class="res ${res}">${res}</span></td>
         <td class="c">${markCell(lineupState(m), 'Line up')}</td><td class="c">${markCell(scorersState(m), 'Scorers')}</td></tr>
@@ -2163,7 +2462,7 @@ $('#ct-body').addEventListener('change', e => {
   const sel = e.target.closest('[data-ct]'); if (!sel) return;
   const c = sel.dataset.ct;
   if (sel.value === autoKind(c)) delete db.compKinds[c]; else db.compKinds[c] = sel.value;
-  saveDB(); renderLeague();
+  saveDB(`Changed competition type of ${c}`); renderLeague();
 });
 $('#lf-kind').addEventListener('click', e => { const b = e.target.closest('[data-kind]'); if (!b) return; leagueKind = b.dataset.kind; openTable = null; renderLeague(); });
 
@@ -2172,7 +2471,7 @@ function resultsTableHTML(ms) {
   return `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th><th></th><th>Opponent</th><th>Score</th><th></th><th class="c">Line up</th><th class="c">Scorers</th></tr></thead><tbody>
     ${ms.map(m => {
       const res = result(m), open = openLtMatches.has(m.id);
-      return `<tr class="lt-match${open ? ' open' : ''}" data-ltm="${m.id}"><td>${esc(fmtDate(m.date))}</td>
+      return `<tr class="lt-match${open ? ' open' : ''}" data-ltm="${m.id}"><td>${dateCell(m.date)}</td>
         <td><span class="ha">${m.venue === 'Away' ? 'A' : m.venue === 'Home' ? 'H' : 'N'}</span></td><td class="opp">${oppHTML(m.opponent)}</td>
         <td>${scoreHTML(m)}</td><td><span class="res ${res}">${res}</span></td>
         <td class="c">${markCell(lineupState(m), 'Line up')}</td><td class="c">${markCell(scorersState(m), 'Scorers')}</td></tr>
@@ -2309,7 +2608,7 @@ function missingHTML(x, label) {
     return `<div class="lt-flag ${done ? 'good' : 'bad'}">Season cut short after ${x.rule.cut} games: <strong>${x.have}</strong> in the archive.${done ? '' : ` ${x.none.length ? ` No game recorded yet against: ${esc(x.none.join(', '))} (not all of these were played before the season stopped).` : ''}`}${extra}</div>`;
   }
   if (!x.gaps.length) return `<div class="lt-flag good">&#10003; All ${x.expected} ${esc(label)} fixtures are in the archive.${extra}</div>`;
-  return `<div class="lt-flag bad"><strong>${x.count} of ${x.expected} games missing</strong> from the archive (${x.rule.mode === 'once' ? 'each team once' : 'home and away'}):
+  return `<div class="lt-flag bad"><strong>${x.count} of ${x.expected} game${x.expected === 1 ? '' : 's'} missing</strong> from the archive (${x.rule.mode === 'once' ? 'each team once' : 'home and away'}):
     ${x.gaps.map(g => `${esc(g.team)}${g.what ? ` <span class="muted">(${g.what})</span>` : ''}`).join(', ')}${extra}</div>`;
 }
 // League (non play-off) matches for a season group
@@ -2519,7 +2818,7 @@ $('#league-body').addEventListener('change', e => {
   if (readOnly) combineView.set(season, cb.checked);
   else {
     db.leagueTables.forEach(t => { if (tableScope(t) && t.season === season && leagueTeamOf(t) === leagueTab) t.combineOff = !cb.checked; });
-    saveDB();
+    saveDB(`Changed table view for ${season}`);
   }
   renderLeague();
 });
@@ -2626,7 +2925,7 @@ $('#lt-cancel').addEventListener('click', () => $('#lt-dialog').close());
 $('#lt-delete').addEventListener('click', () => {
   if (!confirm('Delete this league table?')) return;
   db.leagueTables = db.leagueTables.filter(t => t.id !== editingTable);
-  saveDB(); $('#lt-dialog').close(); toast('Table deleted'); renderLeague();
+  saveDB('Deleted a league table'); $('#lt-dialog').close(); toast('Table deleted'); renderLeague();
 });
 $('#lt-save').addEventListener('click', () => {
   const season = $('#lt-season').value.trim();
@@ -2650,7 +2949,7 @@ $('#lt-save').addEventListener('click', () => {
   if (t.summary) db.leagueTables.forEach(x => { if (x.id !== t.id && x.season === t.season && x.team === t.team) x.summary = false; });
   const i = db.leagueTables.findIndex(x => x.id === t.id);
   if (i >= 0) db.leagueTables[i] = t; else db.leagueTables.push(t);
-  saveDB(); $('#lt-dialog').close(); toast('Table saved');
+  saveDB('Saved a league table'); $('#lt-dialog').close(); toast('Table saved');
   leagueTab = leagueTeamOf(t); openTable = t.season; renderLeague();
 });
 
@@ -2666,6 +2965,7 @@ function renderData() {
   renderGapsSummary();
   $('#data-summary').textContent = `${db.matches.length} matches, ${db.players.length} players, ${db.leagueTables.length} league tables.`;
   renderRenameFrom();
+  renderChecks(); renderCoverage(); renderUndoList();
   const used = new Set();
   db.matches.forEach(m => { m.lineup.forEach(l => used.add(l.player)); m.goals.forEach(g => used.add(g.player)); });
   const orphans = db.players.filter(p => !used.has(p.name)).sort((a, b) => byName(a.name, b.name));
@@ -2682,7 +2982,7 @@ $('#orphans').addEventListener('click', e => {
   if (!e.target.closest('#btn-del-orphans')) return;
   const used = new Set();
   db.matches.forEach(m => { m.lineup.forEach(l => used.add(l.player)); m.goals.forEach(g => used.add(g.player)); });
-  db.players = db.players.filter(p => used.has(p.name)); saveDB(); renderData(); toast('Removed');
+  db.players = db.players.filter(p => used.has(p.name)); saveDB('Removed players with no matches'); renderData(); toast('Removed');
 });
 // ── Spreadsheet import ─────────────────────────────────────────
 // Match template columns (keep in step with reading_hc_match_template.xlsx)
@@ -2699,7 +2999,7 @@ function importSeason(c) {
   const m = /^((?:19|20)\d{2})\s*[-\/–]\s*(\d{2}|\d{4})$/.exec(String(c || '').trim());
   return m ? m[1] + '-' + m[2].slice(-2) : '';
 }
-const STATUS_ALIASES = { 'w/o win': 'Walkover win', 'wo win': 'Walkover win', 'walkover won': 'Walkover win', 'w/o loss': 'Walkover loss', 'wo loss': 'Walkover loss', 'walkover lost': 'Walkover loss', 'conceded': 'Walkover loss' };
+const STATUS_ALIASES = { 'w/o win': 'Walkover win', 'wo win': 'Walkover win', 'walkover won': 'Walkover win', 'w/o loss': 'Walkover loss', 'wo loss': 'Walkover loss', 'walkover lost': 'Walkover loss', 'conceded': 'Walkover loss', 'upcoming': 'Fixture', 'scheduled': 'Fixture', 'fixture': 'Fixture', 'to play': 'Fixture' };
 const pickFrom = (list, c) => { c = String(c || '').trim().toLowerCase(); return list.find(x => x.toLowerCase() === c) || (list === STATUSES && STATUS_ALIASES[c]) || ''; };
 // "Name (GK)", "Name (Sub)", "Name (GK, Sub)"
 function importPlayer(c) {
@@ -2843,7 +3143,7 @@ $('#imp-apply').addEventListener('click', () => {
     }
     ensurePlayers([...x.lineup.map(l => l.player), ...x.goals.map(g => g.player)]); n++;
   });
-  saveDB(); importPlan = []; $('#imp-apply').disabled = true; $('#imp-out').innerHTML = ''; $('#imp-text').value = '';
+  saveDB(`Imported ${n} spreadsheet row${n === 1 ? '' : 's'}`); importPlan = []; $('#imp-apply').disabled = true; $('#imp-out').innerHTML = ''; $('#imp-text').value = '';
   $('#imp-msg').textContent = ''; toast(`${n} matches imported`); renderData();
 });
 
@@ -3188,7 +3488,7 @@ function gapsCSV(rep) {
 function renderGapsSummary() {
   const rep = gapsReport(), n = k => rep.rows.filter(r => r[k] === 'Y' || (k === 'game' && r[k] === 'Y?')).length;
   $('#gaps-summary').textContent = rep.rows.length
-    ? `${n('game')} games missing, ${n('res')} with no result, ${n('sc')} with scorers missing or incomplete, ${n('dup')} venue or duplicate problems, ${n('nodate')} with no date.`
+    ? `${n('game')} game${n('game') === 1 ? '' : 's'} missing, ${n('res')} with no result, ${n('sc')} with scorers missing or incomplete, ${n('dup')} venue or duplicate problems, ${n('nodate')} with no date.`
     : 'Nothing to find: every game, score, scorer and date is in.';
   const free = (rep.summary || []).filter(x => x.freeFix).length;
   const tg = tableGapRows(), bad = tg.filter(x => x.ok !== 'OK').length;
@@ -3220,7 +3520,7 @@ $('#import-file').addEventListener('change', async e => {
     if (!Array.isArray(parsed.matches)) throw new Error('No matches list in this file.');
     const n = normalise(parsed);
     if (!confirm(`Replace the current data with ${n.matches.length} matches, ${n.players.length} players and ${n.leagueTables.length} tables from ${f.name}?`)) return;
-    db = n; saveDB(); refreshDatalists(); if (currentPage === 'data') renderData(); else show(currentPage, false, currentPage === 'opponent' ? oppName : undefined); toast('Data imported');
+    db = n; saveDB(`Replaced data from ${f.name}`); refreshDatalists(); if (currentPage === 'data') renderData(); else show(currentPage, false, currentPage === 'opponent' ? oppName : undefined); toast('Data imported');
   } catch (err) { alert('Couldn\'t import that file: ' + err.message); }
   e.target.value = '';
 });
@@ -3289,7 +3589,7 @@ $('#btn-rename').addEventListener('click', () => {
     db.matches.forEach(m => { if (m.team === from) m.team = to; });
     db.leagueTables.forEach(t => { if (t.team === from) t.team = to; });
   }
-  saveDB(); $('#rn-to').value = ''; renderData(); toast('Renamed');
+  saveDB(`Renamed ${kind} "${from}" → "${to}"${scope ? ' (' + scope + ')' : ''}`); $('#rn-to').value = ''; renderData(); toast('Renamed');
 });
 
 // ════════════════════════════════════════════════════════════
@@ -3301,9 +3601,15 @@ function renderHome() {
   const goals = db.matches.reduce((t, m) => t + m.goals.filter(g => !SPECIAL.includes(g.player)).length, 0);
   const luPlayed = db.matches.filter(canHaveLineup);
   const luHave = luPlayed.filter(m => m.lineupKnown && m.lineup.length).length;
-  $('#home-summary').innerHTML = n ? `<div class="record">${[['Matches', n], ['Lineups', luHave], ['No lineup', luPlayed.length - luHave], ['Seasons', seasons.length], ['First season', seasons[0] || '–'],
-    ['Latest season', seasons[seasons.length - 1] || '–'], ['Players', uniq(db.matches.flatMap(m => m.goals.map(g => g.player).concat(m.lineup.map(l => l.player)))).filter(x => !SPECIAL.includes(x)).length], ['Goals credited', goals], ['No known scorer', goalGap(db.matches).missing]]
-    .map(([l, v]) => `<div><b>${esc(v)}</b><span>${l}</span></div>`).join('')}</div>` : '';
+  const lp = db.matches.filter(canHaveLineup).filter(countsForRecord), lok = lp.filter(m => lineupState(m) === 'ok').length;
+  const gg = goalGap(db.matches), gc = gg.credited + gg.og, pct = (x, d) => d ? Math.round(x / d * 100) : 0;
+  const nPl = uniq(db.matches.flatMap(m => m.goals.map(g => g.player).concat(m.lineup.map(l => l.player)))).filter(x => !SPECIAL.includes(x)).length;
+  const cell = (l, v, sub, p) => `<div><b>${esc(v)}</b><span>${l}</span>${sub ? `<em class="rec-sub">${sub}</em><span class="pbar rec-bar" title="${p}%"><i style="width:${p}%"></i></span>` : ''}</div>`;
+  $('#home-summary').innerHTML = n ? `<div class="record home-rec">${[
+    cell('Seasons', seasons.length), cell('First season', seasons[0] || '–'),
+    cell('Matches', lp.length.toLocaleString('en-GB'), `${lok.toLocaleString('en-GB')} with line-up · ${pct(lok, lp.length)}%`, pct(lok, lp.length)),
+    cell('Players', nPl),
+    cell('Goals scored', gg.total.toLocaleString('en-GB'), `${gc.toLocaleString('en-GB')} with scorer known · ${pct(gc, gg.total)}%`, pct(gc, gg.total))].join('')}</div>` : '';
   const status = n ? `<p class="data-ok">Data loaded: ${n} matches, ${db.leagueTables.length} tables.</p>` : `<p class="data-none">No data loaded yet. Follow the steps below.</p>`;
   let html;
   if (embeddedCopy) {
@@ -3331,6 +3637,7 @@ function renderHome() {
       </div>`;
   }
   $('#home-data').innerHTML = html;
+  renderOnThisDay(); renderHomeExtras();
 }
 $('#home-data').addEventListener('click', e => {
   const b = e.target.closest('[data-home]'); if (!b) return;
@@ -3374,7 +3681,7 @@ function renderMatchPage() {
   const around = meets.filter(x => x !== m).sort((a, b) => Math.abs(meets.indexOf(a) - meets.indexOf(m)) - Math.abs(meets.indexOf(b) - meets.indexOf(m))).slice(0, 6).sort((a, b) => key(a).localeCompare(key(b)));
   let html = `<button class="back-link" data-mp-back>← All matches</button>
     <div class="mp-nav">${navBtn(prev, 'prev')}${navBtn(next, 'next')}</div>
-    <p class="muted" style="margin:6px 0 2px;">${esc(fmtDate(m.date))} · ${esc(m.team)} · <button class="link" data-mp-season="${esc(m.season)}">${esc(m.season)}</button></p>
+    <p class="muted" style="margin:6px 0 2px;">${esc(fmtDate(m.date))} · ${esc(m.team)} · <button class="link" data-season-page="${esc(m.season)}">${esc(m.season)}</button></p>
     <div class="pl-head"><h1>${title}</h1></div>
     <p class="lede">${scoreHTML(m)} ${res ? `<span class="res ${res}">${res}</span> ${resWord}` : ''}</p>
     <p>${esc(m.competition)}${tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')} · ${esc(m.venue === 'Home' ? 'Home' : m.venue === 'Away' ? 'Away' : 'Neutral venue')}</p>
@@ -3396,6 +3703,390 @@ $('#match-page').addEventListener('click', e => {
   const ed = e.target.closest('[data-edit]'); if (ed) { openEditor(ed.dataset.edit); return; }
 });
 
+// ════════════════════════════════════════════════════════════
+// SHARED HELPERS (season, records, checks)
+// ════════════════════════════════════════════════════════════
+const mKey = m => (m.date || (m.season || '') + '-99') + (m.id || '');
+const chrono = (a, b) => mKey(a).localeCompare(mKey(b));
+const fixtureTxt = m => m.venue === 'Away' ? `${m.opponent} v Reading` : `Reading v ${m.opponent}`;
+const scoreTxt = m => m.gf == null || m.ga == null ? '' : m.venue === 'Away' ? `${m.ga}-${m.gf}` : `${m.gf}-${m.ga}`;
+const mLink = (m, txt) => `<button class="link" data-mlink="${m.id}">${esc(txt != null ? txt : `${fmtDate(m.date)}: ${fixtureTxt(m)} ${scoreTxt(m)}`)}</button>`;
+const pLink = n => SPECIAL.includes(n) ? `<em>${esc(n)}</em>` : `<button class="link" data-player="${esc(n)}">${esc(n)}</button>`;
+
+// ════════════════════════════════════════════════════════════
+// SEASON PAGE
+// ════════════════════════════════════════════════════════════
+function renderSeasonPage() {
+  const el = $('#season-page'), S = seasonKey;
+  const inSeason = db.matches.filter(m => m.season === S);
+  const teams = uniq(inSeason.map(m => m.team)).sort((a, b) => DEFAULT_TEAMS.indexOf(a) - DEFAULT_TEAMS.indexOf(b) || a.localeCompare(b));
+  if (!teams.includes(seasonTeam)) seasonTeam = teams[0] || '';
+  const teamMs = inSeason.filter(m => m.team === seasonTeam).sort(chrono);
+  const compsAll = uniq(teamMs.map(m => m.competition)).sort((a, b) => KINDS.indexOf(compKind(a)) - KINDS.indexOf(compKind(b)) || a.localeCompare(b));
+  if (seasonComp && !compsAll.includes(seasonComp)) seasonComp = '';
+  const ms = teamMs.filter(m => !seasonComp || m.competition === seasonComp);
+  const all = allSeasons().slice().sort(), i = all.indexOf(S), prev = all[i - 1], next = all[i + 1];
+  const nb = (x, d) => x ? `<button class="btn btn-secondary btn-sm" data-season-page="${esc(x)}">${d === 'p' ? '← ' : ''}${esc(x)}${d === 'n' ? ' →' : ''}</button>` : '<span></span>';
+  let html = `<button class="back-link" data-sp-back>← All matches</button><div class="mp-nav">${nb(prev, 'p')}${nb(next, 'n')}</div>
+    <h1>${esc(S)}</h1>`;
+  if (teams.length > 1) html += `<div class="seg" id="sp-team" style="margin-bottom:14px;">${teams.map(t => `<button data-t="${esc(t)}" class="${t === seasonTeam ? 'on' : ''}">${esc(t)}</button>`).join('')}</div>`;
+  if (compsAll.length > 1) html += `<div class="seg" id="sp-comp" style="margin-bottom:14px;flex-wrap:wrap;"><button data-c="" class="${seasonComp ? '' : 'on'}">All competitions</button>${compsAll.map(c => `<button data-c="${esc(c)}" class="${c === seasonComp ? 'on' : ''}">${esc(c)}</button>`).join('')}</div>`;
+  html += recordStrip(recordOf(ms));
+  // How the season went
+  const facts = [];
+  const tabs = db.leagueTables.filter(t => t.season === S && leagueTeamOf(t) === seasonTeam);
+  [[tabs.filter(t => !isIndoorTable(t)), ''], [tabs.filter(isIndoorTable), 'indoor ']].forEach(([ts, lab]) => {
+    if (seasonComp) ts = ts.filter(t => t.division === seasonComp);
+    if (!ts.length) return;
+    const t = summaryTable({ season: S, tables: ts }); const row = t && t.rows.find(r => CLUB_RE.test(r.team));
+    const lastS = ms.filter(m => m.date && countsForRecord(m)).sort(chrono).pop();
+    const verb = lastS && (Date.now() - new Date(lastS.date)) < 120 * 864e5 ? 'Currently' : 'Finished';
+    if (row && row.pos) facts.push(`${verb} ${ordinal(row.pos)} of ${t.rows.length} in the ${/indoor/i.test(t.division) ? '' : lab}${t.division}${t.stage && ts.length > 1 && !lab ? ' (' + t.stage + ')' : ''}.`);
+  });
+  const comps = uniq(ms.map(m => m.competition));
+  comps.forEach(c => {
+    const k = compKind(c); if (k === 'league' || k === 'indoor') return;
+    const cm = ms.filter(m => m.competition === c).sort(cupOrder), o = cupOutcome(cm);
+    if (o) facts.push(`${c}: ${o}.`);
+  });
+  const big = ms.filter(m => m.status === 'Played' && m.gf != null && m.ga != null);
+  const bw = big.slice().sort((a, b) => (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf)[0];
+  if (bw && bw.gf > bw.ga) facts.push(`Biggest win: ${bw.gf}-${bw.ga} v ${bw.opponent}.`);
+  if (facts.length) html += `<p style="margin-bottom:16px;">${esc(facts.join(' '))}</p>`;
+  // Coverage
+  const luM = ms.filter(canHaveLineup).filter(countsForRecord), luOk = luM.filter(m => lineupState(m) === 'ok').length;
+  const scM = ms.filter(m => scorersState(m)), scOk = scM.filter(m => scorersState(m) === 'ok').length;
+  const sgg = goalGap(ms), noLuS = luM.filter(m => !m.lineupKnown || !m.lineup.length).length;
+  html += `<div class="coverage">${luOk} of ${luM.length} line-ups complete${noLuS ? ` (${noLuS} with no line-up at all)` : ''}. ${scOk} of ${scM.length} matches have every scorer known${sgg.missing ? `; ${sgg.missing} goal${sgg.missing === 1 ? '' : 's'} ${sgg.missing === 1 ? 'is' : 'are'} unaccounted for` : ''}.</div>`;
+  // Leaders
+  const st = playerStats(ms, false);
+  const lead = (rows, key, lab) => rows.filter(r => r[key] > 0).sort((a, b) => b[key] - a[key] || byName(a.name, b.name)).slice(0, 10)
+    .map(r => `<tr><td>${pLink(r.name)}</td><td class="n">${r[key]}</td></tr>`).join('') || `<tr><td class="muted">None recorded</td><td></td></tr>`;
+  const anyApps = st.some(r => r.apps > 0);
+  html += `<div class="${anyApps ? 'two-col' : ''}"><div class="panel"><h2>Top scorers</h2><table class="tbl"><tbody>${lead(st, 'goals')}</tbody></table></div>
+    ${anyApps ? `<div class="panel"><h2>Most appearances</h2><table class="tbl"><tbody>${lead(st, 'apps')}</tbody></table>${luOk < luM.length ? '<p class="muted small" style="margin-top:6px;">Only matches with a recorded line-up count.</p>' : ''}</div>` : ''}</div>`;
+  // Results, one block per competition
+  const resTable = list => { const hasRd = list.some(m => m.round || m.stage); return `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th>${hasRd ? '<th>Round</th>' : ''}<th></th><th>Opponent</th><th>Score</th><th></th><th class="hide-sm">Scorers</th><th class="c">Line up</th></tr></thead><tbody>
+    ${list.map(m => { const r = result(m); const sc = scorerGroups(m).map(g => g.player + (g.goals.length > 1 ? ' ' + g.goals.length : '')).join(', ');
+      return `<tr class="goto" data-sp-match="${m.id}"><td>${dateCell(m.date)}</td>${hasRd ? `<td>${m.round ? `<span class="tag">${esc(m.round)}</span>` : m.stage ? `<span class="tag">${esc(m.stage)}</span>` : ''}</td>` : ''}
+      <td><span class="ha">${m.venue === 'Home' ? 'H' : m.venue === 'Away' ? 'A' : 'N'}</span></td><td>${oppHTML(m.opponent)}</td><td>${scoreHTML(m)}</td>
+      <td>${r ? `<span class="res ${r}">${r}</span>` : ''}</td><td class="hide-sm small">${esc(sc)}</td><td class="c">${markCell(lineupState(m), 'Line up')}</td></tr>`; }).join('')}
+    </tbody></table></div>`; };
+  uniq(ms.map(m => m.competition)).sort((x, y) => compsAll.indexOf(x) - compsAll.indexOf(y)).forEach(c => {
+    const list = ms.filter(m => m.competition === c), r = recordOf(list), cg = goalGap(list);
+    const k = compKind(c), out = k !== 'league' && k !== 'indoor' ? cupOutcome(list.slice().sort(cupOrder)) : '';
+    const top = playerStats(list, false).filter(x => x.goals).sort((a, b) => b.goals - a.goals || byName(a.name, b.name)).slice(0, 3);
+    html += `<div class="panel"><h2>${esc(c)} <span class="tag">${esc(KIND_LABEL[k] || '')}</span></h2>
+      <p class="small" style="margin-bottom:8px;">P ${r.p}, W ${r.w}, D ${r.d}, L ${r.l}, goals ${r.gf}–${r.ga}${out ? ` · <b>${esc(out)}</b>` : ''}${top.length ? ` · Top scorer${top.length > 1 ? 's' : ''}: ${top.map(x => `${pLink(x.name)} ${x.goals}`).join(', ')}` : ''}${cg.missing ? ` · <span class="muted">${cg.missing} goal${cg.missing === 1 ? '' : 's'} with no known scorer</span>` : ''}</p>
+      ${resTable(list)}</div>`;
+  });
+  el.innerHTML = html;
+}
+$('#season-page').addEventListener('click', e => {
+  const t = e.target.closest('#sp-team button'); if (t) { seasonTeam = t.dataset.t; seasonComp = ''; renderSeasonPage(); return; }
+  const c = e.target.closest('#sp-comp button'); if (c) { seasonComp = c.dataset.c; renderSeasonPage(); return; }
+  if (e.target.closest('[data-sp-back]')) { show('matches'); return; }
+  const pl = e.target.closest('[data-player]'); if (pl) { openProfile(pl.dataset.player); return; }
+  const r = e.target.closest('[data-sp-match]'); if (r) show('match', true, r.dataset.spMatch);
+});
+
+// ════════════════════════════════════════════════════════════
+// ON THIS DAY (home)
+// ════════════════════════════════════════════════════════════
+function renderOnThisDay() {
+  const el = $('#home-otd'); if (!el) return;
+  if (!db.matches.length) { el.hidden = true; return; }
+  const now = new Date(), md = d => d.toISOString().slice(5, 10);
+  const today = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const dated = db.matches.filter(m => m.date && m.date.length === 10);
+  let list = dated.filter(m => m.date.slice(5) === today), head = 'On this day';
+  if (!list.length) {
+    for (let k = 1; k <= 7 && !list.length; k++) {
+      const d = new Date(Date.UTC(2001, now.getMonth(), now.getDate() + k)), x = md(d);
+      list = dated.filter(m => m.date.slice(5) === x);
+      if (list.length) head = `Coming up: ${d.getUTCDate()} ${d.toLocaleString('en-GB', { month: 'long', timeZone: 'UTC' })}`;
+    }
+  }
+  el.hidden = false;
+  if (!list.length) { el.innerHTML = '<h2>On this day</h2><p class="muted">No matches on this date or in the week ahead.</p>'; return; }
+  list.sort((a, b) => b.date.localeCompare(a.date));
+  el.innerHTML = `<h2>${esc(head)}</h2><div class="tbl-wrap"><table class="tbl"><tbody>${list.slice(0, 12).map(m => { const r = result(m);
+    const sc = scorerGroups(m).filter(g => !SPECIAL.includes(g.player)).map(g => g.player + (g.goals.length > 1 ? ' ' + g.goals.length : '')).join(', ');
+    return `<tr class="goto" data-mlink="${m.id}"><td><b>${m.date.slice(0, 4)}</b></td><td>${m.venue === 'Away' ? `${oppHTML(m.opponent)} v Reading` : `Reading v ${oppHTML(m.opponent)}`}</td>
+      <td>${scoreHTML(m)}</td><td>${r ? `<span class="res ${r}">${r}</span>` : ''}</td><td class="hide-sm small muted">${esc(m.competition)}${sc ? ' · ' + esc(sc) : ''}</td></tr>`; }).join('')}</tbody></table></div>
+    ${list.length > 12 ? `<p class="muted small">And ${list.length - 12} more.</p>` : ''}`;
+}
+
+// ════════════════════════════════════════════════════════════
+// RECORDS
+// ════════════════════════════════════════════════════════════
+let recSurface = 'outdoor', recTeam = '';
+function runs(ms, test) {
+  let best = { n: 0 }, cur = [];
+  ms.forEach(m => { const r = result(m); if (!r) return; if (test(r)) { cur.push(m); if (cur.length > best.n) best = { n: cur.length, from: cur[0], to: m }; } else cur = []; });
+  const ongoing = cur.length && best.to === cur[cur.length - 1];
+  return { ...best, ongoing };
+}
+function renderRecords() {
+  const teams = allTeams().filter(t => db.matches.some(m => m.team === t));
+  if (!teams.includes(recTeam)) recTeam = teams.includes("Men's 1s") ? "Men's 1s" : teams[0] || '';
+  $('#rc-team').innerHTML = teams.map(t => `<option ${t === recTeam ? 'selected' : ''}>${esc(t)}</option>`).join('');
+  const kinds = KINDS.filter(k => db.matches.some(m => m.team === recTeam && compKind(m.competition) === k));
+  if (!['outdoor', 'indoor', 'all', ...kinds].includes(recSurface)) recSurface = 'outdoor';
+  $('#rc-kind').innerHTML = [['outdoor', 'All outdoor'], ['indoor', 'All indoor'], ['all', 'Everything'], ...kinds.map(k => [k, KIND_LABEL[k] + (k === 'league' ? ' (incl. play-offs)' : '')])]
+    .map(([v, l]) => `<option value="${v}" ${v === recSurface ? 'selected' : ''}>${esc(l)}</option>`).join('');
+  const inScope = m => recSurface === 'all' || (recSurface === 'outdoor' ? !isIndoor(m) : recSurface === 'indoor' ? isIndoor(m) : compKind(m.competition) === recSurface);
+  const ms = db.matches.filter(m => m.team === recTeam && inScope(m)).sort(chrono);
+  const rec = ms.filter(countsForRecord), sc = rec.filter(m => m.status === 'Played' && m.gf != null && m.ga != null);
+  const plural = (n, w) => `${n} ${w}${n === 1 ? '' : /(ch|sh|s|x)$/.test(w) ? 'es' : 's'}`;
+  const noScore = rec.filter(m => m.status === 'Played' && (m.gf == null || m.ga == null)).length;
+  const undated = rec.filter(m => !m.date).length;
+  const luPlayed = ms.filter(canHaveLineup).filter(countsForRecord), noLu = luPlayed.filter(m => !m.lineupKnown || !m.lineup.length).length, partLu = luPlayed.filter(m => lineupState(m) === 'part').length;
+  const gg = goalGap(ms);
+  const gapNote = parts => { parts = parts.filter(Boolean); return parts.length ? `<p class="gap-note">${parts.join(' ')}</p>` : ''; };
+  const scoreGap = noScore ? `${plural(noScore, 'match')} ${noScore === 1 ? 'has' : 'have'} no score recorded, so ${noScore === 1 ? "isn't" : "aren't"} included.` : '';
+  const goalGapTxt = gg.missing ? `${plural(gg.missing, 'goal')} across ${plural(gg.matches, 'match')} ${gg.missing === 1 ? 'has' : 'have'} no known scorer, so goal totals are a minimum.` : '';
+  const luGap = noLu || partLu ? `${plural(noLu, 'match')} ${noLu === 1 ? 'has' : 'have'} no line-up${partLu ? ` and ${partLu} ${partLu === 1 ? 'has' : 'have'} an incomplete one` : ''}, out of ${luPlayed.length} played, so appearance totals are a minimum.` : '';
+  const runGap = [noScore ? `${plural(noScore, 'match')} with no score ${noScore === 1 ? 'is' : 'are'} skipped.` : '', undated ? `${plural(undated, 'match')} with no date ${undated === 1 ? 'is' : 'are'} placed at the end of ${undated === 1 ? 'its' : 'their'} season.` : ''].join(' ').trim();
+  const list = (rows, val) => rows.length ? `<ol class="rec-list">${rows.map(m => `<li><span class="rv">${esc(val(m))}</span><span class="rt">${mLink(m, `${fmtDate(m.date)}: ${fixtureTxt(m)}`)} <span class="muted small">${esc(m.competition)}</span></span></li>`).join('')}</ol>` : '<p class="muted">None.</p>';
+  const top = (arr, f) => arr.slice().sort(f).slice(0, 10);
+  const wins = top(sc.filter(m => m.gf > m.ga), (a, b) => (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf || chrono(a, b));
+  const losses = top(sc.filter(m => m.ga > m.gf), (a, b) => (b.ga - b.gf) - (a.ga - a.gf) || b.ga - a.ga || chrono(a, b));
+  const most = top(sc, (a, b) => b.gf - a.gf || chrono(a, b));
+  const tot = top(sc, (a, b) => (b.gf + b.ga) - (a.gf + a.ga) || chrono(a, b));
+  const runRow = (lab, x) => `<tr><td>${lab}</td><td class="n"><b>${x.n || 0}</b></td><td>${x.n ? `${mLink(x.from, fmtDate(x.from.date))} to ${mLink(x.to, fmtDate(x.to.date))}${x.ongoing ? ' <span class="tag">current</span>' : ''}` : ''}</td></tr>`;
+  if (!ms.length) { $('#records-body').innerHTML = '<div class="empty">No matches in this selection.</div>'; return; }
+  let html = `<div class="coverage">${plural(rec.length, 'match')} in this selection. ${[scoreGap, goalGapTxt, luGap].filter(Boolean).join(' ') || 'Scores, scorers and line-ups are all complete.'}</div>
+    <div class="two-col"><div class="panel"><h2>Biggest wins</h2>${list(wins, m => `${m.gf}-${m.ga}`)}</div><div class="panel"><h2>Heaviest defeats</h2>${list(losses, m => `${m.gf}-${m.ga}`)}</div></div>
+    <div class="two-col"><div class="panel"><h2>Most goals scored</h2>${list(most, m => `${m.gf}-${m.ga}`)}</div><div class="panel"><h2>Highest-scoring games</h2>${list(tot, m => `${m.gf + m.ga} goals`)}</div></div>
+    ${gapNote([scoreGap])}
+    <div class="panel"><h2>Runs</h2><p class="muted small" style="margin-bottom:8px;">Consecutive matches in date order, across the selected competitions. ${esc(runGap)}</p>
+    <table class="tbl"><tbody>${runRow('Winning run', runs(rec, r => r === 'W'))}${runRow('Unbeaten run', runs(rec, r => r !== 'L'))}${runRow('Losing run', runs(rec, r => r === 'L'))}${runRow('Without a win', runs(rec, r => r !== 'W'))}</tbody></table></div>`;
+  // Hat-tricks
+  const hats = [];
+  ms.forEach(m => { const c = new Map(); m.goals.forEach(g => { if (!SPECIAL.includes(g.player) && !g.player.includes('?')) c.set(g.player, (c.get(g.player) || 0) + 1); }); c.forEach((n, p) => { if (n >= 3) hats.push({ p, n, m }); }); });
+  const hc = new Map(); hats.forEach(h => hc.set(h.p, (hc.get(h.p) || 0) + 1));
+  const hcTop = Array.from(hc).sort((a, b) => b[1] - a[1] || byName(a[0], b[0])).slice(0, 10);
+  const hatsShown = hats.slice().sort((a, b) => b.n - a.n || chrono(b.m, a.m));
+  html += `<div class="two-col"><div class="panel"><h2>Hat-tricks (${hats.length})</h2>${hats.length ? `<div class="scroll-box"><ol class="rec-list">${hatsShown.map(h => `<li><span class="rv">${h.n}</span><span class="rt">${pLink(h.p)} · ${mLink(h.m, `${fmtDate(h.m.date)} v ${h.m.opponent}`)}</span></li>`).join('')}</ol></div>` : '<p class="muted">None recorded.</p>'}</div>
+    <div class="panel"><h2>Most hat-tricks</h2>${hcTop.length ? `<table class="tbl"><tbody>${hcTop.map(([p, n]) => `<tr><td>${pLink(p)}</td><td class="n">${n}</td></tr>`).join('')}</tbody></table>` : '<p class="muted">None recorded.</p>'}</div></div>
+    ${gapNote([goalGapTxt ? goalGapTxt.replace('goal totals are a minimum', 'some hat-tricks may be missing') : ''])}`;
+  // Leaders and milestones
+  const st = playerStats(ms, false);
+  const lead = key => st.filter(r => r[key] > 0).sort((a, b) => b[key] - a[key] || byName(a.name, b.name)).slice(0, 15).map(r => `<tr><td>${pLink(r.name)}</td><td class="n">${r[key]}</td><td class="small muted">${esc(r.first)}${r.last !== r.first ? '–' + esc(r.last.slice(-2)) : ''}</td></tr>`).join('');
+  html += `<div class="two-col"><div class="panel"><h2>Most appearances</h2><table class="tbl"><tbody>${lead('apps')}</tbody></table>${gapNote([luGap])}</div><div class="panel"><h2>Most goals</h2><table class="tbl"><tbody>${lead('goals')}</tbody></table>${gapNote([goalGapTxt])}</div></div>`;
+  $('#records-body').innerHTML = html;
+}
+$('#rc-team').addEventListener('change', e => { recTeam = e.target.value; renderRecords(); });
+$('#rc-kind').addEventListener('change', e => { recSurface = e.target.value; renderRecords(); });
+$('#records-body').addEventListener('click', e => { const pl = e.target.closest('[data-player]'); if (pl) openProfile(pl.dataset.player); });
+
+// ════════════════════════════════════════════════════════════
+// DATA CHECK, COVERAGE MAP, CHANGE LOG
+// ════════════════════════════════════════════════════════════
+const NICK = { tom: 'thomas', tommy: 'thomas', tim: 'timothy', timmy: 'timothy', jon: 'jonathan', jonny: 'jonathan', johnny: 'jonathan', olly: 'oliver', ollie: 'oliver', ali: 'alistair', alastair: 'alistair', alex: 'alexander', nick: 'nicholas', rick: 'richard', rich: 'richard', mike: 'michael', micky: 'michael', mick: 'michael', chris: 'christopher', dave: 'david', dan: 'daniel', danny: 'daniel', andy: 'andrew', matt: 'matthew', steve: 'stephen', sam: 'samuel', ben: 'benjamin', will: 'william', bill: 'william', ed: 'edward', eddie: 'edward', jim: 'james', jamie: 'james', pat: 'patrick', paddy: 'patrick', rob: 'robert', bob: 'robert', charlie: 'charles', tony: 'anthony', pete: 'peter', josh: 'joshua', jack: 'john', ian: 'iain', max: 'maximilian', phil: 'philip', jeff: 'geoffrey', geoff: 'geoffrey', greg: 'gregory', joe: 'joseph', nat: 'nathan' };
+function lev(a, b) { const d = Array.from({ length: b.length + 1 }, (_, i) => i); for (let i = 1; i <= a.length; i++) { let p = d[0]; d[0] = i; for (let j = 1; j <= b.length; j++) { const t = d[j]; d[j] = Math.min(d[j] + 1, d[j - 1] + 1, p + (a[i - 1] === b[j - 1] ? 0 : 1)); p = t; } } return d[b.length]; }
+let ignoredChecks = new Set();
+const syncIgnored = () => { ignoredChecks = new Set(db.ignoredChecks || []); };
+function dataChecks() {
+  syncIgnored();
+  const C = [];
+  const add = (cat, key, html) => { if (!ignoredChecks.has(key)) C.push({ cat, key, html }); };
+  const ml = m => mLink(m);
+  const todayIso = new Date().toISOString().slice(0, 10);
+  db.matches.forEach(m => {
+    if (m.status === 'Fixture' && m.date && m.date < todayIso) add('Fixture date has passed: add the result', 'fx:' + m.id, ml(m));
+    const credited = m.goals.length;
+    if (m.status === 'Played' && m.gf != null && credited > m.gf) add('More scorers than goals', 'sg:' + m.id, `${ml(m)}: ${credited} scorers listed for ${m.gf} goal${m.gf === 1 ? '' : 's'}`);
+    if (m.lineupKnown) {
+      const names = m.lineup.map(l => l.player), dup = names.filter((n, i) => names.indexOf(n) !== i);
+      if (dup.length) add('Player listed twice in a line-up', 'dl:' + m.id, `${ml(m)}: ${esc(uniq(dup).join(', '))}`);
+      if (m.lineupComplete && !isIndoor(m) && m.lineup.length < 11) add('Line-up ticked complete with fewer than 11', 'lc:' + m.id, `${ml(m)}: ${m.lineup.length} players`);
+      if (lineupState(m) === 'ok' && !m.lineup.some(l => l.gk)) add('Complete line-up with no goalkeeper ticked', 'gk:' + m.id, ml(m));
+      if (lineupState(m) === 'ok') {
+        const miss = uniq(m.goals.map(g => g.player).filter(n => !SPECIAL.includes(n) && !n.includes('?') && !names.includes(n)));
+        if (miss.length) add('Scorer not in a complete line-up', 'sl:' + m.id, `${ml(m)}: ${miss.map(pLink).join(', ')}`);
+      }
+    }
+    if (m.date && m.season && seasonFromDate(m.date) && seasonFromDate(m.date) !== m.season && !/^\d{4}$/.test(m.season)) add('Date outside its season', 'ds:' + m.id, `${ml(m)}: in ${esc(m.season)}`);
+  });
+  const seen = new Map();
+  db.matches.forEach(m => { if (!m.date) return; const k = m.team + '|' + m.date + '|' + m.opponent; if (seen.has(k)) add('Possible duplicate match', 'dm:' + m.id, `${ml(seen.get(k))} and ${mLink(m, 'this one')}`); else seen.set(k, m); });
+  // Players
+  const apps = new Map(); db.matches.forEach(m => uniq([...m.lineup.map(l => l.player), ...m.goals.map(g => g.player)]).forEach(n => apps.set(n, (apps.get(n) || 0) + 1)));
+  db.players.filter(p => p.name.startsWith('?') && (apps.get(p.name) || 0) === 1).sort((a, b) => byName(a.name, b.name))
+    .forEach(p => add('One-match players with no first name', 'q1:' + p.name, pLink(p.name)));
+  const names = db.players.map(p => p.name).filter(n => n.includes(' '));
+  const sur = n => n.split(' ').pop().toLowerCase(), first = n => n.split(' ')[0].toLowerCase().replace(/\.$/, '');
+  for (let i = 0; i < names.length; i++) for (let j = i + 1; j < names.length; j++) {
+    const a = names[i], b = names[j], sa = sur(a), sb = sur(b), fa = first(a), fb = first(b);
+    const sameFirst = fa === '?' || fb === '?' || (NICK[fa] || fa) === (NICK[fb] || fb) || fa.slice(0, 3) === fb.slice(0, 3);
+    const close = sa === sb ? sameFirst : (sa.length > 4 && lev(sa, sb) <= 1 && (sameFirst || fa === fb));
+    if (close) { const k = 'nd:' + [a, b].sort().join('|'); add('Possible duplicate players', k, `${pLink(a)} (${apps.get(a) || 0}) and ${pLink(b)} (${apps.get(b) || 0})`); }
+  }
+  return C;
+}
+function renderChecks() {
+  const el = $('#checks'); if (!el) return;
+  const C = dataChecks(), cats = uniq(C.map(c => c.cat));
+  if (!C.length) { el.innerHTML = `<p class="data-ok">No problems found.</p>${ignoredChecks.size ? `<button class="btn btn-secondary btn-sm" data-ck-reset>Show ${ignoredChecks.size} ignored</button>` : ''}`; return; }
+  el.innerHTML = cats.map(cat => { const items = C.filter(c => c.cat === cat);
+    return `<details class="ck"><summary><b>${esc(cat)}</b> <span class="tag">${items.length}</span></summary><ul class="ck-list">${items.map(c => `<li>${c.html} <button class="x small" data-ck-ignore="${esc(c.key)}" title="Not a problem: hide this">ignore</button></li>`).join('')}</ul></details>`; }).join('')
+    + (ignoredChecks.size ? `<p class="muted small" style="margin-top:8px;">${ignoredChecks.size} ignored. <button class="link" data-ck-reset>Show them again</button></p>` : '');
+}
+$('#checks') && $('#checks').addEventListener('click', e => {
+  const ig = e.target.closest('[data-ck-ignore]');
+  if (ig) { db.ignoredChecks = uniq([...(db.ignoredChecks || []), ig.dataset.ckIgnore]); saveDB('Marked a data check as not a problem'); const open = [...$$('#checks details[open] summary b')].map(b => b.textContent); renderChecks(); $$('#checks details').forEach(d => { if (open.includes(d.querySelector('summary b').textContent)) d.open = true; }); return; }
+  if (e.target.closest('[data-ck-reset]')) { db.ignoredChecks = []; saveDB('Showed ignored data checks again'); renderChecks(); return; }
+  const pl = e.target.closest('[data-player]'); if (pl) openProfile(pl.dataset.player);
+});
+let covWhat = 'lineup';
+function renderCoverage() {
+  const el = $('#coverage'); if (!el) return;
+  $$('#cov-what button').forEach(b => b.classList.toggle('on', b.dataset.w === covWhat));
+  const MONTHS = [['Aug', 8], ['Sep', 9], ['Oct', 10], ['Nov', 11], ['Dec', 12], ['Jan', 1], ['Feb', 2], ['Mar', 3], ['Apr', 4], ['May', 5], ['Jun–Jul', 6]];
+  const col = m => { if (!m.date) return 'nd'; const mo = +m.date.slice(5, 7); return mo === 7 ? 6 : mo; };
+  const good = m => covWhat === 'lineup' ? lineupState(m) === 'ok' : scorersState(m) === 'ok';
+  const ms = db.matches.filter(countsForRecord).filter(m => covWhat === 'lineup' ? canHaveLineup(m) : scorersState(m));
+  const seasons = allSeasons();
+  const cell = list => { if (!list.length) return '<td class="cv-empty"></td>'; const g = list.filter(good).length, f = g / list.length;
+    return `<td class="cv" style="background:rgba(19,39,78,${(0.08 + f * 0.92).toFixed(2)});color:${f > .5 ? '#fff' : 'var(--ink)'}" title="${g} of ${list.length} complete">${list.length - g || '✓'}</td>`; };
+  let tot = [0, 0];
+  const rows = seasons.map(S => { const sm = ms.filter(m => m.season === S); if (!sm.length) return ''; const g = sm.filter(good).length; tot[0] += g; tot[1] += sm.length;
+    return `<tr data-cov-season="${esc(S)}"><th>${esc(S)}</th>${MONTHS.map(([, n]) => cell(sm.filter(m => col(m) === n))).join('')}${cell(sm.filter(m => col(m) === 'nd'))}<td class="n small">${Math.round(g / sm.length * 100)}%</td></tr>`; }).join('');
+  el.innerHTML = `<p class="small" style="margin-bottom:8px;">${tot[0]} of ${tot[1]} complete overall. Each cell shows how many are still missing (✓ = none).</p>
+    <div class="tbl-wrap cov-wrap"><table class="cov"><thead><tr><th>Season</th>${MONTHS.map(([l]) => `<th>${l}</th>`).join('')}<th>No date</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+$('#cov-what') && $('#cov-what').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { covWhat = b.dataset.w; renderCoverage(); } });
+$('#coverage') && $('#coverage').addEventListener('click', e => { const r = e.target.closest('[data-cov-season]'); if (r) show('season', true, r.dataset.covSeason); });
+function renderUndoList() {
+  const el = $('#undo-list'); if (!el) return;
+  if (!undoLog.length) { el.innerHTML = '<p class="muted small">No changes recorded yet.</p>'; return; }
+  el.innerHTML = `<table class="tbl"><tbody>${undoLog.map((e, i) => `<tr><td class="small muted" style="white-space:nowrap;">${esc(new Date(e.time).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</td><td>${esc(e.label)}</td><td class="n"><button class="btn btn-secondary btn-sm" data-undo="${i}">Undo</button></td></tr>`).join('')}</tbody></table>`;
+}
+$('#undo-list') && $('#undo-list').addEventListener('click', e => { const b = e.target.closest('[data-undo]'); if (b) undoTo(+b.dataset.undo); });
+
+
+// ════════════════════════════════════════════════════════════
+// HOME: latest season, honours, leaders, decades, tiles, completeness
+// ════════════════════════════════════════════════════════════
+const mainTeam = () => { const t = uniq(db.matches.map(m => m.team)); return t.includes("Men's 1s") ? "Men's 1s" : t.sort((a, b) => db.matches.filter(m => m.team === b).length - db.matches.filter(m => m.team === a).length)[0] || ''; };
+// League seasons that were titles at the second level (all other league titles are top flight)
+const SECOND_TIER_LEAGUE = new Set(['1988-89', '1992-93', '2021-22', '2024-25']);
+const indoorTier = comp => /premier|national indoor club championship/i.test(comp) ? 1 : 2;
+function honoursList(team) {
+  const H = [], ms = db.matches.filter(m => m.team === team);
+  const won = m => { const r = result(m); return r === 'W' || (r === 'D' && soWon(m.so) === true); };
+  const add = (season, comp, kind, m) => {
+    const tier = kind === 'league' ? (SECOND_TIER_LEAGUE.has(season) ? 2 : 1) : kind === 'indoor' ? indoorTier(comp) : 0;
+    const group = kind === 'league' ? `League champions: ${tier === 1 ? 'top flight' : 'second tier'}`
+      : kind === 'indoor' ? `Indoor champions: ${tier === 1 ? 'top flight' : 'second tier'}`
+      : kind === 'cup' ? 'National cup winners' : comp;
+    if (!H.some(h => h.season === season && h.group === group)) H.push({ season, comp, kind, tier, group, m });
+  };
+  const groups = new Map(); ms.forEach(m => { const k = m.season + '|' + m.competition; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(m); });
+  groups.forEach((list, k) => {
+    const [season, comp] = k.split('|'), kind = compKind(comp);
+    if (/qualif/i.test(comp)) return;
+    list.sort(cupOrder);
+    const fin = list.filter(m => /\bfinal\b/i.test(m.round || '') && !/semi|quarter|qualif/i.test(m.round || '')).pop();
+    if (kind === 'league' || kind === 'indoor') { if (fin && won(fin)) add(season, comp, kind, fin); return; }
+    if (cupOutcome(list) === 'Winners') add(season, comp, kind, fin);
+  });
+  // Tables: finished top with no final that season (outdoor and indoor separately)
+  [false, true].forEach(ind => {
+    const kind = ind ? 'indoor' : 'league';
+    uniq(db.leagueTables.filter(t => leagueTeamOf(t) === team && isIndoorTable(t) === ind && !/qualif/i.test(t.division)).map(t => t.season)).forEach(season => {
+      if (H.some(h => h.season === season && h.kind === kind)) return;
+      if (ind && ms.some(m => m.season === season && compKind(m.competition) === kind && m.round)) return;
+      const t = summaryTable({ season, tables: db.leagueTables.filter(x => x.season === season && leagueTeamOf(x) === team && isIndoorTable(x) === ind && !/qualif/i.test(x.division)) });
+      const row = t && t.rows.find(r => CLUB_RE.test(r.team));
+      if (row && row.pos === 1) add(season, t.division, kind, null);
+    });
+  });
+  return H.sort((a, b) => a.season.localeCompare(b.season));
+}
+// Next upcoming fixture for a team (status Fixture, today or later)
+function nextFixture(team) {
+  const t = new Date().toISOString().slice(0, 10);
+  return db.matches.filter(m => m.team === team && m.status === 'Fixture' && m.date && m.date >= t).sort(chrono)[0] || null;
+}
+// Turn back on once more line-ups are in
+const SHOW_APPS_LEADER = false;
+function renderHomeExtras() {
+  const team = mainTeam(), tm = db.matches.filter(m => m.team === team);
+  const ids = ['#home-latest', '#home-table', '#home-honours', '#home-leaders', '#home-decades', '#home-tiles'];
+  if (!tm.length) { ids.forEach(i => $(i).hidden = true); return; }
+  ids.forEach(i => $(i).hidden = false);
+  // Latest season
+  const played = tm.filter(countsForRecord);
+  const latest = uniq(played.map(m => m.season)).sort().pop();
+  const ls = tm.filter(m => m.season === latest), r = recordOf(ls);
+  const ts = db.leagueTables.filter(t => t.season === latest && leagueTeamOf(t) === team && !isIndoorTable(t));
+  const lt = ts.length ? summaryTable({ season: latest, tables: ts }) : null, row = lt && lt.rows.find(x => CLUB_RE.test(x.team));
+  const topS = playerStats(ls, false).filter(x => x.goals).sort((a, b) => b.goals - a.goals || byName(a.name, b.name));
+  const last = ls.filter(m => m.date && countsForRecord(m)).sort(chrono).pop(), nx = nextFixture(team);
+  $('#home-latest').innerHTML = `<h2>Latest season: ${esc(latest)}</h2>
+    <p class="big-rec">P ${r.p} · W ${r.w} · D ${r.d} · L ${r.l} · goals ${r.gf}–${r.ga}</p>
+    ${row && row.pos ? `<p>${last && last.date && (Date.now() - new Date(last.date)) < 120 * 864e5 ? 'Currently' : 'Finished'} <b>${ordinal(row.pos)}</b> of ${lt.rows.length} in the ${esc(lt.division)}.</p>` : ''}
+    ${topS.length ? `<p>Top scorer: ${topS.filter(x => x.goals === topS[0].goals).map(x => pLink(x.name)).join(', ')} (${topS[0].goals})</p>` : ''}
+    ${last ? `<p>Last result: ${mLink(last)} <span class="res ${result(last)}">${result(last)}</span></p>` : ''}
+    ${nx ? `<p class="next-fx">Next: ${mLink(nx, `${fmtDate(nx.date)} v ${nx.opponent} (${nx.venue === 'Home' ? 'H' : nx.venue === 'Away' ? 'A' : 'N'})`)}${nx.competition ? ` <span class="muted small">${esc(nx.competition)}</span>` : ''}</p>` : ''}
+    <div class="btn-row" style="margin-top:12px;"><button class="btn btn-primary btn-sm" data-season-page="${esc(latest)}">Season page</button></div>`;
+  // Current league table
+  if (lt && lt.rows.length) {
+    const gd = x => { const v = gdOf(x); return v == null ? '' : (v > 0 ? '+' : '') + v; };
+    $('#home-table').hidden = false;
+    $('#home-table').innerHTML = `<h2>${esc(lt.division)}</h2><p class="muted small" style="margin:-6px 0 8px;">${esc(latest)}${lt.rows.some(x => x.p !== lt.rows[0].p) ? '' : `, after ${lt.rows[0].p} games`}</p>
+      <div class="tbl-wrap"><table class="tbl ctr home-lt"><thead><tr><th class="n">#</th><th>Team</th><th class="n">P</th><th class="n">W</th><th class="n">D</th><th class="n">L</th><th class="n">GD</th><th class="n">Pts</th></tr></thead><tbody>
+      ${lt.rows.map(x => `<tr${CLUB_RE.test(x.team) ? ' class="club"' : ''}><td class="n">${x.pos ?? ''}</td><td>${esc(x.team)}</td><td class="n">${x.p ?? ''}</td><td class="n">${x.w ?? ''}</td><td class="n">${x.d ?? ''}</td><td class="n">${x.l ?? ''}</td><td class="n">${gd(x)}</td><td class="n"><b>${x.pts ?? ''}</b></td></tr>`).join('')}
+      </tbody></table></div>
+      <p class="small" style="margin-top:8px;text-align:right;"><button class="link" data-home-go="league">All tables →</button></p>`;
+  } else $('#home-table').hidden = true;
+  // Honours
+  const H = honoursList(team);
+  const byWhat = new Map(); H.forEach(h => { if (!byWhat.has(h.group)) byWhat.set(h.group, { k: h.group, kind: h.kind, tier: h.tier, items: [] }); byWhat.get(h.group).items.push(h); });
+  const order = { euro: 0, euroindoor: 1, league: 2, cup: 4, indoor: 5, county: 7 };
+  const hg = Array.from(byWhat.values()).map(g => Object.assign(g, { win: true })).sort((a, b) => (order[a.kind] + (a.tier === 2 ? 1 : 0)) - (order[b.kind] + (b.tier === 2 ? 1 : 0)) || a.k.localeCompare(b.k));
+  $('#home-honours').innerHTML = `<h2>Honours</h2>${hg.length ? `<div class="honours">${hg.map(g => `<div class="honour${g.win ? ' win' : ''}"><div class="h-title">${g.win ? '🏆 ' : ''}${esc(g.k)} <span class="tag">${g.items.length}</span></div>
+      <div class="h-years">${g.items.map(h => { const tip = esc(h.comp + (h.m ? ' final v ' + h.m.opponent + (scoreTxt(h.m) ? ' ' + scoreTxt(h.m) : '') : '')); return h.m ? `<button class="link" data-mlink="${h.m.id}" title="${tip}">${esc(h.season)}</button>` : `<button class="link" data-season-page="${esc(h.season)}" title="${tip}">${esc(h.season)}</button>`; }).join(' ')}</div></div>`).join('')}</div>
+      <p class="muted small" style="margin-top:8px;">Worked out from finals and final league tables in the archive. Hover over a season for the competition, and click it to open the final or season.</p>` : '<p class="muted">None found in the archive yet.</p>'}`;
+  // Leaders at a glance (outdoor)
+  const out = tm.filter(m => !isIndoor(m)), st = playerStats(out, false);
+  const tsc = st.slice().sort((a, b) => b.goals - a.goals)[0], tap = st.slice().sort((a, b) => b.apps - a.apps)[0];
+  const sc = out.filter(countsForRecord).filter(m => m.status === 'Played' && m.gf != null && m.ga != null);
+  const bw = sc.filter(m => m.gf > m.ga).sort((a, b) => (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf)[0];
+  const un = runs(out.filter(countsForRecord).sort(chrono), x => x !== 'L');
+  const card = (lab, big, sub) => `<div class="lead-card"><span class="lab">${lab}</span><b>${big}</b><span class="sub">${sub}</span></div>`;
+  $('#home-leaders').innerHTML = `<div class="lead-row">
+    ${tsc ? card('Top scorer', `${tsc.goals}`, `${pLink(tsc.name)} · ${esc(tsc.first)}${tsc.last !== tsc.first ? ' to ' + esc(tsc.last) : ''}`) : ''}
+    ${SHOW_APPS_LEADER && tap ? card('Most appearances', `${tap.apps}`, `${pLink(tap.name)} <span class="muted">(recorded line-ups)</span>`) : ''}
+    ${bw ? card('Biggest win', `${bw.gf}–${bw.ga}`, mLink(bw, `v ${bw.opponent}, ${bw.season}`)) : ''}
+    ${un.n ? card('Longest unbeaten run', `${un.n}`, `${mLink(un.from, un.from.season)} to ${mLink(un.to, un.to.season)}`) : ''}
+    </div><p class="small" style="margin:-6px 0 18px;text-align:right;"><button class="link" data-home-go="records">All records →</button></p>`;
+  // Decades
+  const seasons = uniq(tm.map(m => m.season)).sort();
+  const decs = uniq(seasons.map(s => s.slice(0, 3))).sort();
+  $('#home-decades').innerHTML = `<h2>Browse by decade</h2><div class="decades">${decs.map(d => {
+    const ss = seasons.filter(s => s.slice(0, 3) === d), dm = tm.filter(m => ss.includes(m.season)), dr = recordOf(dm);
+    const best = ss.map(s => { const x = recordOf(tm.filter(m => m.season === s && !isIndoor(m))); return { s, p: x.p, pct: x.p ? (x.w + x.d / 2) / x.p : 0 }; }).filter(x => x.p >= 5).sort((a, b) => b.pct - a.pct)[0];
+    return `<div class="decade"><button class="dec-head" data-season-page="${esc(ss[0])}">${d}0s</button>
+      <span class="small">${ss.length} season${ss.length === 1 ? '' : 's'} · ${dr.p} played</span>
+      <span class="small dec-rec"><span>W ${dr.w}</span><span>D ${dr.d}</span><span>L ${dr.l}</span></span>
+      ${best ? `<span class="small">Best: <button class="link" data-season-page="${esc(best.s)}">${esc(best.s)}</button></span>` : ''}
+      <div class="dec-seasons">${ss.map(s => `<button class="link" data-season-page="${esc(s)}">${esc(s.slice(2, 4))}</button>`).join(' ')}</div></div>`; }).join('')}</div>`;
+  // Tiles
+  const nPlayers = uniq(db.matches.flatMap(m => m.goals.map(g => g.player).concat(m.lineup.map(l => l.player)))).filter(x => !SPECIAL.includes(x)).length;
+  const nPlayed = db.matches.filter(countsForRecord).length;
+  const tiles = [['matches', 'Matches', `${nPlayed.toLocaleString('en-GB')} games, season by season`], ['season', 'Seasons', `${seasons.length} seasons, each with its own page`], ['players', 'Players', `${nPlayers} players with appearances and goals`],
+    ['opponents', 'Opponents', `${uniq(db.matches.map(m => m.opponent)).length} clubs and Reading's record against each`], ['records', 'Records', 'Biggest wins, runs, hat-tricks and leaders'], ['league', 'Tables', `${db.leagueTables.length} league tables, cup runs and Europe`]];
+  $('#home-tiles').innerHTML = `<div class="tiles">${tiles.map(([pg, t, d]) => `<button class="tile" data-home-go="${pg}"><b>${t}</b><span>${esc(d)}</span></button>`).join('')}</div>`;
+}
+$('#page-home').addEventListener('click', e => {
+  const g = e.target.closest('[data-home-go]');
+  if (g) { const pg = g.dataset.homeGo; if (pg === 'season') { const s = uniq(db.matches.filter(countsForRecord).map(m => m.season)).sort().pop(); show('season', true, s); } else show(pg); return; }
+  const pl = e.target.closest('[data-player]'); if (pl) openProfile(pl.dataset.player);
+});
 function renderOpponentPage() {
   const el = $('#opp-page'), name = oppName;
   const every = db.matches.filter(m => m.opponent === name).sort((a, b) => (a.date || '9').localeCompare(b.date || '9'));
@@ -3456,7 +4147,7 @@ function renderOpponentPage() {
   html += `<div class="panel"><h2>Matches</h2><p class="muted small" style="margin-bottom:8px;">Click a match to open it.</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Date</th><th>Season</th><th class="hide-sm">Competition</th><th></th><th>Score</th><th></th><th class="hide-sm">Reading scorers</th></tr></thead><tbody>
     ${all.slice().reverse().map(m => {
       const res = result(m), s = scorerGroups(m).filter(g => !SPECIAL.includes(g.player)).map(g => g.player + (g.goals.length > 1 ? ' ' + g.goals.length : ''));
-      return `<tr class="goto" data-match="${m.id}"><td style="white-space:nowrap;">${esc(fmtDate(m.date))}</td><td>${esc(m.season)}</td>
+      return `<tr class="goto" data-match="${m.id}"><td style="white-space:nowrap;">${dateCell(m.date)}</td><td>${esc(m.season)}</td>
         <td class="hide-sm small">${esc(m.competition)}${m.round ? ', ' + esc(m.round) : ''}</td>
         <td><span class="ha">${m.venue === 'Away' ? 'A' : m.venue === 'Home' ? 'H' : 'N'}</span></td><td>${scoreHTML(m)}</td>
         <td>${res ? `<span class="res ${res}">${res}</span>` : ''}</td><td class="small hide-sm">${esc(s.join(', '))}</td></tr>`;
@@ -3472,7 +4163,7 @@ $('#opp-page').addEventListener('click', e => {
     const country = $('#op-country').value, notes = $('#op-notes').value.trim();
     db.oppInfo[oppName] = { country: country || (KNOWN_COUNTRY[oppName] ? 'none' : ''), notes };
     if (!country && !KNOWN_COUNTRY[oppName] && !notes) delete db.oppInfo[oppName];
-    saveDB(); editingOpp = false; renderOpponentPage(); toast('Club saved'); return;
+    saveDB(`Edited club ${oppName}`); editingOpp = false; renderOpponentPage(); toast('Club saved'); return;
   }
   const pl = e.target.closest('tr[data-player]'); if (pl) { show('players', true, pl.dataset.player); return; }
   const row = e.target.closest('tr[data-match]');
@@ -3521,9 +4212,19 @@ $('#opp-page').addEventListener('click', e => {
   if (readOnly) document.querySelectorAll('#page-edit, #page-data, #lt-dialog, .edit-only').forEach(e => e.remove());
   document.body.classList.toggle('ro', readOnly);
   refreshDatalists();
+  if (!readOnly) await loadUndoLog();
   const [start, arg] = parseHash();
   show(PAGES.includes(start) ? start : 'home', false, arg);
 })();
+
+// Site style switch (Clubhouse / Almanack)
+function applyTheme(t) {
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem('rhcTheme', t); } catch (e) {}
+  document.querySelectorAll('[data-theme-set]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.themeSet === t)));
+}
+document.querySelectorAll('[data-theme-set]').forEach(b => b.addEventListener('click', () => applyTheme(b.dataset.themeSet)));
+applyTheme(document.documentElement.dataset.theme || 'clubhouse');
 </script>
 </body>
 </html>

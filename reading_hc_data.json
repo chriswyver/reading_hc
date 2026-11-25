@@ -129,7 +129,7 @@
     },
     {
       "id": "Pmuyb9dnztb5eq",
-      "name": "? Wilcox",
+      "name": "Hugh Wilcox",
       "notes": ""
     },
     {
@@ -1374,7 +1374,7 @@
     },
     {
       "id": "P1a20925a3a4jrng6",
-      "name": "? Spray",
+      "name": "Mike Spray",
       "notes": ""
     },
     {
@@ -1389,7 +1389,7 @@
     },
     {
       "id": "P1a20925a3a6sodoj",
-      "name": "? Leaver",
+      "name": "Phil Leaver",
       "notes": ""
     },
     {
@@ -1438,13 +1438,8 @@
       "notes": ""
     },
     {
-      "id": "P93zl0fl6zedgg",
-      "name": "? Cookman",
-      "notes": ""
-    },
-    {
       "id": "P1a20d32a7ba0ejyg",
-      "name": "? Amps",
+      "name": "Phil Amps",
       "notes": ""
     },
     {
@@ -3012,7 +3007,7 @@
           "sub": false
         },
         {
-          "player": "? Wilcox",
+          "player": "Hugh Wilcox",
           "gk": false,
           "sub": false
         }
@@ -57254,7 +57249,7 @@
           "minute": null
         }
       ],
-      "notes": "",
+      "notes": "No goalkeeper played.",
       "round": "",
       "post": "",
       "stage": "",
@@ -64900,6 +64895,11 @@
           "sub": false
         },
         {
+          "player": "Simon Briscoe",
+          "gk": false,
+          "sub": false
+        },
+        {
           "player": "Matt Collinson",
           "gk": false,
           "sub": false
@@ -65012,7 +65012,7 @@
           "minute": null
         }
       ],
-      "notes": "Line up: Reading Evening Post, 5 Feb 1998 p68 (indoor finals squad announced; second keeper Benson omitted).",
+      "notes": "Line up: Reading Evening Post, 5 Feb 1998 p68 (indoor finals squad announced; second keeper Benson omitted). Simon Briscoe added: he scored, so he played.",
       "round": "",
       "post": "",
       "stage": "Finals Pool A",
@@ -65605,7 +65605,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -70194,7 +70194,7 @@
           "sub": false
         },
         {
-          "player": "? Spray",
+          "player": "Mike Spray",
           "gk": false,
           "sub": false
         },
@@ -72945,7 +72945,7 @@
         }
       ],
       "goals": [],
-      "notes": "Line up: Reading Evening Post, 25 Mar 1981 p13 (10 men).",
+      "notes": "Line up: Reading Evening Post, 25 Mar 1981 p13 (10 men). Reading played with 10.",
       "round": "",
       "post": "",
       "stage": "",
@@ -73370,7 +73370,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -73583,7 +73583,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -73952,7 +73952,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -74382,7 +74382,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -74661,7 +74661,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -74977,7 +74977,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -75870,7 +75870,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -75953,7 +75953,7 @@
           "sub": false
         },
         {
-          "player": "? Leaver",
+          "player": "Phil Leaver",
           "gk": false,
           "sub": false
         },
@@ -80979,7 +80979,7 @@
           "sub": false
         },
         {
-          "player": "? Cookman",
+          "player": "Chris Cookman",
           "gk": false,
           "sub": false
         },
@@ -81129,7 +81129,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81227,7 +81227,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81330,7 +81330,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81418,7 +81418,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81506,7 +81506,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81604,7 +81604,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81681,7 +81681,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -81790,7 +81790,7 @@
       "lineupComplete": true,
       "lineup": [
         {
-          "player": "? Amps",
+          "player": "Phil Amps",
           "gk": false,
           "sub": false
         },
@@ -82151,7 +82151,7 @@
           "sub": false
         },
         {
-          "player": "? Wilcox",
+          "player": "Hugh Wilcox",
           "gk": false,
           "sub": false
         },
@@ -82976,7 +82976,7 @@
           "sub": false
         },
         {
-          "player": "? Wilcox",
+          "player": "Hugh Wilcox",
           "gk": false,
           "sub": false
         },
@@ -83903,6 +83903,27 @@
       "round": "Quarter-final",
       "post": "",
       "stage": "",
+      "so": null
+    },
+    {
+      "id": "Mmww2ig30l31pl",
+      "date": "2026-11-28",
+      "season": "2026-27",
+      "team": "Men's 1s",
+      "competition": "England Hockey League Premier Division",
+      "opponent": "Beeston",
+      "venue": "Away",
+      "status": "Fixture",
+      "gf": null,
+      "ga": null,
+      "lineupKnown": false,
+      "lineupComplete": false,
+      "lineup": [],
+      "goals": [],
+      "notes": "",
+      "round": "",
+      "post": "",
+      "stage": "Phase 1",
       "so": null
     }
   ],
@@ -87186,7 +87207,7 @@
       "carry": false,
       "summary": false,
       "combine": false,
-      "combineOff": false,
+      "combineOff": true,
       "fixtures": "auto",
       "cutAfter": null,
       "playoffs": []
@@ -87288,7 +87309,7 @@
       "carry": true,
       "summary": false,
       "combine": false,
-      "combineOff": false,
+      "combineOff": true,
       "fixtures": "auto",
       "cutAfter": null,
       "playoffs": []
@@ -87366,7 +87387,7 @@
       "carry": true,
       "summary": false,
       "combine": false,
-      "combineOff": false,
+      "combineOff": true,
       "fixtures": "auto",
       "cutAfter": null,
       "playoffs": [
@@ -102543,5 +102564,10 @@
     "EH Cup": "cup",
     "NOW: Pensions Men's Cup": "cup"
   },
-  "oppInfo": {}
+  "oppInfo": {},
+  "ignoredChecks": [
+    "gk:Mmvjg276d8k53v",
+    "lc:Mmvz82o1ad6h98",
+    "nd:? Cooper|Ben Hooper"
+  ]
 }
