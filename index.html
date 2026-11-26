@@ -250,7 +250,7 @@
   /* Editor */
   .lrow, .grow { display: grid; align-items: center; gap: 8px; margin-bottom: 6px; }
   .lrow { grid-template-columns: 26px 1fr auto auto 32px; }
-  .grow { grid-template-columns: 26px 1fr 170px 90px 32px; }
+  .grow { grid-template-columns: 26px 1fr 90px 32px; }
   .rnum { text-align: right; font-family: var(--display); font-weight: 600; color: var(--muted); }
   .x { width: 30px; height: 30px; border: 1px solid var(--line); background: var(--white); color: var(--muted); border-radius: 4px; cursor: pointer; font-size: 18px; line-height: 1; }
   .x:hover { color: var(--loss); border-color: #e6b9b9; }
@@ -315,8 +315,7 @@
     .g2, .g3, .g4, .g5, .g6, .two-col, .detail { grid-template-columns: 1fr; }
     .detail ol { columns: 1; }
     .hide-sm { display: none; }
-    .grow { grid-template-columns: 22px 1fr 110px 32px; }
-    .grow .g-min { display: none; }
+    .grow { grid-template-columns: 22px 1fr 70px 32px; }
     h1 { font-size: 30px; }
   }
 .mp-nav{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:8px 0 4px;}
@@ -513,6 +512,11 @@ html[data-theme="almanack"] .pl-list{margin:10px 0 0;}
   .home-rec div:last-child{grid-column:1/-1;}
   .home-rec b{white-space:nowrap;font-size:28px!important;}
 }
+
+/* Filter bar that stays under the header while scrolling */
+.sticky-filters{position:sticky;top:var(--hdr-h,72px);z-index:40;box-shadow:0 6px 14px -8px rgba(0,0,0,.25);}
+html[data-theme="almanack"] .sticky-filters{background:var(--paper);border-bottom:1px solid var(--ink);padding:10px 0;}
+@media (max-width:820px){.sticky-filters{position:static;box-shadow:none;}}
 @media (max-width:820px){.theme-switch{margin:6px 0;}html[data-theme="almanack"] .brand{font-size:26px;}}
 </style>
 </head>
@@ -589,7 +593,7 @@ html[data-theme="almanack"] .pl-list{margin:10px 0 0;}
 <section id="page-matches" class="page">
   <h1>Matches</h1>
   <p class="lede" id="matches-lede"></p>
-  <div class="panel tight">
+  <div class="panel tight sticky-filters">
     <div class="filters">
       <div><label class="f" for="mf-season">Season</label><select id="mf-season"></select></div>
       <div><label class="f" for="mf-team">Team</label><select id="mf-team"></select></div>
@@ -1028,7 +1032,6 @@ const ROUND_COL   = { 'First round': 0, 'Positional': 0, 'Quarter-final': 0, 'Se
 const STATUSES    = ['Played', 'Fixture', 'Awarded win', 'Awarded loss', 'Walkover win', 'Walkover loss', 'Postponed', 'Cancelled', 'Abandoned'];
 // Walkovers decide a tie (so cups show who went through) but no match was played,
 // so they don't count in played/won/lost records or appearances.
-const GOAL_TYPES  = { FG: 'Field goal', PC: 'Penalty corner', PS: 'Penalty stroke', '': 'Not recorded' };
 const SPECIAL     = ['Own goal', 'Unknown'];
 const MARKS = [   // league table outcomes, highest priority first
   { k: 'champ', label: 'Champions', short: 'Ch' },
@@ -1137,8 +1140,8 @@ function normalise(d) {
     lineupComplete: !!m.lineupComplete,
     lineup: (m.lineup || []).map(l => typeof l === 'string' ? { player: l, gk: false, sub: false }
       : { player: String(l.player || '').trim(), gk: !!l.gk, sub: !!l.sub }).filter(l => l.player),
-    goals: (m.goals || []).map(g => typeof g === 'string' ? { player: g, type: '', minute: null }
-      : { player: String(g.player || '').trim(), type: g.type || '', minute: numOrNull(g.minute) }).filter(g => g.player),
+    goals: (m.goals || []).map(g => typeof g === 'string' ? { player: g, minute: null }
+      : { player: String(g.player || '').trim(), minute: numOrNull(g.minute) }).filter(g => g.player),
     notes: m.notes || '',
     round: canonRound(m.round),
     post: String(m.post || '').trim(),
@@ -1482,7 +1485,7 @@ function matchDetailHTML(m) {
   if (!canHaveLineup(m) && !groups.length) sc = '<p class="muted">None.</p>';
   else if (!groups.length) sc = `<p class="muted">${(m.gf || 0) > 0 ? 'Scorers not recorded.' : 'No Reading goals.'}</p>`;
   else sc = `<ul class="scorers">${groups.map(g => {
-    const detail = g.goals.map(x => [x.minute != null ? x.minute + '′' : '', x.type].filter(Boolean).join(' ')).filter(Boolean).join(', ');
+    const detail = g.goals.map(x => x.minute != null ? x.minute + '′' : '').filter(Boolean).join(', ');
     const name = SPECIAL.includes(g.player) ? `<em>${esc(g.player)}</em>` : `<button class="link" data-player="${esc(g.player)}">${esc(g.player)}</button>`;
     return `<li>${name}${g.goals.length > 1 ? ' ' + g.goals.length : ''}${detail ? ` <span class="gt">(${esc(detail)})</span>` : ''}</li>`;
   }).join('')}</ul>`;
@@ -1653,7 +1656,6 @@ function addGoalRow(g = {}) {
   const d = document.createElement('div'); d.className = 'grow';
   d.innerHTML = `<span class="rnum"></span>
     <input type="text" class="g-name" list="dl-scorers" placeholder="Scorer" value="${esc(g.player || '')}" aria-label="Scorer">
-    <select class="g-type" aria-label="Goal type">${Object.entries(GOAL_TYPES).map(([k, v]) => `<option value="${k}" ${k === (g.type || '') ? 'selected' : ''}>${v}</option>`).join('')}</select>
     <input type="number" class="g-min" min="0" max="80" placeholder="Min" value="${g.minute != null ? g.minute : ''}" aria-label="Minute">
     <button type="button" class="x" aria-label="Remove goal">&times;</button>`;
   $('#goal-rows').appendChild(d); renumber('#goal-rows'); return d;
@@ -1800,7 +1802,7 @@ $('#btn-save-match').addEventListener('click', () => {
     if (!m.lineup.length) m.lineupKnown = false;
   } else m.lineupKnown = false;
   m.goals = $$('#goal-rows .grow').map(r => ({
-    player: canonicalName(r.querySelector('.g-name').value), type: r.querySelector('.g-type').value, minute: numOrNull(r.querySelector('.g-min').value),
+    player: canonicalName(r.querySelector('.g-name').value), minute: numOrNull(r.querySelector('.g-min').value),
   })).filter(g => g.player);
 
   const warn = [];
@@ -1857,7 +1859,7 @@ function statCatTips(ms) {
 function playerStats(matches, scorersCount) {
   const P = new Map();
   const get = n => {
-    if (!P.has(n)) P.set(n, { name: n, apps: 0, goals: 0, aLeague: 0, aPost: 0, aCup: 0, aCounty: 0, aEuro: 0, gLeague: 0, gPost: 0, gCup: 0, gCounty: 0, gEuro: 0, FG: 0, PC: 0, PS: 0, gk: 0, seasons: new Set(), bySeason: new Map(), matches: [] });
+    if (!P.has(n)) P.set(n, { name: n, apps: 0, goals: 0, aLeague: 0, aPost: 0, aCup: 0, aCounty: 0, aEuro: 0, gLeague: 0, gPost: 0, gCup: 0, gCounty: 0, gEuro: 0, gk: 0, seasons: new Set(), bySeason: new Map(), matches: [] });
     return P.get(n);
   };
   const bs = (r, s, team) => {
@@ -1875,7 +1877,7 @@ function playerStats(matches, scorersCount) {
     });
     m.goals.forEach(g => {
       if (SPECIAL.includes(g.player)) return;
-      const r = get(g.player); r.goals++; if (g.type) r[g.type]++;
+      const r = get(g.player); r.goals++;
       r['g' + cat]++;
       r.seasons.add(m.season); bs(r, m.season, m.team).goals++;
       if (!r.matches.includes(m)) r.matches.push(m);
@@ -2078,7 +2080,6 @@ function renderProfile() {
   const cells = [['Appearances', r.apps], ['Goals', r.goals], ['Seasons', r.nSeasons], ['First season', r.first || '–'], ['Last season', r.last || '–']];
   html += `<div class="record">${cells.map(([l, v]) => `<div><b>${esc(v)}</b><span>${l}</span></div>`).join('')}</div>`;
   const facts = [];
-  if (r.goals && (r.FG || r.PC || r.PS)) facts.push(`Goals: ${[['FG', 'field'], ['PC', 'penalty corner'], ['PS', 'penalty stroke']].filter(([k]) => r[k]).map(([k, l]) => `${r[k]} ${l}`).join(', ') || 'types not recorded'}${r.goals - r.FG - r.PC - r.PS > 0 && (r.FG || r.PC || r.PS) ? `, ${r.goals - r.FG - r.PC - r.PS} not recorded` : ''}.`);
   if (r.gk) facts.push(`Played in goal ${r.gk} time${r.gk === 1 ? '' : 's'}.`);
   if (teams.length > 1) facts.push(`Played for ${teams.join(' and ')}.`);
   if (facts.length) html += `<p style="margin-bottom:18px;">${esc(facts.join(' '))}</p>`;
@@ -3007,7 +3008,7 @@ function importPlayer(c) {
   const flags = m ? m[2].toLowerCase() : '';
   return { player: canonicalName(m ? m[1] : c), gk: /\bgk\b/.test(flags), sub: false };
 }
-// "Name", "Name PC", "Name PC 23", "Name 23'"
+// "Name", "Name 23", "Name 23'" (an old goal-type tag such as PC is ignored)
 function importGoal(c) {
   let words = String(c).trim().split(/\s+/), type = '', minute = null;
   for (let k = 0; k < 2 && words.length > 1; k++) {
@@ -3015,7 +3016,7 @@ function importGoal(c) {
     if (!type && /^(fg|pc|ps)$/i.test(w)) { type = w.toUpperCase(); words.pop(); }
     else if (minute == null && /^\d{1,2}'?$/.test(w)) { minute = parseInt(w, 10); words.pop(); }
   }
-  return { player: canonicalName(words.join(' ')), type, minute };
+  return { player: canonicalName(words.join(' ')), minute };
 }
 function parseTemplateRow(line) {
   const c = line.split('\t').map(x => x.trim());
@@ -4225,6 +4226,13 @@ function applyTheme(t) {
 }
 document.querySelectorAll('[data-theme-set]').forEach(b => b.addEventListener('click', () => applyTheme(b.dataset.themeSet)));
 applyTheme(document.documentElement.dataset.theme || 'clubhouse');
+
+// Keep --hdr-h equal to the header's height so sticky bars sit just below it
+(function () {
+  const h = document.querySelector('header');
+  const set = () => document.documentElement.style.setProperty('--hdr-h', h.offsetHeight + 'px');
+  set(); if (window.ResizeObserver) new ResizeObserver(set).observe(h); window.addEventListener('resize', set);
+})();
 </script>
 </body>
 </html>
