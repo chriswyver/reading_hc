@@ -33160,8 +33160,13 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Richard Mantell",
+          "minute": null
+        }
+      ],
+      "notes": "Scorer: getreading/Reading Evening Post, 31 Oct 2008 (penalty corner just before half-time).",
       "round": "",
       "post": "",
       "stage": "",
@@ -41383,8 +41388,17 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Andy Watts",
+          "minute": null
+        },
+        {
+          "player": "Andy Watts",
+          "minute": null
+        }
+      ],
+      "notes": "Scorers: The Times, 4 Feb 2002 - \"Andrew Watts giving them the lead after 13 seconds and quickly adding another\". \"Andrew Watts\" confirmed as Andy Watts.",
       "round": "Fifth Round",
       "post": "",
       "stage": "",
@@ -42246,8 +42260,13 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Tom Bertram",
+          "minute": null
+        }
+      ],
+      "notes": "Scorer: The Times, 29 May 2004 - Tom Bertram penalty corner a minute before the break.",
       "round": "Pool A",
       "post": "",
       "stage": "",
@@ -42267,8 +42286,13 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Andy Todd",
+          "minute": null
+        }
+      ],
+      "notes": "Scorer: The Times, 31 May 2004 - \"Leading through an Andrew Todd goal\".",
       "round": "Pool A",
       "post": "",
       "stage": "",
@@ -42312,9 +42336,13 @@
         {
           "player": "Mark Pearn",
           "minute": null
+        },
+        {
+          "player": "Simon Mantell",
+          "minute": null
         }
       ],
-      "notes": "",
+      "notes": "Scorers: The Times, 31 May 2004 - Pearn, Watts 2, Simon Mantell 2, Clarke (penalty stroke), Andrew Todd.",
       "round": "Pool A",
       "post": "",
       "stage": "",
@@ -43664,7 +43692,7 @@
     },
     {
       "id": "Mmvhxoag0r231f",
-      "date": "2008-05-04",
+      "date": "2008-05-03",
       "season": "2007-08",
       "team": "Men's 1s",
       "competition": "EH Cup",
@@ -43676,8 +43704,13 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Simon Lanyon",
+          "minute": null
+        }
+      ],
+      "notes": "Scorer: The Hockey Results blog (thrnews.blogspot.com), 3 May 2008 - \"an early goal by Simon Lanyon\". Played Saturday 3 May 2008 (blog post of that date says the match was played \"this afternoon\"; previously listed as 4 May).",
       "round": "Semi-final",
       "post": "",
       "stage": "",
@@ -43739,8 +43772,33 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Austin Smith",
+          "minute": 3
+        },
+        {
+          "player": "Jonny Codling",
+          "minute": 12
+        },
+        {
+          "player": "Matt Armitage",
+          "minute": 19
+        },
+        {
+          "player": "Simon Lanyon",
+          "minute": 23
+        },
+        {
+          "player": "Andy Watts",
+          "minute": 30
+        },
+        {
+          "player": "Warren D'Souza",
+          "minute": 47
+        }
+      ],
+      "notes": "Scorers: getreading/Reading Evening Post, 31 Oct 2008 (tie brought forward to 26 Oct because of EHL weekend).",
       "round": "Third Round",
       "post": "",
       "stage": "",
@@ -60026,8 +60084,33 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
-      "notes": "",
+      "goals": [
+        {
+          "player": "Andy Todd",
+          "minute": null
+        },
+        {
+          "player": "Andy Todd",
+          "minute": null
+        },
+        {
+          "player": "Andy Todd",
+          "minute": null
+        },
+        {
+          "player": "Jonty Clarke",
+          "minute": null
+        },
+        {
+          "player": "Rob Todd",
+          "minute": null
+        },
+        {
+          "player": "Simon Mantell",
+          "minute": null
+        }
+      ],
+      "notes": "Scorers: getreading/Reading Evening Post, 10 Feb 2005 (\"Watts at the double\"). Lost 4-3 on penalty strokes. The Times, 5 Feb 2005, reports the final the same day, which confirms the 4 Feb date.",
       "round": "Semi-final",
       "post": "",
       "stage": "",
@@ -60345,7 +60428,7 @@
       "lineupComplete": false,
       "lineup": [],
       "goals": [],
-      "notes": "",
+      "notes": "Result: The Times, 27 Jan 2003, results service - Higgins Group English Indoor League play-offs (Larkhill): Infantry 1 Reading 7; Reading 9 Sheffield Hallam 3; Nottingham 3 Reading 11; Reading 8 Crostyx 2 (played in that order). Reading finished top with 12 points.",
       "round": "",
       "post": "",
       "stage": "National",
@@ -60360,13 +60443,13 @@
       "opponent": "Nottingham",
       "venue": "Neutral",
       "status": "Played",
-      "gf": null,
-      "ga": null,
+      "gf": 11,
+      "ga": 3,
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
       "goals": [],
-      "notes": "",
+      "notes": "Result: The Times, 27 Jan 2003, results service - Higgins Group English Indoor League play-offs (Larkhill): Infantry 1 Reading 7; Reading 9 Sheffield Hallam 3; Nottingham 3 Reading 11; Reading 8 Crostyx 2 (played in that order). Reading finished top with 12 points.",
       "round": "",
       "post": "",
       "stage": "National",
@@ -60378,16 +60461,16 @@
       "season": "2002-03",
       "team": "Men's 1s",
       "competition": "Super 6s Indoor National League Qualifier",
-      "opponent": "Sheffield",
+      "opponent": "Sheffield Hallam",
       "venue": "Neutral",
       "status": "Played",
-      "gf": null,
-      "ga": null,
+      "gf": 9,
+      "ga": 3,
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
       "goals": [],
-      "notes": "",
+      "notes": "Result: The Times, 27 Jan 2003, results service - Higgins Group English Indoor League play-offs (Larkhill): Infantry 1 Reading 7; Reading 9 Sheffield Hallam 3; Nottingham 3 Reading 11; Reading 8 Crostyx 2 (played in that order). Reading finished top with 12 points.",
       "round": "",
       "post": "",
       "stage": "National",
@@ -60402,13 +60485,13 @@
       "opponent": "Infantry",
       "venue": "Neutral",
       "status": "Played",
-      "gf": null,
-      "ga": null,
+      "gf": 7,
+      "ga": 1,
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
       "goals": [],
-      "notes": "",
+      "notes": "Result: The Times, 27 Jan 2003, results service - Higgins Group English Indoor League play-offs (Larkhill): Infantry 1 Reading 7; Reading 9 Sheffield Hallam 3; Nottingham 3 Reading 11; Reading 8 Crostyx 2 (played in that order). Reading finished top with 12 points.",
       "round": "",
       "post": "",
       "stage": "National",
@@ -63750,7 +63833,7 @@
     },
     {
       "id": "Mmvtgszjrrpar3",
-      "date": "1974-03-31",
+      "date": "1974-03-30",
       "season": "1973-74",
       "team": "Men's 1s",
       "competition": "London League",
@@ -65846,7 +65929,16 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
+      "goals": [
+        {
+          "player": "Nick Barton",
+          "minute": null
+        },
+        {
+          "player": "Nick Barton",
+          "minute": null
+        }
+      ],
       "notes": "",
       "round": "",
       "post": "",
@@ -66020,7 +66112,12 @@
       "lineupKnown": false,
       "lineupComplete": false,
       "lineup": [],
-      "goals": [],
+      "goals": [
+        {
+          "player": "Nick Barton",
+          "minute": null
+        }
+      ],
       "notes": "",
       "round": "",
       "post": "",
@@ -79975,7 +80072,7 @@
           "gf": 36,
           "ga": 15,
           "gd": null,
-          "pts": 22,
+          "pts": 33,
           "pct": null,
           "marks": []
         },
@@ -80263,7 +80360,7 @@
           "p": 15,
           "w": 7,
           "d": 4,
-          "l": 3,
+          "l": 4,
           "gf": 25,
           "ga": 20,
           "gd": null,
@@ -82388,7 +82485,7 @@
         {
           "pos": 9,
           "team": "Beeston",
-          "p": 22,
+          "p": 21,
           "w": 5,
           "d": 3,
           "l": 13,
@@ -82402,7 +82499,7 @@
         {
           "pos": 10,
           "team": "Hounslow",
-          "p": 22,
+          "p": 21,
           "w": 4,
           "d": 5,
           "l": 12,
@@ -82903,11 +83000,11 @@
           "pos": 3,
           "team": "Old Loughtonians",
           "p": 18,
-          "w": 18,
-          "d": 9,
-          "l": 5,
-          "gf": 4,
-          "ga": 45,
+          "w": 9,
+          "d": 5,
+          "l": 4,
+          "gf": 45,
+          "ga": 37,
           "gd": null,
           "pts": 32,
           "pct": null,
@@ -86987,7 +87084,7 @@
       "season": "2007-08",
       "team": "Men's 1s",
       "division": "Slazenger England Hockey League Premier Division",
-      "notes": "Loughborough Students and Hampstead & Westminster deducted 2 points",
+      "notes": "Loughborough Students deducted 10 points; Hampstead & Westminster deducted 2 points",
       "postName": "",
       "rows": [
         {
@@ -92856,7 +92953,7 @@
       "carry": false,
       "summary": false,
       "combine": false,
-      "combineOff": false,
+      "combineOff": true,
       "fixtures": "once",
       "cutAfter": null,
       "playoffs": [
@@ -92876,76 +92973,80 @@
       "season": "2002-03",
       "team": "Men's 1s",
       "division": "Super 6s Indoor National League Qualifier",
-      "notes": "",
+      "notes": "Play-off group at Larkhill, January 2003; first two qualified for the 2003-04 English Indoor League. Rebuilt from the ten results in The Times, 27 Jan 2003, which gives final positions only for the top three (Reading 12, Crostyx 6, Hallam 6). Nottingham and Infantry both finished on 3 points; Nottingham placed 4th on goal difference, although Infantry won their meeting 6-4.",
       "postName": "",
       "rows": [
         {
           "pos": 1,
           "team": "Reading",
-          "p": null,
-          "w": null,
-          "d": null,
-          "l": null,
-          "gf": null,
-          "ga": null,
+          "p": 4,
+          "w": 4,
+          "d": 0,
+          "l": 0,
+          "gf": 35,
+          "ga": 9,
           "gd": null,
-          "pts": null,
+          "pts": 12,
           "pct": null,
-          "marks": []
+          "marks": [
+            "prom"
+          ]
         },
         {
           "pos": 2,
           "team": "Crostyx",
-          "p": null,
-          "w": null,
-          "d": null,
-          "l": null,
-          "gf": null,
-          "ga": null,
+          "p": 4,
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 16,
+          "ga": 15,
           "gd": null,
-          "pts": null,
+          "pts": 6,
+          "pct": null,
+          "marks": [
+            "prom"
+          ]
+        },
+        {
+          "pos": 3,
+          "team": "Sheffield Hallam",
+          "p": 4,
+          "w": 2,
+          "d": 0,
+          "l": 2,
+          "gf": 19,
+          "ga": 22,
+          "gd": null,
+          "pts": 6,
           "pct": null,
           "marks": []
         },
         {
-          "pos": null,
-          "team": "Infantry",
-          "p": null,
-          "w": null,
-          "d": null,
-          "l": null,
-          "gf": null,
-          "ga": null,
-          "gd": null,
-          "pts": null,
-          "pct": null,
-          "marks": []
-        },
-        {
-          "pos": null,
-          "team": "Sheffield",
-          "p": null,
-          "w": null,
-          "d": null,
-          "l": null,
-          "gf": null,
-          "ga": null,
-          "gd": null,
-          "pts": null,
-          "pct": null,
-          "marks": []
-        },
-        {
-          "pos": null,
+          "pos": 4,
           "team": "Nottingham",
-          "p": null,
-          "w": null,
-          "d": null,
-          "l": null,
-          "gf": null,
-          "ga": null,
+          "p": 4,
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 17,
+          "ga": 27,
           "gd": null,
-          "pts": null,
+          "pts": 3,
+          "pct": null,
+          "marks": []
+        },
+        {
+          "pos": 5,
+          "team": "Infantry",
+          "p": 4,
+          "w": 1,
+          "d": 0,
+          "l": 3,
+          "gf": 12,
+          "ga": 26,
+          "gd": null,
+          "pts": 3,
           "pct": null,
           "marks": []
         }
@@ -92954,8 +93055,8 @@
       "carry": false,
       "summary": false,
       "combine": false,
-      "combineOff": false,
-      "fixtures": "auto",
+      "combineOff": true,
+      "fixtures": "once",
       "cutAfter": null,
       "playoffs": []
     },
@@ -98549,7 +98650,6 @@
     "National Clubs Championship South": "cup",
     "MaxiNutrition Hockey 5s Indoor Premier Division": "indoor",
     "Super 6s Indoor Division 1 South": "indoor",
-    "EuroHockey Indoor Club Trophy": "indoor",
     "Super 6s Indoor Division 2": "indoor",
     "Super 6s Indoor Premier Division": "indoor",
     "Super 6s Indoor Division 1": "indoor",

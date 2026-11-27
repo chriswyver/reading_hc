@@ -2280,7 +2280,16 @@ const isSplit = g => g.tables.length > 1 || g.tables.some(t => t.stage);
 const combineView = new Map();   // read-only viewers' local choice, by season
 // Season totals are on by default for split seasons; switching them off is remembered per season
 const isCombined = g => isSplit({ ...g, tables: leagueTablesOf(g) }) && (combineView.has(g.season) ? combineView.get(g.season) : !g.tables.some(t => t.combineOff));
-const groupForPlayoffs = g => ({ ...g.tables[0], postName: g.tables.map(t => t.postName).find(Boolean) || '', playoffs: g.tables.flatMap(t => t.playoffs || []) });
+// A regional stage with its own knockout (e.g. the 2002-03 South qualifier: group, then semi-finals and a final).
+// Reading's knockout matches carry that stage, so the bracket sits under that stage's table rather than with the season's play-offs.
+const stageKoMatches = t => (!t.stage || isPostTable(t)) ? [] : db.matches.filter(m => isPost(m) && m.stage === t.stage && m.season === t.season && m.team === t.team
+  && leagueScopeMatch(m) && (!t.division || !m.competition || m.competition === t.division));
+const hasStageKO = t => stageKoMatches(t).length > 0;
+const stageKOGroup = t => ({ ...t, koStage: t.stage, postName: t.postName || `${t.stage} knockout` });
+const groupForPlayoffs = g => {
+  const ts = g.tables.filter(t => !hasStageKO(t));
+  return { ...g.tables[0], koStage: '', postName: ts.map(t => t.postName).find(Boolean) || '', playoffs: ts.flatMap(t => t.playoffs || []) };
+};
 
 let leagueKind = 'league';
 const openCups = new Set();
@@ -2341,7 +2350,7 @@ function renderLeague() {
     const open = openTable === g.season;
     const link = `<button class="yr-link${open ? ' open' : ''}" data-open-table="${esc(g.season)}" aria-expanded="${open}">${esc(g.season)}</button>`;
     const pts = g.tables.filter(isPostTable).map(x => { const c = x.rows.find(r => CLUB_RE.test(r.team)); return c && c.pos ? `${x.stage} ${c.pos === 1 ? 'winners' : ordinal(c.pos)}` : ''; }).filter(Boolean);
-    const badge = [playoffBadge(groupForPlayoffs(g)), ...pts].filter(Boolean).join(' · ');
+    const badge = [playoffBadge(groupForPlayoffs(g)), ...g.tables.filter(hasStageKO).map(x => playoffBadge(stageKOGroup(x))), ...pts].filter(Boolean).join(' · ');
     const miss = seasonMissingCount(g);
     const freeFix = g.tables.some(x => !isPostTable(x) && fixtureRule(x, g.season).mode === 'free');
     const missTag = freeFix ? ` <span class="tag" title="${esc(FREE_FIXTURES_NOTE)}">own fixtures</span>` : miss == null ? '' : miss ? ` <span class="tag miss-badge" title="League games not yet in the archive">${miss} missing</span>` : ' <span class="tag ok-badge edit-only" title="Every league game is in the archive">all games in</span>';
@@ -2699,7 +2708,8 @@ function leagueSeasonHTML(g) {
       ${fullTableHTML(rows, club ? { ms: own, mode: mode === 'double' ? 'double' : 'once' } : {})}
       ${checksHTML([club ? checkInfo(club, forCheck, t.stage || g.season) : null, missingInfo(missingFixtures(t, g.season, own), t.stage ? t.stage : 'league')])}
       ${t.notes ? `<p class="small" style="margin-top:8px;">${esc(t.notes)}</p>` : ''}
-      ${club ? resultsBlock(own, t.id) : ''}</div>`;
+      ${club ? resultsBlock(own, t.id) : ''}
+      ${hasStageKO(t) ? `<div style="margin-top:22px;">${playoffBracketHTML(stageKOGroup(t))}</div>` : ''}</div>`;
     if (!staged && po) html += po;
   }
   if (staged) {
@@ -2731,8 +2741,11 @@ function leagueSeasonHTML(g) {
 
 // ── Play-offs: Reading's play-off matches plus other ties stored on the table
 function playoffTies(t) {
+  // a stage's own knockout takes only that stage's matches; the season's play-offs leave those out
+  const koStages = db.leagueTables.filter(x => x.season === t.season && x.team === t.team && hasStageKO(x)).map(x => x.stage);
   const ours = db.matches.filter(m => isPost(m) && leagueScopeMatch(m) && m.season === t.season && m.team === t.team && m.gf != null && m.ga != null
-      && !db.leagueTables.some(x => x.season === t.season && x.team === t.team && x.stage && x.stage === m.post))
+      && !db.leagueTables.some(x => x.season === t.season && x.team === t.team && x.stage && x.stage === m.post)
+      && (t.koStage ? m.stage === t.koStage : !koStages.includes(m.stage)))
     .map(m => {
       const r = { round: m.round || postName(m), post: m.post, a: CLUB_NAME, b: m.opponent, as: m.gf, bs: m.ga, aso: m.so ? (soKnown(m.so) ? m.so.gf : m.so.won ? 1 : 0) : null, bso: m.so ? (soKnown(m.so) ? m.so.ga : m.so.won ? 0 : 1) : null, matchId: m.id, date: m.date };
       return m.venue === 'Away' ? { ...r, a: r.b, b: r.a, as: r.bs, bs: r.as, aso: r.bso, bso: r.aso } : r;
@@ -3980,8 +3993,8 @@ function honoursList(team) {
   const won = m => { const r = result(m); return r === 'W' || (r === 'D' && soWon(m.so) === true); };
   const add = (season, comp, kind, m) => {
     const tier = kind === 'league' ? (SECOND_TIER_LEAGUE.has(season) ? 2 : 1) : kind === 'indoor' ? indoorTier(comp) : 0;
-    const group = kind === 'league' ? `League champions: ${tier === 1 ? 'top flight' : 'second tier'}`
-      : kind === 'indoor' ? `Indoor champions: ${tier === 1 ? 'top flight' : 'second tier'}`
+    const group = kind === 'league' ? `League champions: ${tier === 1 ? 'Premier Division' : 'Division One'}`
+      : kind === 'indoor' ? `Indoor champions: ${tier === 1 ? 'Premier Division' : 'Division One'}`
       : kind === 'cup' ? 'National cup winners' : comp;
     if (!H.some(h => h.season === season && h.group === group)) H.push({ season, comp, kind, tier, group, m });
   };
